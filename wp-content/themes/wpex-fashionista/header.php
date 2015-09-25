@@ -51,12 +51,15 @@
 <?php wpex_hook_header_before(); ?>
 <div id="header-wrap" <?php if( of_get_option('static_header') !== '1' && ! wp_is_mobile() ) { echo 'class="fixed-header"'; } ?> >
   <header id="header" class="outerbox clearfix">
-  <a id="skip-link" href="#main-content">Skip to main content</a>
+<!--   <a id="skip-link" href="#main-content">Skip to main content</a> -->
     <?php wpex_hook_header_top(); ?>
-    <a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="home">
+   <div class="logo-container">
+    	<a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="home">
+    
     <?php
 	//show custom image logo if defined in the admin
 	if( of_get_option('custom_logo','') !== '' ) { ?>
+	 
 	<img src="<?php echo esc_url(of_get_option('custom_logo')); ?>" alt="<?php get_bloginfo( 'name' ) ?>" />
     
     <?php }
@@ -70,9 +73,11 @@
 			if( of_get_option('social','1') ) {
 				wpex_display_social();
 			 } //social disabled ?>
+	
     <?php
 		// Output content for mobile menu
 		wpex_mobile_menu(); ?>
+		</div>
     <nav id="navigation" class="clearfix">
       <?php
 			// Main Navigation menu

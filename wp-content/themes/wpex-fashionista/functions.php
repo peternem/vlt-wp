@@ -40,7 +40,7 @@ require_once( get_template_directory() .'/functions/scripts.php' );
 require_once( get_template_directory() .'/functions/hooks.php' );
 require_once( get_template_directory() .'/functions/mobile-menu.php' );
 require_once( get_template_directory() .'/functions/load-more.php' );
-require_once( get_template_directory() .'/functions/aqua-resizer.php' );
+//require_once( get_template_directory() .'/functions/aqua-resizer.php' );
 require_once( get_template_directory() .'/functions/widgets/widget-areas.php' );
 require_once( get_template_directory() . '/functions/widgets/flickr.php');
 require_once( get_template_directory() . '/functions/widgets/video.php');

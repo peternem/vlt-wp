@@ -10,17 +10,21 @@
 		});
 		
 		/* Mobile menu */
-		$('.mobile-menu-toggle').sidr({
-			name: 'sidr-main',
-			source: '#sidr-close, #navigation',
-			side: 'left',
-			displace: false
+		$('.mobile-menu-toggle').click( function() {
+			$('#navigation').toggleClass('test');
+			console.log('test');
 		});
-		
-		$(".sidr-class-toggle-sidr-close").click( function() {
-			$.sidr('close', 'sidr-main');
-			preventDefaultEvents: false
-		});
+//		$('.mobile-menu-toggle').sidr({
+//			name: 'sidr-main',
+//			source: '#sidr-close, #navigation',
+//			side: 'left',
+//			displace: false
+//		});
+//		
+//		$(".sidr-class-toggle-sidr-close").click( function() {
+//			$.sidr('close', 'sidr-main');
+//			preventDefaultEvents: false
+//		});
 		
 		/*lightbox*/
 		$("a.fancybox").fancybox({

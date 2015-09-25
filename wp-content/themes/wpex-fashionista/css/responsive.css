@@ -14,15 +14,22 @@
     display: none;
   }
   /*hide stuff*/
-  #navigation,
   #navigation #searchbar {
-    display: none !important;
+    display: none;
+  }
+  #navigation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    top: -60px;
   }
   .entry-overlay {
     display: none !important;
   }
   #header {
-    padding: 24px 50px;
+    padding: 15px 0;
+    min-height: 60px;
   }
   /*navigation*/
   .mobile-menu-toggle {
@@ -92,6 +99,48 @@
   .sidr.left {
     left: -320px;
     right: auto;
+  }
+  #navigation {
+    position: absolute;
+    top: -35px;
+    z-index: 0;
+    width: 100%;
+    background-color: #fff;
+    -webkit-transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
+  }
+  .logo-container {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    background-color: pink;
+    height: 60px;
+    top: 0;
+  }
+  #navigation.test {
+    top: 62px;
+  }
+  #navigation.test li {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+  }
+  #navigation.test a {
+    margin: 0;
+  }
+  #navigation.test li + li a {
+    margin-left: 0;
+  }
+  .test .menu-main-nav-container {
+    width: 100%;
+    margin: 30px;
+  }
+  .test .sf-menu {
+    margin: 0;
+    list-style: inherit;
+  }
+  .test .menu-sub-nav-container {
+    position: relative;
+    margin: 30px;
   }
   .sidr a {
     color: #707070;
@@ -240,9 +289,6 @@
     padding-top: 0 !important;
   }
   /*grid*/
-  .outerbox {
-    width: 280px;
-  }
   #sidebar {
     width: 280px;
   }
@@ -359,9 +405,6 @@
     display: none;
   }
   /*main*/
-  .outerbox {
-    width: 440px;
-  }
   #sidebar {
     width: 440px;
   }
