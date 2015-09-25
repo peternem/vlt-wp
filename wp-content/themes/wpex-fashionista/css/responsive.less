@@ -6,7 +6,7 @@
 	    float: none;
 	    display: block;
 	    max-width: 125px;
-	    margin: 0px auto;
+	    margin: 25px auto;
 	    width: 100%;
 	}
 	/*special hide class*/
@@ -75,61 +75,57 @@
 	.sidr.right { left: auto; right: -320px; }
 	.sidr.left { left: -320px; right: auto; }
 	#navigation {
-	    // background-color: #fff;
-	    // display: block;
-	    // position: absolute;
-	    // top: 65px;
-	    // left: 0;
-	    // right: 0;
-	    // width: 100%;
-	    // margin: 0;
-	    // padding: 0;
-	    // height: auto;
-	    // overflow: auto;
+	    padding: 0 5%;
 	    position:absolute;
-        top:-35px;
+        top:-445px;
         z-index:0;
         width:100%;
         background-color:#fff;
-        -webkit-transition:top .3s ease-in-out,
-        right .3s ease-in-out
+        border-bottom: 1px solid #d7d7d7;
+        -webkit-transition:top .3s ease-in-out,right .3s ease-in-out;
+        transition: top .3s ease-in-out,right .3s ease-in-out;
+        .menu-sub-nav-container {
+		    position: relative;
+		    margin-top: 3%;
+		}
+		&.test {
+			 top: 60px;
+		}
+		.sf-menu {
+		    margin: 0;
+		    list-style: inherit;
+		}
 	}
+
 	.logo-container {
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-    background-color: pink;
-    height: 60px;
-    top: 0;
-}
-	#navigation.test {
-		 top: 62px;
-	}
-	#navigation ul li {
-	    display: inline-block;
+	    position: absolute;
+	    z-index: 999;
 	    width: 100%;
-	    text-align: left;
+	    background-color: #fff;
+	    height: 60px;
+	    top: 0;
 	}
-	#navigation ul a {
-	    margin: 0;
-	}
-	#navigation ul li + li a {
-	    margin-left: 0;
-	}
-	.test .menu-main-nav-container {
-	    width: 100%;
-	    margin: 30px;
+	#navigation {
+		ul {
+			li {
+				border-top: 1px solid #d7d7d7;
+			    display: block;
+			    width: 100%;
+			    text-align: center;
+			    a {
+					display: block;
+					font-size: 1rem;
+				    margin: 0;
+				    padding: 1rem;
+				}
+			}
+			li + li a {
+			    margin-left: 0;
+			}
+		}
 	}
 	
-	.test .sf-menu {
-	    margin: 0;
-	    list-style: inherit;
-	}
 	
-	.test .menu-sub-nav-container {
-	    position: relative;
-	    margin: 30px;
-	}
 	.sidr a { color: #707070; }
 	.sidr a:hover { color: #fff; text-decoration: none; }
 	.sidr ul li ul { border-top: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: -8px; margin-left: 0; margin-top: 10px; }

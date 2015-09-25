@@ -6,7 +6,7 @@
     float: none;
     display: block;
     max-width: 125px;
-    margin: 0px auto;
+    margin: 25px auto;
     width: 100%;
   }
   /*special hide class*/
@@ -101,46 +101,49 @@
     right: auto;
   }
   #navigation {
+    padding: 0 5%;
     position: absolute;
-    top: -35px;
+    top: -445px;
     z-index: 0;
     width: 100%;
     background-color: #fff;
+    border-bottom: 1px solid #d7d7d7;
     -webkit-transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
+  }
+  #navigation .menu-sub-nav-container {
+    position: relative;
+    margin-top: 3%;
+  }
+  #navigation.test {
+    top: 60px;
+  }
+  #navigation .sf-menu {
+    margin: 0;
+    list-style: inherit;
   }
   .logo-container {
     position: absolute;
     z-index: 999;
     width: 100%;
-    background-color: pink;
+    background-color: #fff;
     height: 60px;
     top: 0;
   }
-  #navigation.test {
-    top: 62px;
-  }
-  #navigation.test li {
-    display: inline-block;
+  #navigation ul li {
+    border-top: 1px solid #d7d7d7;
+    display: block;
     width: 100%;
-    text-align: left;
+    text-align: center;
   }
-  #navigation.test a {
+  #navigation ul li a {
+    display: block;
+    font-size: 1rem;
     margin: 0;
+    padding: 1rem;
   }
-  #navigation.test li + li a {
+  #navigation ul li + li a {
     margin-left: 0;
-  }
-  .test .menu-main-nav-container {
-    width: 100%;
-    margin: 30px;
-  }
-  .test .sf-menu {
-    margin: 0;
-    list-style: inherit;
-  }
-  .test .menu-sub-nav-container {
-    position: relative;
-    margin: 30px;
   }
   .sidr a {
     color: #707070;
