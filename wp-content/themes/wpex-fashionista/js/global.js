@@ -11,8 +11,8 @@
 		
 		/* Mobile menu */
 		$('.mobile-menu-toggle').click( function() {
-			$('#navigation').toggleClass('test');
-			console.log('test');
+			$('#navigation').toggleClass('test height');
+			$('body').toggleClass('fixed-page');
 		});
 //		$('.mobile-menu-toggle').sidr({
 //			name: 'sidr-main',

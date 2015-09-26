@@ -1,5 +1,7 @@
 /* LESS Compiles - Apply To All Responsive Layouts
 ================================================== */
+/* Global Variables
+================================================== */
 @media only screen and (max-width: 959px) {
   a#logo {
     text-align: center;
@@ -29,7 +31,6 @@
   }
   #header {
     padding: 15px 0;
-    min-height: 60px;
   }
   /*navigation*/
   .mobile-menu-toggle {
@@ -101,13 +102,17 @@
     right: auto;
   }
   #navigation {
+    background-color: #fff;
+    opacity: 0.90;
+    overflow-x: none;
+    overflow-y: scroll;
+    /* has to be scroll, not auto */
     padding: 0 5%;
-    position: absolute;
-    top: -445px;
+    position: fixed;
+    top: -579px;
     z-index: 0;
     width: 100%;
-    background-color: #fff;
-    border-bottom: 1px solid #d7d7d7;
+    -webkit-overflow-scrolling: touch;
     -webkit-transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
     transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
   }
@@ -122,16 +127,20 @@
     margin: 0;
     list-style: inherit;
   }
+  #navigation.height {
+    height: 100%;
+  }
   .logo-container {
+    background-color: #fff;
+    border-bottom: 1px solid #d7d3d1;
     position: absolute;
     z-index: 999;
     width: 100%;
-    background-color: #fff;
     height: 60px;
     top: 0;
   }
   #navigation ul li {
-    border-top: 1px solid #d7d7d7;
+    border-top: 1px solid #d7d3d1;
     display: block;
     width: 100%;
     text-align: center;
@@ -144,6 +153,16 @@
   }
   #navigation ul li + li a {
     margin-left: 0;
+  }
+  .footer-box.logo {
+    width: 25%;
+  }
+  .footer-box.menus {
+    width: 75%;
+  }
+  .footer-box.social {
+    width: 100%;
+    margin-top: 1.563rem;
   }
   .sidr a {
     color: #707070;
@@ -205,6 +224,12 @@
   .jumbtron {
     margin: 61px auto 0;
   }
+  html #wpadminbar {
+    display: none;
+  }
+  .admin-bar #header-wrap {
+    margin-top: 0px;
+  }
 }
 /* #Tablet (Landscape) = Design for a width of 720px
 ================================================== */
@@ -260,9 +285,15 @@
     margin: 0;
   }
   /*footer*/
-  .footer-box {
-    width: 226px;
-    margin-right: 21px;
+  .footer-box.logo {
+    width: 25%;
+  }
+  .footer-box.menus {
+    width: 75%;
+  }
+  .footer-box.social {
+    width: 100%;
+    margin-top: 1.563rem;
   }
   /*blog*/
   #author-bio {
@@ -361,25 +392,11 @@
     margin-top: 25px;
   }
   /*footer*/
-  .footer-box {
-    width: 100%;
-    margin-right: 0;
-  }
-  #footer-bottom,
-  #footer-menu {
-    text-align: center;
-  }
-  #footer-menu {
-    margin-top: 5px;
-  }
-  #copyright,
   .footer-menu {
-    width: 100%;
-    float: none;
+    margin-left: 53px;
   }
-  .footer-menu {
-    margin-top: 10px;
-    text-align: center;
+  .footer-menu:first-child {
+    margin-left: 0;
   }
   /*comments*/
   .children {
@@ -395,6 +412,43 @@
   .children li.depth-9,
   .children li.depth-10 {
     margin: 0;
+  }
+}
+/* Mobile (portait) = Design for a max-width of 480px
+================================================== */
+@media only screen and (max-width: 480px) {
+  /*footer*/
+  .footer-box.logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .footer-box.menus {
+    width: 100%;
+    margin: 0;
+  }
+  .footer-box.social .icon-set-lsi_widget-2 {
+    text-align: center !important;
+  }
+  .footer-box.social .lsi-social-icons li {
+    margin-bottom: 0 !important;
+  }
+  .footer-box.social .lsi-social-icons li:last-child {
+    margin-right: 0 !important;
+  }
+  .footer-menu {
+    margin: 0px 0 8%;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-menu:last-child {
+    margin-bottom: 0;
+  }
+  #copyright {
+    text-align: center;
+  }
+  #copyright p {
+    padding-bottom: 3%;
   }
 }
 /* Mobile (Landscape) = Design for a width of 440px

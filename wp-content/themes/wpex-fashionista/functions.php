@@ -40,7 +40,7 @@ require_once( get_template_directory() .'/functions/scripts.php' );
 require_once( get_template_directory() .'/functions/hooks.php' );
 require_once( get_template_directory() .'/functions/mobile-menu.php' );
 require_once( get_template_directory() .'/functions/load-more.php' );
-//require_once( get_template_directory() .'/functions/aqua-resizer.php' );
+require_once( get_template_directory() .'/functions/aqua-resizer.php' );
 require_once( get_template_directory() .'/functions/widgets/widget-areas.php' );
 require_once( get_template_directory() . '/functions/widgets/flickr.php');
 require_once( get_template_directory() . '/functions/widgets/video.php');
@@ -112,6 +112,22 @@ if( ! function_exists( 'fashionista_setup' ) ) {
 	}
 }
 
+/*--------------------------------------*/
+/* Add SVG Support to media library
+ /*--------------------------------------*/
+ 
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+// Add SVG Thumbnails to media library grid
+
+function custom_admin_head() {
+	$css = '';
+	$css = 'td.media-icon img[src$=".svg"] { width: 100% !important; height: auto !important; }';
+	echo '<style type="text/css">'.$css.'</style>';
+}
 
 
 /*--------------------------------------*/

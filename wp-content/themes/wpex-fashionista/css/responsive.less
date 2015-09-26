@@ -1,5 +1,7 @@
 /* LESS Compiles - Apply To All Responsive Layouts
 ================================================== */
+@import  "../less/variables.less";
+
 @media only screen and (max-width: 959px) {
 	a#logo {
 	    text-align: center;
@@ -25,7 +27,6 @@
 	
 	#header {
 	    padding: 15px 0;
-	    min-height: 60px;
 	}
 	/*navigation*/
 	.mobile-menu-toggle { 
@@ -53,35 +54,42 @@
 		width: 65px;
 	}
 	//.mobile-menu-toggle span.fa-bars { margin-right: 10px; }
-	.mobile-menu-toggle span.fa-caret-down { position: absolute; right: 20px; top: 0; height: 40px; line-height: 40px; display: block;  font-size: 10px; }
-	.mobile-menu-toggle span.fa-bars {
-	    font-size: 18px;
+	.mobile-menu-toggle  {
+    	span.fa-caret-down { position: absolute; right: 20px; top: 0; height: 40px; line-height: 40px; display: block;  font-size: 10px; }
+    	span.fa-bars {
+      		font-size: 18px;
+    	}
 	}
 	.mobile-menu-toggle:hover { text-decoration: none; color: #000; }
+	
 	.sidr { 
-	  position: absolute; 
-	  position: fixed; 
-	  top: 65px; 
-	  height: 40%; 
-	  z-index: 999999; 
-	  width: 100%; 
-	  overflow-x: none; 
-	  overflow-y: auto;
-	  font-size: 13px; 
-	  background: #fff; 
-	  color: #fff; 
+		position: absolute; 
+		position: fixed; 
+		top: 65px; 
+		height: 40%; 
+		z-index: 999999; 
+		width: 100%; 
+		overflow-x: none; 
+		overflow-y: auto;
+		font-size: 13px; 
+		background: #fff; 
+		color: #fff; 
 	 }
 	#sidr-main { padding: 40px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 	.sidr.right { left: auto; right: -320px; }
 	.sidr.left { left: -320px; right: auto; }
+	
 	#navigation {
+        background-color:#fff;
+		opacity: 0.90;
+		overflow-x: none;
+    	overflow-y: scroll; /* has to be scroll, not auto */
 	    padding: 0 5%;
-	    position:absolute;
-        top:-445px;
+	    position:fixed;
+        top:-579px;
         z-index:0;
         width:100%;
-        background-color:#fff;
-        border-bottom: 1px solid #d7d7d7;
+        -webkit-overflow-scrolling: touch;
         -webkit-transition:top .3s ease-in-out,right .3s ease-in-out;
         transition: top .3s ease-in-out,right .3s ease-in-out;
         .menu-sub-nav-container {
@@ -95,20 +103,27 @@
 		    margin: 0;
 		    list-style: inherit;
 		}
+		
+	}
+	#navigation.height {
+	    height: 100%;
 	}
 
 	.logo-container {
+		background-color: #fff;
+	    border-bottom: 1px solid @global-color-soft-grey;
 	    position: absolute;
 	    z-index: 999;
 	    width: 100%;
-	    background-color: #fff;
+
 	    height: 60px;
 	    top: 0;
 	}
+	
 	#navigation {
 		ul {
 			li {
-				border-top: 1px solid #d7d7d7;
+				border-top: 1px solid  @global-color-soft-grey;
 			    display: block;
 			    width: 100%;
 			    text-align: center;
@@ -125,7 +140,19 @@
 		}
 	}
 	
-	
+	.footer-box{
+		&.logo {
+			width: 25%;
+		}
+		&.menus {
+			width: 75%;
+		}
+		&.social {
+			width: 100%;
+			margin-top: 1.563rem;
+		}
+	}
+
 	.sidr a { color: #707070; }
 	.sidr a:hover { color: #fff; text-decoration: none; }
 	.sidr ul li ul { border-top: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: -8px; margin-left: 0; margin-top: 10px; }
@@ -148,6 +175,12 @@
 	    margin: 61px auto 0;
 	}
 	
+	html #wpadminbar {
+	    display: none;
+	}
+	.admin-bar #header-wrap {
+	    margin-top:0px;
+	}
 }
 
 
@@ -188,7 +221,18 @@
 	.home-sidebar .loop-entry-meta li:last-child{ margin:0; }
 	
 	/*footer*/
-	.footer-box{ width: 226px; margin-right: 21px; }
+	.footer-box{
+		&.logo {
+			width: 25%;
+		}
+		&.menus {
+			width: 75%;
+		}
+		&.social {
+			width: 100%;
+			margin-top: 1.563rem;
+		}
+	}
 	
 	/*blog*/
 	#author-bio{ width: 310px }
@@ -239,12 +283,17 @@
 	.search-entry-text{ width: 100%; margin-top: 25px; }
 	
 	/*footer*/
-	.footer-box{ width: 100%; margin-right: 0; }
-	#footer-bottom, #footer-menu{ text-align: center; }
-	#footer-menu{ margin-top: 5px; }
-	#copyright,
-	.footer-menu{ width: 100%; float: none; }
-	.footer-menu{ margin-top: 10px; text-align: center; }
+	.footer-menu {
+	    margin-left: 53px;
+	    &:first-child {
+	    	margin-left: 0;
+	    }
+	}
+	// .footer-box{ width: 100%; margin-right: 0; }
+	// #footer-bottom, #footer-menu{ text-align: center; }
+	// #footer-menu{ margin-top: 5px; }
+	// #copyright,.footer-menu{ width: 100%; float: none; }
+	// .footer-menu{ margin-top: 10px; text-align: center; }
 	
 	/*comments*/
 	.children { margin: 30px 0 0; }
@@ -260,6 +309,47 @@
        
 }
 
+/* Mobile (portait) = Design for a max-width of 480px
+================================================== */
+@media only screen and (max-width: 480px) {
+		/*footer*/
+	.footer-box{
+		&.logo {
+			width: 100%;
+		    text-align: center;
+		    margin-bottom: 25px;
+		}
+		&.menus {
+			width: 100%;
+			margin: 0;
+		}
+		&.social {
+			.icon-set-lsi_widget-2 {
+				text-align: center !important;
+			}
+			.lsi-social-icons li {
+				margin-bottom: 0 !important;
+				&:last-child {
+					margin-right: 0 !important;
+				}
+			}
+		}
+	}
+	.footer-menu {
+		margin: 0px 0 8%;
+    	width: 100%;
+    	text-align: center;
+    	&:last-child {
+    		margin-bottom: 0;
+    	}
+	}
+	#copyright {
+	    text-align: center;
+	    p {
+	    	padding-bottom: 3%;
+	    }
+	}
+}
 
 /* Mobile (Landscape) = Design for a width of 440px
 ================================================== */
@@ -279,5 +369,8 @@
 	/*blog*/
 	#author-bio{ width: 310px }
 	body.no-sidebar #author-bio{ width: 315px; }
+	
+
+	
 		
 }

@@ -176,11 +176,56 @@ body a {
 body a:hover {
   text-decoration: underline;
 }
+/* Button Styling - Global
+================================================== */
+.btn {
+  display: inline-block;
+  padding: 11px 20px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.42857143;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+.btn:focus,
+.btn:hover {
+  text-decoration: none;
+}
+.btn-default {
+  background-color: #303030;
+  color: #ffffff;
+}
+.btn-default:hover {
+  background-color: #8c8787;
+  border-color: #303030;
+  color: #fff;
+}
 /* Commons
 ================================================== */
 .single-blog .entry p {
   margin-bottom: 1rem;
   line-height: 1.4rem;
+}
+/* fixed page position for mobile when mobile nav displayed.*/
+.fixed-page {
+  position: fixed;
+  width: 100%;
+}
+.fixed-page .logo-container {
+  border: none;
 }
 /*images*/
 img {
@@ -479,7 +524,7 @@ ol ul li {
 }
 #header {
   padding: 32px 50px;
-  border-bottom: 1px solid #8c8787;
+  border-bottom: 1px solid #d7d3d1;
   max-width: 1280px;
   position: relative;
 }
@@ -681,12 +726,25 @@ section .col {
   position: relative;
 }
 .jumbtron .caption {
+  background-color: pink;
+  bottom: 2.625em;
   left: 10%;
-  max-width: 375px;
+  max-width: 25%;
   position: absolute;
   text-align: center;
-  top: 10%;
+  top: 2.625rem;
   z-index: 20;
+}
+.jumbtron h1 {
+  font-size: 1.75rem;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+.jumbtron p {
+  font-size: 0.875rem;
+  line-height: 1.6rem;
+  margin: 0 auto 22px;
+  max-width: 600px;
 }
 /* Blog Posts & Blog Entries
 ================================================== */
@@ -1387,7 +1445,7 @@ widget_meta li,
   font-size: 0.75rem;
   margin: 0 auto;
   max-width: 1280px;
-  padding: 0 15px;
+  padding: 0 53px 15px;
   text-align: right;
   width: 100%;
 }

@@ -55,29 +55,24 @@
     <?php wpex_hook_header_top(); ?>
    <div class="logo-container">
     	<a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="home">
-    
-    <?php
-	//show custom image logo if defined in the admin
-	if( of_get_option('custom_logo','') !== '' ) { ?>
-	 
-	<img src="<?php echo esc_url(of_get_option('custom_logo')); ?>" alt="<?php get_bloginfo( 'name' ) ?>" />
-    
-    <?php }
-					//no custom img logo - show text logo
-						else { ?>
-    <h2><?php echo get_bloginfo( 'name' ); ?></h2>
-    <?php } //end logo check ?>
-    </a>
-    <?php
-			//show social icons if not disabled
-			if( of_get_option('social','1') ) {
-				wpex_display_social();
-			 } //social disabled ?>
-	
-    <?php
+		    <?php
+			//show custom image logo if defined in the admin
+			if( of_get_option('custom_logo','') !== '' ) { ?>
+			<img src="<?php echo esc_url(of_get_option('custom_logo')); ?>" alt="<?php get_bloginfo( 'name' ) ?>" />
+		    <?php } else { ?>
+		    <h2><?php echo get_bloginfo( 'name' ); ?></h2>
+	    <?php } ?>
+		</a>
+	    <?php
+				//show social icons if not disabled
+				if( of_get_option('social','1') ) {
+					wpex_display_social();
+				 } //social disabled ?>
+		
+	    <?php
 		// Output content for mobile menu
 		wpex_mobile_menu(); ?>
-		</div>
+	</div>
     <nav id="navigation" class="clearfix">
       <?php
 			// Main Navigation menu
@@ -105,14 +100,16 @@
 <!-- /header-wrap -->
 <?php wpex_hook_header_after(); ?>
 <div id="wrap">
+	<?php if(is_page('home')) { ?>
 	<div id="hompage-hero-section" class="jumbtron clearfix ">
 		<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1280%C3%97385&w=1280&h=385" />
 		<div class="caption">
-			<h1>Hello, world!</h1>
-			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. 
-			Use it as a starting point to create something more unique.</p>
+			<h1>Your Wedding, Your Style</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content.</p>
+			<p><a class="btn btn-default" href="#" role="button">Find Your Wedding Style</a></p>
 		</div>
 	</div>
+	<?php } ?>
 <?php wpex_hook_content_before(); ?>
 <div id="main-content" class="outerbox clearfix <?php if( of_get_option( 'pagination_style', 'infinite_scroll' ) == 'infinite_scroll' ) { echo 'infinite-scroll-enabled'; } ?>">
 <?php wpex_hook_content_top(); ?>
