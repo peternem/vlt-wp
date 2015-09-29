@@ -167,8 +167,8 @@ address{letter-spacing: 1px; margin: 20px 0 }
 #post { position: relative; float: left; width: 660px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 #post img{ max-width: 100%; }
 #sidebar{ width: 320px; }
-.infinite-scroll-enabled #wpex-grid-wrap { padding-bottom: 40px; }
- #wpex-grid-wrap{ margin-right: -20px; }
+//.infinite-scroll-enabled #wpex-grid-wrap { padding-bottom: 40px; }
+// #wpex-grid-wrap{ margin-right: -20px; }
 /* #wpex-grid-wrap{ opacity: 0; } */
 /* .grid-loader { position: absolute; top: 80px; left: 50%; color: #666; font-size: 24px; } */
 .grid-loader { display: none; }
@@ -212,6 +212,23 @@ ul.circle { list-style: circle outside }
 ul.disc { list-style: disc outside }
 ul ul, ul ol, ol ol, ol ul { margin: 4px 0 5px 30px }
 ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 6px }
+
+.filters.moody, .filters.styles  {
+	max-width: 100%;
+	overflow: auto;
+	> li {
+	    display: inline-block;
+	    padding: 5px 15px;
+	    a {
+	    	border: 1px solid @global-color-soft-grey;
+		    display: block;
+		    padding: 5px 8px;
+	    }
+	}
+	.selected {
+		border: 1px solid pink;
+	}
+} 
 
 /* Headings
 ================================================== */
@@ -405,8 +422,26 @@ section .col {
 
 /*entry*/
 .entry-top { margin-bottom: 20px; }
-.loop-entry { position: relative; display: block; width: 320px; float: left; margin-right: 20px; margin-bottom: 30px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border:1px solid #8c8787; overflow: hidden; -webkit-transition-property: border;-moz-transition-property: border;-ms-transition-property: border;-o-transition-property: border;transition-property: border;-webkit-transition-duration: 0.25s;-moz-transition-duration: 0.25s;-ms-transition-duration: 0.25s;-o-transition-duration: 0.25s;transition-duration: 0.25s; padding:0 }
-
+.loop-entry {
+	float: left;
+    height: auto;
+    margin-bottom: 35px;
+    position: relative;
+    width: 33.3333%;
+    z-index: 2;
+	// position: relative;
+	// display: block;
+	// width: 320px;
+	// float: left;
+	// margin-right: 20px;
+	// margin-bottom: 30px; 
+	// -moz-box-sizing: border-box; 
+	// -webkit-box-sizing: border-box; 
+	// box-sizing: border-box; 
+	// border:1px solid #8c8787; 
+	// overflow: hidden; 
+	//-webkit-transition-property: border;-moz-transition-property: border;-ms-transition-property: border;-o-transition-property: border;transition-property: border;-webkit-transition-duration: 0.25s;-moz-transition-duration: 0.25s;-ms-transition-duration: 0.25s;-o-transition-duration: 0.25s;transition-duration: 0.25s; padding:0 }
+}
 .loop-entry .text {padding:20px;border-top:1px solid #8c8787}
 .loop-entry h2 { font-size:1rem;font-weight:400; margin: 0 0 8px; text-transform: uppercase; }
 .loop-entry p {font-size:0.875rem;margin-bottom:8px}
@@ -794,8 +829,32 @@ blockquote.right { margin-left: 20px; text-align: left; margin-right: 0; width: 
 #load-more a:hover{ color: #ed4555; }
 #load-more:hover{ border-color: #bbb; }
 
-.isotope { -webkit-transition-property: height, width;-moz-transition-property: height, width;-ms-transition-property: height, width;-o-transition-property: height, width;transition-property: height, width;-webkit-transition-duration: 0.8s;-moz-transition-duration: 0.8s;-ms-transition-duration: 0.8s;-o-transition-duration: 0.8s;transition-duration: 0.8s;}
+.grid.isotope {
+    max-width: 1280px;
+    width: 100%;
+}
+.isotope { 
+	// -webkit-transition-property: height, width;
+	// -moz-transition-property: height, width;
+	// -ms-transition-property: height, width;
+	// -o-transition-property: height, width;
+	// transition-property: height, width;
+	// -webkit-transition-duration: 0.8s;
+	// -moz-transition-duration: 0.8s;
+	// -ms-transition-duration: 0.8s;
+	// -o-transition-duration: 0.8s;
+	// transition-duration: 0.8s;
+	}
 
+.isotope,
+.isotope .item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+ -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+   -o-transition-duration: 0.8s;
+      transition-duration: 0.8s;
+}
 /* fancyBox v2.1.4 fancyapps.com | fancyapps.com/fancybox/#license
 ================================================== */
 .fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox-image, .fancybox-wrap iframe, .fancybox-wrap object, .fancybox-nav, .fancybox-nav span, .fancybox-tmp { padding: 0; margin: 0; border: 0; outline: none; vertical-align: top; }

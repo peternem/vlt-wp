@@ -41,6 +41,7 @@
 	//WordPress head hook <== DO NOT DELETE ME
 	wp_head(); ?>
 <?php wpex_hook_head_bottom(); ?>
+
 </head>
 <!-- /end head -->
 

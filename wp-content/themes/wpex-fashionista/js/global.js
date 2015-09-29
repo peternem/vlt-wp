@@ -2,7 +2,42 @@
 	"use strict";
 
 	$(document).ready(function() {
+		 var isoDuration = '0.4s';
+			
+		var $grid = $('.grid').isotope({
+			layoutMode: 'fitRows',
+			itemSelector: '.loop-entry',
+			hiddenStyle: {
+			      opacity: 0,
+			      transform: 'scale(0.001)'
+			    },
+			    visibleStyle: {
+			      opacity: 1,
+			      transform: 'scale(1)'
+			    },
+			    transitionDuration:isoDuration
+		});
 
+
+		// bind filter button click
+		$('.filters').on( 'click', 'a', function() {
+			var filterValue = $( this ).attr('data-filter');
+			console.log(filterValue);
+			// use filterFn if matches value
+			$grid.isotope({ filter: filterValue });
+		});
+
+		// change is-checked class on buttons
+		$('.moody, .styles').each( function( i, buttonGroup ) {
+			var $buttonGroup = $( buttonGroup );
+			$buttonGroup.on( 'click', 'a', function() {
+				$buttonGroup.find('.selected').removeClass('selected');
+				$( this ).addClass('selected');
+			});
+		});
+		
+	    
+	    
 		/* superFish */
 		$("ul.sf-menu").superfish({
 			autoArrows: false,
@@ -87,64 +122,65 @@
 
 		$('div#load-more').addClass('display-element');
 		
-		$('#wpex-grid-wrap, .single .post-video').animate({opacity:1},'fast');
 		
-		$('.grid-loader').hide();
+//		$('#wpex-grid-wrap, .single .post-video').animate({opacity:1},'fast');
+//		
+//		$('.grid-loader').hide();
+//		
+//		var $container = $('#wpex-grid-wrap');
+//		$container.imagesLoaded(function(){
+//			$container.isotope({
+//				itemSelector: '.loop-entry',
+//				transformsEnabled: false,
+//				animationOptions: {
+//					duration: 400,
+//					easing: 'swing',
+//					queue: false
+//				}
+//			});
+//		});
 		
-		var $container = $('#wpex-grid-wrap');
-		$container.imagesLoaded(function(){
-			$container.isotope({
-				itemSelector: '.loop-entry',
-				transformsEnabled: false,
-				animationOptions: {
-					duration: 400,
-					easing: 'swing',
-					queue: false
-				}
-			});
-		});
+//		$(window).resize(function () {
+//			var $container = $('#wpex-grid-wrap');
+//			$container.isotope();
+//		});
 		
-		$(window).resize(function () {
-			var $container = $('#wpex-grid-wrap');
-			$container.isotope();
-		});
-		
-		var ajaxurl = wpexvars.ajaxurl;
-		$('div#load-more').click(function() {
-			$(this).children('a').html(wpexvars.loading);
-			var $this = $(this),
-				anchor = $this.children('a'),
-				nonce = anchor.val(),
-				pagenum = anchor.data('pagenum'),
-				maxpage = anchor.data('maxpage'),
-				data = {
-					action: 'aq_ajax_scroll',
-					pagenum: pagenum,
-					archive_type: anchor.data('archive_type'),
-					archive_id: anchor.data('archive_id'),
-					archive_month: anchor.data('archive_month'),
-					archive_year: anchor.data('archive_year'),
-					post_format: anchor.data('post_format'),
-					author: anchor.data('author'),
-					s: anchor.data('s'),
-					security: nonce
-				};
-			$.post(ajaxurl, data, function(response) {
-				var content = $(response);
-				$(content).imagesLoaded(function() {
-					$('div#load-more a').html(wpexvars.loadmore);
-					$('#wpex-grid-wrap').append(content).isotope( 'appended', content, function() {	
-						$('#wpex-grid-wrap').isotope('reLayout');
-						$(".fitvids").fitVids(); /* re-fire fitvids */
-					});
-				});
-				anchor.data('pagenum', pagenum + 1);
-				if(pagenum >= maxpage) {
-					$this.fadeOut();
-				}
-			});
-			return false;
-		});
+//		var ajaxurl = wpexvars.ajaxurl;
+//		$('div#load-more').click(function() {
+//			$(this).children('a').html(wpexvars.loading);
+//			var $this = $(this),
+//				anchor = $this.children('a'),
+//				nonce = anchor.val(),
+//				pagenum = anchor.data('pagenum'),
+//				maxpage = anchor.data('maxpage'),
+//				data = {
+//					action: 'aq_ajax_scroll',
+//					pagenum: pagenum,
+//					archive_type: anchor.data('archive_type'),
+//					archive_id: anchor.data('archive_id'),
+//					archive_month: anchor.data('archive_month'),
+//					archive_year: anchor.data('archive_year'),
+//					post_format: anchor.data('post_format'),
+//					author: anchor.data('author'),
+//					s: anchor.data('s'),
+//					security: nonce
+//				};
+//			$.post(ajaxurl, data, function(response) {
+//				var content = $(response);
+//				$(content).imagesLoaded(function() {
+//					$('div#load-more a').html(wpexvars.loadmore);
+//					$('#wpex-grid-wrap').append(content).isotope( 'appended', content, function() {	
+//						$('#wpex-grid-wrap').isotope('reLayout');
+//						$(".fitvids").fitVids(); /* re-fire fitvids */
+//					});
+//				});
+//				anchor.data('pagenum', pagenum + 1);
+//				if(pagenum >= maxpage) {
+//					$this.fadeOut();
+//				}
+//			});
+//			return false;
+//		});
 
 		function wpex_staticheader() {
 			var $header_height = $('.fixed-header').outerHeight();
@@ -196,6 +232,8 @@ else {
     $(this).parent('label').removeClass('checked');
 }
 });
+
+
 
 
 

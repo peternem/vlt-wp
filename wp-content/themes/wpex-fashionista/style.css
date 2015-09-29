@@ -354,12 +354,6 @@ address {
 #sidebar {
   width: 320px;
 }
-.infinite-scroll-enabled #wpex-grid-wrap {
-  padding-bottom: 40px;
-}
-#wpex-grid-wrap {
-  margin-right: -20px;
-}
 /* #wpex-grid-wrap{ opacity: 0; } */
 /* .grid-loader { position: absolute; top: 80px; left: 50%; color: #666; font-size: 24px; } */
 .grid-loader {
@@ -475,6 +469,26 @@ ul ol li,
 ol ol li,
 ol ul li {
   margin-bottom: 6px;
+}
+.filters.moody,
+.filters.styles {
+  max-width: 100%;
+  overflow: auto;
+}
+.filters.moody > li,
+.filters.styles > li {
+  display: inline-block;
+  padding: 5px 15px;
+}
+.filters.moody > li a,
+.filters.styles > li a {
+  border: 1px solid #d7d3d1;
+  display: block;
+  padding: 5px 8px;
+}
+.filters.moody .selected,
+.filters.styles .selected {
+  border: 1px solid pink;
 }
 /* Headings
 ================================================== */
@@ -753,28 +767,12 @@ section .col {
   margin-bottom: 20px;
 }
 .loop-entry {
-  position: relative;
-  display: block;
-  width: 320px;
   float: left;
-  margin-right: 20px;
-  margin-bottom: 30px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #8c8787;
-  overflow: hidden;
-  -webkit-transition-property: border;
-  -moz-transition-property: border;
-  -ms-transition-property: border;
-  -o-transition-property: border;
-  transition-property: border;
-  -webkit-transition-duration: 0.25s;
-  -moz-transition-duration: 0.25s;
-  -ms-transition-duration: 0.25s;
-  -o-transition-duration: 0.25s;
-  transition-duration: 0.25s;
-  padding: 0;
+  height: auto;
+  margin-bottom: 35px;
+  position: relative;
+  width: 33.3333%;
+  z-index: 2;
 }
 .loop-entry .text {
   padding: 20px;
@@ -1951,12 +1949,13 @@ blockquote.right {
 #load-more:hover {
   border-color: #bbb;
 }
-.isotope {
-  -webkit-transition-property: height, width;
-  -moz-transition-property: height, width;
-  -ms-transition-property: height, width;
-  -o-transition-property: height, width;
-  transition-property: height, width;
+.grid.isotope {
+  max-width: 1280px;
+  width: 100%;
+}
+.isotope,
+.isotope .item {
+  /* change duration value to whatever you like */
   -webkit-transition-duration: 0.8s;
   -moz-transition-duration: 0.8s;
   -ms-transition-duration: 0.8s;
