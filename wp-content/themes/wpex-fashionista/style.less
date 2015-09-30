@@ -38,12 +38,12 @@
 ================================================== */
 body,input,select,textarea {
 	font-family: 'Roboto', sans-serif;
-	font-size:1rem;
+	font-size:14px;
 	font-weight:300;
 }
 h1,h2,h3,em {
 	font-family: 'Playfair Display', sans-serif;
-	font-size:1rem;
+	font-size:14px;
 	font-weight:400;
 }
 
@@ -295,11 +295,16 @@ ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 6px }
 }
 
 /* Style Catalog */
-.style-entry { margin-bottom:50px; overflow:hidden; background-color: #eee9e9; }
+.style-entry { margin-bottom:50px; background-color: #eee9e9; }
 
 .style-grid {
-	background-color: #f5f5f5;
+	background-color: @global-color-nude;
+	.text-col {
+		padding: 1.875rem;
+		text-align: center;
+	}
 	.style-col {
+		//border-right: 2px solid pink;
 		img {
 		    display: block;
 		    max-width: 100%;
@@ -307,38 +312,103 @@ ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 6px }
 		}
 	}	
 }
-.collage img {
-	display:block
+
+.middle-left {
+	//padding: 1px;
 }
-.collage .col,.style-entry .text {
-	width:25%;
-	float:left
-	}
-.collage .col {
-	position:relative;
-	display:inline-block;
+.middle-right .col-lg-12, .middle-left .col-lg-12 {
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
-.collage .col:after,.img-group .first:after {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right:0;
-  border-right: 3px solid blue;
+.far-right .col-lg-12 {
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
-.collage .col:last-child:after {
-	display:none
+.far-right .col-lg-6 {
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
-.collage .img-group:before,.collage .suite-image:before {
-	display: block;
-  content: '';
-  position: absolute;
-  right:0;
-  left:0;
-  border-top: 3px solid yellow;
-  z-index:10
+.far-right .logow {
+    padding-right: 2px;
 }
+
+// .middle-left {
+	// padding-left: 1px;
+	// padding-right: 1px;
+ // }
+// .middle-right {
+	// padding-left: 1px;
+	// padding-right: 1px;
+ // }
+ // .far-right {
+	// padding-left: 1px;
+	// padding-right: 1px;
+ // }
+ // .far-right .row .col-lg-6:first-child {
+	// padding-right: 1px;
+ // }
+  // .far-right .row .col-lg-6:last-child {
+	// padding-left: 1px;
+ // }
+ // .middle-right .col-lg-12:last-child {
+	// padding-bottom: 0px;
+ // }
+// .far-right .col-lg-12 {
+    // padding: 1px;
+// }
+ // .far-right .col-lg-6 {
+    // padding: 1px 1px 0 1px;
+// }
+ // .middle-right .col-lg-12:last-child {
+  // border-bottom: 2px solid pink;
+ // }
+ // .middle-right .col-lg-12:first-child {
+  // border-top: 2px solid pink;
+ // }
+ 
+// .middle-right .col-md-12.col-lg-12:first-child {
+    // padding-bottom: 0;
+// }
+// 
+// .middle-right .col-md-12.col-lg-12 {
+    // padding: 2px;
+// }
+// .middle-right .col-md-12.col-lg-12:last-child {
+    // padding-top: 0;
+    // padding-bottom: 2px;
+// }
+// .collage img {
+	// display:block
+// }
+// .collage .col,.style-entry .text {
+	// width:25%;
+	// float:left
+	// }
+// .collage .col {
+	// position:relative;
+	// display:inline-block;
+// }
+// .collage .col:after,.img-group .first:after {
+  // display: block;
+  // content: '';
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // right:0;
+  // border-right: 3px solid blue;
+// }
+// .collage .col:last-child:after {
+	// display:none
+// }
+// .collage .img-group:before,.collage .suite-image:before {
+	// display: block;
+  // content: '';
+  // position: absolute;
+  // right:0;
+  // left:0;
+  // border-top: 3px solid yellow;
+  // z-index:10
+// }
 .img-group {
 	position:relative;
 }
@@ -369,13 +439,13 @@ ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 6px }
 .style-entry .label { font-weight:500 }
 .style-entry .description { line-height:1.5rem;margin-bottom:22px }
 /* Style Detail */
-section {
-	overflow:hidden}
-section .col {
-	display:block;
-	width:33.33%;
-	float:left
-}
+// section {
+	// overflow:hidden}
+// section .col {
+	// display:block;
+	// width:33.33%;
+	// float:left
+// }
 .single-wedding-styles section {
 	padding:30px 0;
 	border-bottom:1px solid #999}
