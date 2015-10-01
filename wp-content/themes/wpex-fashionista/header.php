@@ -49,6 +49,7 @@
 
 <?php $no_sidebar = ( of_get_option('sidebar_layout') == 'none' && is_singular() ) ? 'no-sidebar' : ''; ?>
 <body <?php body_class('body '. $no_sidebar .''); ?>>
+<?php get_template_part('google-tag-manager'); ?> 
 <?php wpex_hook_header_before(); ?>
 <div id="header-wrap" <?php if( of_get_option('static_header') !== '1' && ! wp_is_mobile() ) { echo 'class="fixed-header"'; } ?> >
   <header id="header" class="outerbox clearfix">
