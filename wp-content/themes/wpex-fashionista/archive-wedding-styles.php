@@ -16,7 +16,7 @@ if(have_posts()) : ?>
 
 <div id="archive-wrap" class="clearfix">
   <header id="page-heading">
-    <h1>Wedding Styles weddingstyles-php</h1>
+    <h1>Wedding Styles</h1>
     <p>
       <?php $obj = get_post_type_object( 'wedding-styles' );
 echo $obj->description; ?>
@@ -101,19 +101,21 @@ echo $obj->description; ?>
         			<h2><?php the_title(); ?></h2>
         			<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
         			<p class="description"><?php the_field('suite_description'); ?></p>
-        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="symple-button">CTA</a> 
+        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button" >CTA</a> 
       							
 				</div>
 				
 				<div class="col-sm-6 col-md-3 col-lg-3 style-col middle-left">
-				
+					<div class="row">
+						<div class="col-md-12 col-lg-12">
 					<?php
 			 		$imageArray = get_field('inspiration_3'); // Array returned by Advanced Custom Fields
 			 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
 			 		$imageThumbURL = $imageArray['sizes']['large']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 			 		?>
 			 		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>">
-			 		
+			 			</div>
+			 		</div>
 	 			</div>
 	 			
 	 			<!-- Center Col -->
