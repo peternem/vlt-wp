@@ -1058,6 +1058,35 @@ img {
   border-color: #8c8787;
   color: #fff;
 }
+/* Grids
+================================================== */
+.grid-container {
+  position: relative;
+  margin-right: -25px;
+}
+.grid-loader {
+  display: none;
+}
+.grid.isotope {
+  max-width: 1280px;
+  width: 100%;
+}
+.style-grid {
+  border: 1px solid #d7d3d1;
+}
+.style-grid .text-col {
+  padding: 1.875rem;
+  text-align: center;
+}
+.isotope,
+.isotope .item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
 /* Commons
 ================================================== */
 .single-blog .entry p {
@@ -1071,12 +1100,6 @@ img {
 }
 .fixed-page .logo-container {
   border: none;
-}
-/*class to box in content*/
-.outerbox {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 /*clear floats*/
 .remove-margin {
@@ -1093,16 +1116,7 @@ img {
 .clear {
   clear: both;
 }
-/*grids*/
-.grid-container {
-  position: relative;
-  margin-right: -25px;
-}
 /*container with white background and shadow*/
-.container {
-  padding: 15px;
-  background: #fff;
-}
 /*classes to remove margins*/
 .no-right-margin {
   margin-right: 0;
@@ -1172,7 +1186,16 @@ address {
   padding-bottom: 0;
 }
 /*main containers*/
-#main-content {
+.single-wedding-styles .style-grid {
+  border: none;
+}
+.single-wedding-styles .outerbox {
+  padding: 40px 0;
+}
+.outerbox {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 40px 50px;
 }
 #home-wrap,
@@ -1193,11 +1216,6 @@ address {
 }
 #sidebar {
   width: 320px;
-}
-/* #wpex-grid-wrap{ opacity: 0; } */
-/* .grid-loader { position: absolute; top: 80px; left: 50%; color: #666; font-size: 24px; } */
-.grid-loader {
-  display: none;
 }
 .entry ul {
   list-style-image: url("images/bullets-gray.png");
@@ -1466,7 +1484,6 @@ ol ul li {
 /* Style Catalog */
 .style-entry {
   margin-bottom: 50px;
-  background-color: #eee9e9;
 }
 .style-entry .text {
   text-align: center;
@@ -1498,27 +1515,45 @@ ol ul li {
   line-height: 1.5rem;
   margin-bottom: 22px;
 }
-.style-grid {
+.style-inspiration {
+  background-color: #faf6f0;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+}
+.design-stationery {
+  background-color: #ffffff;
+  padding: 50px;
+}
+.design-stationery .text-col {
+  padding-left: 6.5%;
+}
+.design-stationery .text-col h2::after {
+  display: none;
+}
+.photo-credits {
   background-color: #faf6f0;
 }
-.style-grid .text-col {
-  padding: 1.875rem;
-  text-align: center;
+.photo-credits .credit {
+  font-size: 0.714em;
+  text-align: right;
+  text-transform: uppercase;
+  padding: 5px;
 }
-.middle-right .col-lg-12,
-.middle-left .col-lg-12 {
+.style-grid .middle-right .col-lg-12,
+.style-grid .middle-left .col-lg-12 {
   padding-bottom: 2px;
   padding-top: 2px;
 }
-.far-right .col-lg-12 {
+.style-grid .far-right .col-lg-12 {
   padding-bottom: 2px;
   padding-top: 2px;
 }
-.far-right .col-lg-6 {
+.style-grid .far-right .col-lg-6 {
   padding-bottom: 2px;
   padding-top: 2px;
 }
-.far-right .logow {
+.style-grid .far-right .logow {
   padding-right: 2px;
 }
 .img-group {
@@ -1531,14 +1566,6 @@ ol ul li {
   position: relative;
 }
 /* Style Detail */
-.single-wedding-styles section {
-  padding: 30px 0;
-  border-bottom: 1px solid #999999;
-}
-.single-wedding-styles .suite-image {
-  width: 50%;
-  float: left;
-}
 .single-wedding-styles aside {
   width: 50%;
   float: left;
@@ -2768,19 +2795,6 @@ blockquote.right {
 }
 #load-more:hover {
   border-color: #bbb;
-}
-.grid.isotope {
-  max-width: 1280px;
-  width: 100%;
-}
-.isotope,
-.isotope .item {
-  /* change duration value to whatever you like */
-  -webkit-transition-duration: 0.8s;
-  -moz-transition-duration: 0.8s;
-  -ms-transition-duration: 0.8s;
-  -o-transition-duration: 0.8s;
-  transition-duration: 0.8s;
 }
 /* fancyBox v2.1.4 fancyapps.com | fancyapps.com/fancybox/#license
 ================================================== */
