@@ -26,57 +26,6 @@ echo $obj->description; ?>
       <?php echo do_shortcode('[searchandfilter id="655"]'); ?>
     </fieldset>
   </header>
-<!-- <div id="archive-entries-wrap" class="clearfix"> -->
-
-<!-- 		<article class="style-entry"> -->
-<!-- 		  	<div class="row style-grid"> -->
-<!-- 				<div class="col-sm-6 col-md-3 col-lg-3 text-col"> -->
-<!-- 					<h2>Duis id justo </h2> -->
-<!-- 					<h3>ac enim accumsan maximus ac et mauris.</h3> -->
-<!-- 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu congue justo. Suspendisse pretium purus eros, id ornare erat placerat ut.  -->
-<!-- 					Maecenas porttitor neque erat, a tristique lectus ullamcorper et. Ut vehicula mauris quis leo lacinia, ut ultrices purus maximus. Lorem  -->
-<!-- 					ipsum dolor sit amet, consectetur adipiscing elit. Ut vel arcu urna. Donec id vestibulum nulla. Fusce in mi sed turpis convallis consequat. </p> -->
-<!-- 				</div> -->
-<!-- 				<div class="col-sm-6 col-md-3 col-lg-3 style-col middle-left"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-md-12 col-lg-12"> -->
-<!-- 							<img src="https://placeholdit.imgix.net/~text?txtsize=43&bg=333333&txtclr=ffffff&txt=inspiration-3-img-591%C3%97926&w=591&h=926" alt="" class="insp-3"/> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="col-sm-6 col-md-3 col-lg-3 style-col middle-right"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-md-12 col-lg-12"> -->
-<!-- 							<img src="https://placeholdit.imgix.net/~text?txtsize=23&bg=8a8a8a&txtclr=ffffff&txt=swatch-1-final-img-700%C3%97301&w=700&h=301" alt="" class="swatch-1"/> -->
-<!-- 						</div> -->
-<!-- 						<div class="col-md-12 col-lg-12"> -->
-<!-- 							<img src="https://placeholdit.imgix.net/~text?txtsize=23&bg=8a8a8a&txtclr=ffffff&txt=swatch-1-final-img-700%C3%97301&w=700&h=301" alt="" class="swatch-2"/> -->
-<!-- 						</div> -->
-<!-- 						<div class="col-md-12 col-lg-12"> -->
-<!-- 							<img src="https://placeholdit.imgix.net/~text?txtsize=43&bg=222222&txtclr=ffffff&txt=suite-overview-final-img-700×475&w=700&h=475" alt="" class="suite-img"/> -->
-<!-- 						</div>			 -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="col-sm-6 col-md-3 col-lg-3 style-col far-right"> -->
-<!-- 					<div class="row "> -->
-<!-- 						<div class="col-md-12 col-lg-12"> -->
-<!-- 							<img src="https://placeholdit.imgix.net/~text?txtsize=43&bg=222222&txtclr=ffffff&txt=inspiration-2-img-700%C3%97610&w=700&h=610" alt="" class="insp-2"/> -->
-<!-- 						</div> -->
-<!-- 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 logow"> -->
-<!-- 							<img src="https://placeholdit.imgix.net/~text?txtsize=43&bg=222222&txtclr=ffffff&txt=logo-detail-img-472%C3%97651&w=472&h=650" alt="" class="logo-detail"/> -->
-<!-- 						</div> -->
-<!-- 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
-<!-- 							<img src="https://placeholdit.imgix.net/~text?txtsize=43&bg=7a7a7a&txtclr=ffffff&txt=inspiration-1-img-591%C3%97926&w=591&h=926" alt="" class="insp-1"/> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</article> -->
-
-<!-- </div> -->
-<!-- <br/> -->
-<!-- <br/> -->
-  <!-- /page-heading -->
   <div id="archive-entries-wrap" class="clearfix">
 
     <div class="grid-loader"><i class="icon-spinner icon-spin"></i></div>
@@ -87,123 +36,119 @@ echo $obj->description; ?>
 			$format = get_post_format();
 			if ( false === $format ) $format = 'standard';
 			wpex_hook_entry_before(); ?>
-	
-		<article class="style-entry">
-			<?php wpex_hook_entry_top(); ?>
-			<div class="row style-grid">
-				
-				<!-- Left Col -->
-				
-				<div class="col-sm-6 col-md-3 col-lg-3 text-col">
-				
-					<p class="wedding-style"><?php $terms = get_the_terms( $post->ID , 'style' ); foreach ( $terms as $term ) {echo $term->name;}?> Wedding Style</p>
-        			<h2><?php the_title(); ?></h2>
-        			<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
-        			<p class="description"><?php the_field('suite_description'); ?></p>
-        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button">CTA</a> 
-      							
-				</div>
-				
-				<!-- middle-left Col -->
-				
-				<div class="col-sm-6 col-md-3 col-lg-3 style-col middle-left">
-					<div class="row">
-						<div class="col-md-12 col-lg-12">
-					<?php
-			 		$imageArray = get_field('inspiration_3'); // Array returned by Advanced Custom Fields
-			 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 		$imageThumbURL = $imageArray['url'];
-			 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-			 		?>
-			 		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>">
-			 			</div>
-			 		</div>
-	 			</div>
-	 			
-	 			<!-- middle-right Col -->
-	 			
-				<div class="col-sm-6 col-md-3 col-lg-3 style-col middle-right">
+		<section class="wedding-style-archive">
+			<article class="">
+				<?php wpex_hook_entry_top(); ?>
+				<div class="row style-grid">
 					
-					<div class="row">
-						<div class="col-md-12 col-lg-12">
-							<?php
-					 		$imageArray = get_field('swatch_1'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
-					 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-					 		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="swatch-1">
-						</div>
-						
-						<div class="col-md-12 col-lg-12">
-							<?php
-					 		$imageArray = get_field('swatch_2'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
-					 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-			          		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="swatch-2" />
-						</div>
-						
-						<div class="col-md-12 col-lg-12">
-							<?php
-					 		$imageArray = get_field('suite_image'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
-					 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-		        			<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="suite-img"/>
-						</div>			
-					</div>
-        		</div>
-        		
-				<!-- Right Col -->
-				
-				<div class="col-sm-6 col-md-3 col-lg-3 style-col far-right">
-				
-					<div class="row">
+					<!-- Left Col -->
 					
-						<div class="col-md-12 col-lg-12">
-							<?php
-					 		$imageArray = get_field('inspiration_2'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
-					 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-			        		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="insp-2">
-						</div>
-						
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 logow">
-			          		<?php
-				 			$imageArray = get_field('logo_detail'); // Array returned by Advanced Custom Fields
-				 			$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-				 			$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
-				 			//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-			 				?>
-							<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>"  class="logo-detail">
-						</div>
-						
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-					        <?php
-					 		$imageArray = get_field('inspiration_1'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		//$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
-					 		$imageThumbURL = $imageArray['sizes']['insp-1-472x651']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		
-					 		?>
-			          		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="insp-1"> 
-						</div>
+					<div class="col-sm-6 col-md-3 col-lg-3 text-col typography">
+					
+						<p class="wedding-style"><?php $terms = get_the_terms( $post->ID , 'style' ); foreach ( $terms as $term ) {echo $term->name;}?> Wedding Style</p>
+	        			<h2 class="grey-hr"><?php the_title(); ?></h2>
+	        			<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
+	        			<p class="description"><?php the_field('suite_description'); ?></p>
+	        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button">CTA</a> 
+	      							
 					</div>
 					
+					<!-- middle-left Col -->
+					
+					<div class="col-sm-6 col-md-3 col-lg-3 style-col middle-left">
+						<div class="row">
+							<div class="col-md-12 col-lg-12">
+						<?php
+				 		$imageArray = get_field('inspiration_3'); // Array returned by Advanced Custom Fields
+				 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+				 		$imageThumbURL = $imageArray['url'];
+				 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+				 		?>
+				 		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>">
+				 			</div>
+				 		</div>
+		 			</div>
+		 			
+		 			<!-- middle-right Col -->
+		 			
+					<div class="col-sm-6 col-md-3 col-lg-3 style-col middle-right">
+						
+						<div class="row">
+							<div class="col-md-12 col-lg-12">
+								<?php
+						 		$imageArray = get_field('swatch_1'); // Array returned by Advanced Custom Fields
+						 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+						 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
+						 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+						 		?>
+						 		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="swatch-1">
+							</div>
+							
+							<div class="col-md-12 col-lg-12">
+								<?php
+						 		$imageArray = get_field('swatch_2'); // Array returned by Advanced Custom Fields
+						 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+						 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
+						 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+						 		?>
+				          		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="swatch-2" />
+							</div>
+							
+							<div class="col-md-12 col-lg-12">
+								<?php
+						 		$imageArray = get_field('suite_image'); // Array returned by Advanced Custom Fields
+						 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+						 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
+						 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+						 		?>
+			        			<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="suite-img"/>
+							</div>			
+						</div>
+	        		</div>
+	        		
+					<!-- Right Col -->
+					
+					<div class="col-sm-6 col-md-3 col-lg-3 style-col far-right">
+					
+						<div class="row">
+						
+							<div class="col-md-12 col-lg-12">
+								<?php
+						 		$imageArray = get_field('inspiration_2'); // Array returned by Advanced Custom Fields
+						 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+						 		$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
+						 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+						 		?>
+				        		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="insp-2">
+							</div>
+							
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 logow">
+				          		<?php
+					 			$imageArray = get_field('logo_detail'); // Array returned by Advanced Custom Fields
+					 			$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+					 			$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
+					 			//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+				 				?>
+								<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>"  class="logo-detail">
+							</div>
+							
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						        <?php
+						 		$imageArray = get_field('inspiration_1'); // Array returned by Advanced Custom Fields
+						 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+						 		//$imageThumbURL = $imageArray['url']; //grab from the array, the 'url'
+						 		$imageThumbURL = $imageArray['sizes']['insp-1-472x651']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+						 		
+						 		?>
+				          		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="insp-1"> 
+							</div>
+						</div>
+						
+					</div>
 				</div>
-			</div>
-			<?php 
-// 			echo "<pre>";
-// 			print_r($imageArray);
-// 			echo "</pre>";
-			?>
-			<?php wpex_hook_entry_bottom(); ?>
-		</article>   
+				<?php wpex_hook_entry_bottom(); ?>
+			</article>  
+		</section>
     	<?php wpex_hook_entry_after();
 		}
 	}

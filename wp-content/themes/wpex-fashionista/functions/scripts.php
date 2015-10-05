@@ -18,11 +18,13 @@ function wpex_load_scripts() {
 	*******************/
 	
 	// Main style.css
-	wp_enqueue_style( 'wpex-style', get_stylesheet_uri() );
+	wp_enqueue_style('font-awesome1', get_template_directory_uri() . '/css/font-awesome.css', false, filemtime(get_stylesheet_directory(). '/css/font-awesome.css'));
+	
+	wp_enqueue_style( 'wpex-style', get_stylesheet_uri(),false, filemtime(get_stylesheet_directory()) );
 	
 	// Responsive CSS
 	if( of_get_option('responsive') ) {
-		wp_enqueue_style('responsive', WPEX_CSS_DIR . '/responsive.css', 'style', true );
+		wp_enqueue_style('responsive', get_template_directory_uri() . '/css/responsive.css', false, filemtime(get_stylesheet_directory(). '/css/font-awesome.css'));
 	}
 	
 	
