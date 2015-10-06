@@ -259,10 +259,6 @@
   .hide-tablet-portrait {
     display: none;
   }
-  /*grid*/
-  .loop-entry {
-    width: 350px;
-  }
   /*removed fixed header*/
   .fixed-header {
     position: relative !important;
@@ -338,11 +334,6 @@
   /*grid*/
   #sidebar {
     width: 280px;
-  }
-  .loop-entry {
-    width: 280px;
-    margin-right: 0;
-    margin-bottom: 20px;
   }
   /*main*/
   #post {
@@ -430,6 +421,16 @@
 /* Mobile (portait) = Design for a max-width of 480px
 ================================================== */
 @media only screen and (max-width: 480px) {
+  /*isotope grid */
+  .gutter-sizer {
+    width: 4%;
+  }
+  .loop-entry {
+    width: 48%;
+  }
+  .loop-entry .text {
+    padding: 10px;
+  }
   /*footer*/
   .footer-box.logo {
     width: 100%;
@@ -477,11 +478,6 @@
   /*main*/
   #sidebar {
     width: 440px;
-  }
-  .loop-entry {
-    width: 440px;
-    margin-right: 0;
-    margin-bottom: 20px;
   }
   .wpex-widget-recent-posts .recent-right {
     float: right;

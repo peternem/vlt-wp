@@ -19,6 +19,7 @@
    }
 }
 @media only screen and (max-width: 980px) {
+	
 	a#logo {
 	    text-align: center;
 	    float: none;
@@ -214,9 +215,7 @@
 	/*special hide class*/
 	.hide-tablet-portrait{ display: none; }
 	
-	/*grid*/
-	//.outerbox{ width: 720px; }
-	.loop-entry{ width: 350px; }
+
 		
 	/*removed fixed header*/
 	.fixed-header { position: relative !important; top: auto !important; left: auto !important; }
@@ -271,7 +270,7 @@
 	/*grid*/
 	//.outerbox{ width: 280px; }
 	#sidebar{ width: 280px; }
-	.loop-entry{ width: 280px; margin-right: 0; margin-bottom: 20px }
+	//.loop-entry{ width: 280px; margin-right: 0; margin-bottom: 20px }
 	
 	/*main*/
 	#post{ width: 100%; }
@@ -325,6 +324,16 @@
 /* Mobile (portait) = Design for a max-width of 480px
 ================================================== */
 @media only screen and (max-width: 480px) {
+	/*isotope grid */
+	.gutter-sizer {
+	    width: 4%;
+	}
+	.loop-entry {
+	    width: 48%;
+	    .text {
+		    padding: 10px;
+		}
+	}
 		/*footer*/
 	.footer-box{
 		&.logo {
@@ -375,7 +384,7 @@
 	/*main*/
 	//.outerbox{ width: 440px; }
 	#sidebar{ width: 440px; }
-	.loop-entry{ width: 440px; margin-right: 0; margin-bottom: 20px }
+	//.loop-entry{ width: 440px; margin-right: 0; margin-bottom: 20px }
 	.wpex-widget-recent-posts .recent-right{ float: right; width: 330px; }
 	#footer .wpex-widget-recent-posts .recent-right{ width: 330px; }
 	

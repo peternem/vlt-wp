@@ -84,4 +84,5 @@
 <?php wpex_hook_footer_after(); ?>
 <a href="#toplink" id="toplink"><span class="fa fa-chevron-up"></span></a>
 <?php wp_footer(); ?>
+
 </body></html>

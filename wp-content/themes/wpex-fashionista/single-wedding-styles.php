@@ -158,11 +158,23 @@ while (have_posts()) : the_post(); ?>
 	    	 	
 	    	 	<!-- right Col -->
 	    	 	<div class="col-sm-5 col-md-5 col-lg-5 text-col typography">
-					<h2>Design Your Stationery</h2>
-					<h4>Free PDF Download</h4>
-					<p>Quisque et gravida nisl. Vestibulum pellentesque urna augue, quis tristique 
-					sapien pretium et. Phasellus commodo libero vitae euismod pellentesque. Vestibulum 
-					consectetur eros in lacus tempor commodo.</p>
+					<?php
+					$my_query = new WP_Query('name=design-your-stationery');
+					while($my_query->have_posts()){
+						$my_query->the_post();
+					?>
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<h2><?php the_title() ?></h2>
+						<?php
+						if(get_field('post_subtitle'))
+						{
+							echo '<h4>' . get_field('post_subtitle') . '</h4>';
+						}
+						?>
+						<?php the_content(); ?>
+						</article>
+					<?php } ?>
+					<?php wp_reset_postdata(); ?>
 					<p><strong>Includes:</strong></p>
 					<ul class="items-list">
 						<li>Quisque et gravida nisl</li>
@@ -182,10 +194,24 @@ while (have_posts()) : the_post(); ?>
 	    	 	<!-- Left Col -->
 	    	 	
 	    	 	<div class="col-sm-12 col-md-12 col-lg-3 text-col typography">
-	    	 		<h2>Choose your colors, share your vision</h2>
-	    	 		<p>Quisque et gravida nisl. Vestibulum pellentesque urna augue, quis tristique 
-					sapien pretium et. Phasellus commodo libero vitae euismod pellentesque. Vestibulum 
-					consectetur eros in lacus tempor commodo.</p>
+	    	 	
+					<?php
+					$my_query = new WP_Query('name=choose-your-colors-share-your-vision');
+					while($my_query->have_posts()){
+						$my_query->the_post();
+					?>
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<h2><?php the_title() ?></h2>
+						<?php
+						if(get_field('post_subtitle'))
+						{
+							echo '<h4>' . get_field('post_subtitle') . '</h4>';
+						}
+						?>
+						<?php the_content(); ?>
+						</article>
+					<?php } ?>
+					<?php wp_reset_postdata(); ?>
 					<a href="#" class="btn btn-default" role="button" >CREATE STYLE GUIDE</a>
 				</div>
 	    	 	
@@ -275,10 +301,10 @@ while (have_posts()) : the_post(); ?>
     	</section>
     	
     	<hr>
+    	
     	<section class="custom-monogram">
 			<div class="row style-grid">
 				<!-- left Col -->
-				<!-- middle-left Col -->
 	    	 	<div class="col-sm-12 col-md-12 col-lg-4 style-col left-col">
 	    	 		<div class="row">
 	    	 			<div class="col-sm-6 col-md-6 col-lg-6">
@@ -352,46 +378,142 @@ while (have_posts()) : the_post(); ?>
 	    	 	<!-- right Col -->
 	    	 	
 	    	 	<div class="col-sm-12 col-md-12 col-lg-4 text-col typography">
-	    	 		<h2>Create a Custom Wedding Monograms</h2>
-	    	 		<p>Quisque et gravida nisl. Vestibulum pellentesque urna augue, quis tristique 
-					sapien pretium et. Phasellus commodo libero vitae euismod pellentesque. Vestibulum 
-					consectetur eros in lacus tempor commodo.</p>
+					<?php
+					$my_query = new WP_Query('name=create-a-custom-wedding-monograms');
+					while($my_query->have_posts()){
+						$my_query->the_post();
+					?>
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<h2><?php the_title() ?></h2>
+						<?php
+						if(get_field('post_subtitle'))
+						{
+							echo '<h4>' . get_field('post_subtitle') . '</h4>';
+						}
+						?>
+						<?php the_content(); ?>
+						</article>
+					<?php } ?>
+					<?php wp_reset_postdata(); ?>
 					<a href="#" class="btn btn-default" role="button" >Design Monogram</a>
 				</div>
 		</section>
-    </article>
-    
+		
+    	<hr>
+    	
+		<section class="sharing-styles">
+			<!-- left Col -->
+	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
+	    	 		<div class="row">
+	    	 			<div class="col-lg-12">
+	    	 				<h3>What We're Pinning</h3>
+	    	 				<!-- Pinboard -->
+	    	 				<aside class="pinboard">
+								<a data-pin-do="embedBoard" href="http://www.pinterest.com/violetwedding/<?php the_field('pinterest_board'); ?>/" data-pin-scale-width="80" data-pin-scale-height="320" data-pin-board-width="400">See on Pinterest</a> 
+          						<!-- Please call pinit.js only once per page --> 
+								<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script> 
+							</aside>
+	    	 			</div>
+	    	 		</div>
+	    	 	</div>
+	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
+	    	 		<div class="row">
+	    	 			<div class="col-lg-12">
+	    	 			<h3>From The Blog - WP LOOP</h3>
+					
+					
 
-    
+	    	 			
+						<?php 
+						$argsc = array( 
+						'post_type' 		=> 'blog',
+						'posts_per_page' 	=> 4,
+						'order'             => 'DESC',
+						'post_status' 		=> 'publish',
+						//'taxonomy'  	=> 'suite',
+// 						'tax_query' => array(
+// 								array(
+// 									'taxonomy' => 'suite',
+// 									'field'    => 'slug',
+// 									'terms'    => 'suite',
+// 								),
+// 							),
+ 						);
+						                
+						$my_query = new WP_Query($argsc);
+						?>
+						
+						<p class="wedding-style">
+							<?php $terms = get_the_terms( $post->ID , 'mood' ); ?>
+							<?php echo get_the_term_list( $post->ID, 'mood', 'Mood: ', ', ' ); ?>
+						</p>
+						<p class="wedding-style">
+							<?php echo get_the_term_list( $post->ID, 'style', 'Style: ', ', ' ); ?>
+						</p>
+						<?php 
+						while($my_query->have_posts()){
+							$my_query->the_post();
+							
+						?>
+						
+							<div class="blog-container">
+								<div class="blog-img">
+									<?php the_post_thumbnail('thumbnail', array( 'class' => 'aga-img img-responsive' )); ?> 
+								</div>
+								<div class="blog-post">
+									<h4><?php the_title() ?></h4>
+									<?php the_excerpt(); ?>
+									<?php echo get_the_term_list( $post->ID, 'suite', 'suite: ', ', ' ); ?>
+								</div>
+							</div>
+						<?php   } ?>
+						<?php 
+						
+						?>
+						<?php wp_reset_postdata(); ?>
+	    	 			<h3>Widget Plugin - Delete TBD</h3>
+	    	 			<aside class="related-posts">
+				          <ul>
+				            <?php dynamic_sidebar( 'Aside Widget' ); ?>
+				          </ul>
+				        </aside>
+	    	 			</div>
+	    	 		</div>
+	    	 	</div>
+		</section>
+		
+		<hr>
+		
+		<section class="related-styles">
+			<!-- left Col -->
+	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
+	    	 		<div class="row">
+	    	 			<div class="col-lg-12">
+	    	 				<h3>Related Styles</h3>
+	    	 				<p>how do we do this?</p>
+	    	 			</div>
+	    	 		</div>
+	    	 	</div>
+	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
+	    	 		<div class="row">
+	    	 			<div class="col-lg-12">
+	    	 			<h3>Extra Section of grid</h3>
+	    	 			
+	    	 			</div>
+	    	 		</div>
+	    	 	</div>
+		</section>
+    </article>
     <article class="entry clearfix"> 
-      <!-- Sharing Section -->
-      
-      <section> 
-        
-        <!-- Pinboard -->
-        <aside class="pinboard">
-          <h3>What We're Pinning</h3>
-          <a data-pin-do="embedBoard" href="http://www.pinterest.com/violetwedding/<?php the_field('pinterest_board'); ?>/" data-pin-scale-width="80" data-pin-scale-height="320" data-pin-board-width="400">See on Pinterest</a> 
-          <!-- Please call pinit.js only once per page --> 
-          <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script> 
-        </aside>
-        <aside class="related-posts">
-          <ul>
-            <?php dynamic_sidebar( 'Aside Widget' ); ?>
-          </ul>
-        </aside>
-      </section>
-      <section>
-        <h2>Related Styles</h2>
-        <p>how do we do this?</p>
-      </section>
+    <?php 
+   // echo "<pre>";
+   //print_r($my_query);
+    //echo "</pre>";
+    
+    ?>
       <?php the_content(); ?>
     </article>
     <!-- /entry -->
-    
-    <?php
-		//share post
-		 ?>
     <?php } ?>
 
   
@@ -401,6 +523,13 @@ while (have_posts()) : the_post(); ?>
 <?php
 //end post loop
 endwhile;
+
+
+// $taxonomy_objects = get_object_taxonomies( 'blog', 'objects' );
+// echo "<br><pre>";
+// print_r( $taxonomy_objects);
+// echo "</pre>";
+
 
 //get template sidebar
 get_sidebar(); ?>

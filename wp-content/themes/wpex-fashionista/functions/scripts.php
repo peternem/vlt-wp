@@ -44,7 +44,8 @@ function wpex_load_scripts() {
 	
 	// Required js Plugins
 	wp_enqueue_script('wpex-plugins', WPEX_JS_DIR .'/plugins.js', array('jquery'), '', true);
-	
+	wp_enqueue_script('isotope-plugins', WPEX_JS_DIR .'/isotope.pkgd.min.js', array('jquery'), '2.2.2', true);
+	wp_enqueue_script('isotope-script', WPEX_JS_DIR .'/isotope-script.js', array('jquery'), '', true);
 	//initialize
 	wp_enqueue_script('wpex-global', WPEX_JS_DIR .'/global.js', array('jquery','wpex-plugins'), '1.0', true);
 	

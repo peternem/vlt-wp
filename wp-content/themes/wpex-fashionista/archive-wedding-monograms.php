@@ -70,6 +70,7 @@ $args = array(
 
 $loop = new WP_Query( $args );?>
 <div id="wpex-grid-wrap2" class="grid">
+	<div class="gutter-sizer"></div>
 	<?php while ( $loop->have_posts() ) : $loop->the_post();?>
 	<?php 
 	$fields = get_field_objects( $post->ID);
@@ -78,7 +79,7 @@ $loop = new WP_Query( $args );?>
 	
 	if( $fields_xx ) {
 		foreach( $fields_xx as $field_name => $field ) {?>
-			<article <?php post_class( $post->post_name.' item loop-entry container' ); ?>>
+			<article <?php post_class(' grid-item '. $post->post_name.' item loop-entry container' ); ?>>
 				<?php wpex_hook_entry_top(); ?>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
         	     	<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive">
@@ -124,7 +125,9 @@ if( of_get_option( 'sidebar_homepage_archive' ) == '1' ) {
 	echo '</div>';
 	get_sidebar();
 }
+?>
 
+<?php
 // Get template footer
 get_footer(); ?>
 
