@@ -81,7 +81,7 @@ $loop = new WP_Query( $args );?>
 			<article <?php post_class( $post->post_name.' item loop-entry container' ); ?>>
 				<?php wpex_hook_entry_top(); ?>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-        	     	<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>">
+        	     	<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive">
 				</a>
 				<div class="text">
 		        	<h2><?php the_title(); ?></h2>
