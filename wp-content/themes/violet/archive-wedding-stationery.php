@@ -6,27 +6,24 @@ Template Name: wedding-stationery
 // Get template header
 get_header();
 
-// Sidebar Wrap?
-if( of_get_option( 'sidebar_homepage_archive' ) == '1' ) echo '<div id="post" class="home-sidebar">';
 
 // Start loop
 if(have_posts()) : ?>
 
 <div id="archive-wrap" class="clearfix">
-  <div id="archive-entries-wrap" class="clearfix">
+	<div id="archive-entries-wrap" class="clearfix">
     <header id="page-heading">
-      <h1>Wedding Stationery</h1>
-      <p>
-        <?php $obj = get_post_type_object( 'wedding-stationery' );
-echo $obj->description; ?>
-      </p>
-      <fieldset class="filter">
-        <legend class="symple-button">Filter by style &amp; mood</legend>
-        <?php echo do_shortcode('[searchandfilter id="800"]'); ?>
-      </fieldset>
+    	<?php $obj = get_post_type_object( 'wedding-stationery' ); ?>
+		<h1><?php echo $obj->labels->name; ?></h1>
+      	<p><?php echo $obj->description;  ?></p>
+
+<!--       <fieldset class="filter"> -->
+<!--         <legend class="symple-button">Filter by style &amp; mood</legend> -->
+        <?php //echo do_shortcode('[searchandfilter id="800"]'); ?>
+<!--       </fieldset> -->
       
       	 <h4>Style</h4>
-      	    		<?php 
+      	 <?php 
         	//Get Moods
 			$argsz = array('type' => 'wedding-styles','taxonomy'  => 'style');
 		    $mood = get_categories($argsz); ?>
@@ -59,48 +56,47 @@ echo $obj->description; ?>
     <div class="grid-loader"><i class="icon-spinner icon-spin"></i></div>
     <?php
 $args = array(
-    'post_type' => array( 'wedding-styles' ),
+    'post_type' => 'wedding-styles',
     'order' => 'asc',
     'orderby' => 'title',
+	'taxonomy'  	=> 'wedding-styles',
+	'post_status' 		=> 'publish',
     'posts_per_page' => -1
 );
 
 $loop = new WP_Query( $args );?>
-	<div id="wpex-grid-wrap2" class="grid">
-		<div class="gutter-sizer"></div>
-      	<?php while ( $loop->have_posts() ) : $loop->the_post();?>
-      		<article <?php post_class('grid-item '. $post->post_name.' item loop-entry container' ); ?>>
-        	<?php wpex_hook_entry_top(); ?>
-        	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-	        	<?php
-		 		$imageArray = get_field('suite_image'); // Array returned by Advanced Custom Fields
-		 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-		 		$imageThumbURL = $imageArray['sizes']['large']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-		 		?>
-        		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>">
-        	</a>
-        	<div class="text">
-        	<h2><?php the_title(); ?></h2>
-        	<p><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>
-        	<p><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
-        </div>
-        <!-- /entry-text -->
-        <?php wpex_hook_entry_bottom(); ?>
-      </article>
-      <?php wpex_hook_entry_after(); ?>
-      <?php endwhile; ?>
-    </div>
+		<div id="wpex-grid-wrap2" class="grid">
+			<div class="gutter-sizer"></div>
+			<?php while ( $loop->have_posts() ) : $loop->the_post();?>
+				<?php 
+				$fields = get_field_objects( $post->ID);
+				$allowed = array("suite_image", "stationary_suite_2_image", "stationery_suite_image_3", "stationary_suite_image_4");
+				$fields_xx = array_intersect_key($fields, array_flip($allowed));
+		
+				if( $fields_xx ) {
+					foreach( $fields_xx as $field_name => $field ) {?>
+						<article <?php post_class('grid-item '. $post->post_name.' item container' ); ?>>
+							<?php wpex_hook_entry_top(); ?>
+								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+	        	     				<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive">
+								</a>
+								<div class="text">
+			        				<h2><?php the_title(); ?></h2>
+			        				<p><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>
+			        				<p><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
+			     				</div>
+			     				<!-- /entry-text -->
+	        				<?php wpex_hook_entry_bottom(); ?>
+	      				</article>
+	      				<?php wpex_hook_entry_after(); ?>
+				<?php } ?>
+			<?php }?>
+		<?php endwhile; ?>
+		</div>
     <?php wp_reset_query(); ?>
-    <!-- /wpex-grid-wrap -->
-    <?php if( of_get_option( 'pagination_style', 'infinite_scroll' ) == 'infinite_scroll' ) { ?>
-    <?php wpex_infinite_scroll(); ?>
-    <?php } elseif( of_get_option( 'pagination_style', 'infinite_scroll' ) == 'load_more' ) { ?>
-    <?php echo aq_load_more(); ?>
-    <?php } else { ?>
-    <?php wpex_paginate_pages(); ?>
-    <?php } ?>
-  </div>
-  <!-- /archive-entries-wrap --> 
+    
+	</div>
+  	<!-- /archive-entries-wrap --> 
   
 </div>
 <!-- /archive-wrap -->
@@ -108,10 +104,5 @@ $loop = new WP_Query( $args );?>
 // End loop
 endif;
 
-// Get sidebar
-if( of_get_option( 'sidebar_homepage_archive' ) == '1' ) {
-	echo '</div>';
-	get_sidebar();
-}
 // Get template footer
 get_footer(); ?>
