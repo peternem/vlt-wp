@@ -55,9 +55,18 @@ while (have_posts()) : the_post(); ?>
 	    	 	
 	    	 	<div class="col-sm-6 col-md-3 col-lg-3 text-col typography">
 					<p class="wedding-style">
+						<?php 
+						//Used later in the Blog section at bottom of page 
+						$curr_PostID = $post->ID;
+						$curr_PostSLug = $term->slug;
+						
+						?>
+						
 						<?php $terms = get_the_terms( $post->ID , 'style' ); 
 						foreach ( $terms as $term ) {
-							echo $term->name. "Wedding Style";
+							echo $term->name. " Wedding Style";
+							// Used in blog section
+							$current_page_term_slug =  $term->slug;
 						}?>
 					</p>
 	            	<h2 class="grey-hr"><?php the_title(); ?></h2>
@@ -419,64 +428,46 @@ while (have_posts()) : the_post(); ?>
 	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
 	    	 		<div class="row">
 	    	 			<div class="col-lg-12">
-	    	 			<h3>From The Blog - WP LOOP</h3>
-					
-					
-
+	    	 			<h3>From The Blog</h3>
 	    	 			
-						<?php 
-						$argsc = array( 
-						'post_type' 		=> 'blog',
-						'posts_per_page' 	=> 4,
-						'order'             => 'DESC',
-						'post_status' 		=> 'publish',
-						//'taxonomy'  	=> 'suite',
-// 						'tax_query' => array(
-// 								array(
-// 									'taxonomy' => 'suite',
-// 									'field'    => 'slug',
-// 									'terms'    => 'suite',
-// 								),
-// 							),
- 						);
-						                
-						$my_query = new WP_Query($argsc);
-						?>
-						
-						<p class="wedding-style">
-							<?php $terms = get_the_terms( $post->ID , 'mood' ); ?>
-							<?php echo get_the_term_list( $post->ID, 'mood', 'Mood: ', ', ' ); ?>
-						</p>
-						<p class="wedding-style">
-							<?php echo get_the_term_list( $post->ID, 'style', 'Style: ', ', ' ); ?>
-						</p>
-						<?php 
-						while($my_query->have_posts()){
-							$my_query->the_post();
-							
-						?>
-						
-							<div class="blog-container">
-								<div class="blog-img">
-									<?php the_post_thumbnail('thumbnail', array( 'class' => 'aga-img img-responsive' )); ?> 
-								</div>
-								<div class="blog-post">
-									<h4><?php the_title() ?></h4>
-									<?php the_excerpt(); ?>
-									<?php echo get_the_term_list( $post->ID, 'suite', 'suite: ', ', ' ); ?>
-								</div>
-							</div>
-						<?php   } ?>
-						<?php 
-						
-						?>
+	    	 			<?php 
+	    	 			$terms = get_terms('style');
+	    	 			foreach ($terms as $term) {
+	    	 				$wpq = array ('taxonomy'=>'style','term'=>$term->slug, 'posts_per_page' 	=> 6,);
+	    	 				$myquery = new WP_Query ($wpq);
+	    	 				$article_count = $myquery->post_count;
+	    	 				
+	    	 				if($term->slug == $current_page_term_slug) {
+	    	 					//echo "<h3 class=\"term-heading\" id=\"".$term->slug."\">Blog Posts By Wedding Style: ".$term->name."</h3>";
+	    	 					if ($article_count) {
+		    	 						echo "<ul>";
+		    	 						
+		    	 						while ($myquery->have_posts()) : $myquery->the_post();
+		    	 						
+		    	 						if($post->ID != $curr_PostID) { ?>
+		    	 							<li class="blog-container">
+		    	 							<div class="blog-img">
+												<?php the_post_thumbnail('thumbnail', array( 'class' => 'aga-img img-responsive' )); ?> 
+											</div>
+											<div class="blog-post">
+												<h4><a href="<?php get_permalink() ?>"><?php echo $post->post_title; ?></a></h4>
+												<?php the_excerpt(); ?>
+		    	 								<?php echo get_the_term_list( $post->ID, 'style','<b>Related Styles:</b> ', ', ' )."<br/>"; ?>
+												<?php //echo get_the_term_list( $post->ID, 'suite', '<b>Suite:</b> ', ', ' ); ?>
+		    	 							</div>
+		    	 							</li>
+		    	 						
+		    	 						<?php }  
+		    	 						endwhile; 
+		    	 						echo "</ul>";
+		    	 					}
+	    	 					
+	    	 				}
+	    	 			}
+	    	 			
+	    	 			?>
+
 						<?php wp_reset_postdata(); ?>
-	    	 			<h3>Widget Plugin - Delete TBD</h3>
-	    	 			<aside class="related-posts">
-				          <ul>
-				            <?php dynamic_sidebar( 'Aside Widget' ); ?>
-				          </ul>
-				        </aside>
 	    	 			</div>
 	    	 		</div>
 	    	 	</div>
@@ -485,23 +476,59 @@ while (have_posts()) : the_post(); ?>
 		<hr>
 		
 		<section class="related-styles">
-			<!-- left Col -->
-	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
-	    	 		<div class="row">
-	    	 			<div class="col-lg-12">
-	    	 				<h3>Related Styles</h3>
-	    	 				<p>how do we do this?</p>
-	    	 			</div>
-	    	 		</div>
-	    	 	</div>
-	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
-	    	 		<div class="row">
-	    	 			<div class="col-lg-12">
-	    	 			<h3>Extra Section of grid</h3>
-	    	 			
-	    	 			</div>
-	    	 		</div>
-	    	 	</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<h3>Related <?php echo ucwords($current_page_term_slug); ?> Styles</h3>
+						</div>
+					</div>
+					<div class="row">
+						<?php 
+						//for a given post type, return all
+						//echo "current page style name: ".$current_page_term_slug;
+						$post_type = 'wedding-styles';
+						$tax = 'style';						
+						$argsc = array( 
+						'post_type' 		=> $post_type,
+						'posts_per_page' 	=> -1,
+						'order'             => 'DESC',
+ 						'post_status' 		=> 'publish',
+						'style'				=> $current_page_term_slug,
+ 						);
+						                
+						$my_query = new WP_Query($argsc);
+						?>
+						
+						<?php 
+						while($my_query->have_posts()){
+							$my_query->the_post();
+						?>
+							<?php if($post->ID != $curr_PostID) {  ?>
+							<div class=" col-sm-4 col-md-4 col-lg-4">
+								<div class="related-style-entry">
+									<div class="related-img">
+										<?php
+										$imageArray = get_field('inspiration_2'); // Array returned by Advanced Custom Fields
+										$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+							 			$imageURL = $imageArray['url']; // Grab the full size version
+										$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+										?>
+										<a href="<?php echo $imageURL; ?>" rel="lightbox">
+										<img src="<?php echo $imageURL;?>" class="img-responsive" alt="<?php echo $imageAlt; ?>">
+										</a>  
+									</div>
+									<div class="related-text">
+										<h3><?php the_title() ?></h3>
+										<?php echo get_the_term_list( $post->ID, 'mood','<b>Mood:</b> ', ', ' )."<br/>"; ?>
+										<?php echo get_the_term_list( $post->ID, 'style','<b>Style:</b> ', ', ' )."<br/>"; ?>
+										<?php echo get_the_term_list( $post->ID, 'suite', '<b>Suite:</b> ', ', ' ); ?>
+									</div>
+								</div>
+							</div>
+							<?php  } ?>
+						<?php   } ?>
+						<?php wp_reset_postdata(); ?>						
+					</div>
+    	 		</div>
 		</section>
     </article>
     <article class="entry clearfix"> 

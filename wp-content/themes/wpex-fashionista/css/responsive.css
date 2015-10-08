@@ -7,7 +7,10 @@
   .style-inspiration,
   .design-stationery,
   .design-vision,
-  .custom-monogram {
+  .custom-monogram,
+  .sharing-styles,
+  .related-styles,
+  #copyright {
     padding-left: 25px;
     padding-right: 25px;
   }
@@ -16,7 +19,7 @@
     padding-left: 0;
   }
   #footer-widgets {
-    padding: 25px 0;
+    padding: 25px 25px;
   }
 }
 @media only screen and (max-width: 980px) {
