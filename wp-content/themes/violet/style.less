@@ -396,17 +396,44 @@ ul.disc { list-style: disc outside }
 	margin-bottom: 1.5rem;
 	> li {
 	    display: inline-block;
-	    padding: 5px 15px;
+	    padding: 5px 15px 0 0;
 	    a {
 	    	border: 1px solid @global-color-soft-grey;
 		    display: block;
-		    padding: 5px 8px;
+		    //padding: 5px 8px;
 	    }
 	}
 	.selected {
-		border: 1px solid pink;
+		border: 1px solid @global-color-warm-grey;
+		> span {
+			
+	   		 background-color: @global-color-nude;
+		}
+		
+	}
+	span {
+	    display: block;
+	    padding: 5px 8px;
 	}
 } 
+
+.browse-filters {
+    overflow: auto;
+    width: 100%;
+    p {
+	    padding-bottom: 0.425rem;
+	}
+}
+.style-filters {
+    border-right:  1px solid @global-color-soft-grey;
+    float: left;
+    margin-right: 2%;
+    width: 25%;
+}
+.mood-filters {
+    float: left;
+    width: 73%;
+}
 
 /* Headings
 ================================================== */
@@ -669,6 +696,16 @@ ul.disc { list-style: disc outside }
     width: 31.95%;
     z-index: 2;
     border: 1px solid @global-color-soft-grey;
+    h3 { margin: 0 0 5px; text-transform: uppercase; }
+    p {
+    	margin-bottom: 0;
+    	padding: 0;
+    	&:last-child{
+    		margin: 0;
+    	}
+    }
+    .label {text-transform:uppercase;font-weight:500;}
+    .text {padding:20px; border-top:1px solid @global-color-soft-grey;}
 }
 
 .related-style-entry {
@@ -680,11 +717,6 @@ ul.disc { list-style: disc outside }
 	}
 }
 .gutter-sizer { width: 2%; }
-.grid-item .text {padding:20px; border-top:1px solid @global-color-soft-grey}
-.grid-item h2 { font-size:1rem;font-weight:400; margin: 0 0 8px; text-transform: uppercase; }
-.grid-item p {font-size:0.875rem;margin-bottom:8px}
-.grid-item .label {text-transform:uppercase;font-weight:500}
-.grid-item p:last-child{ margin: 0; }
 
 .loop-entry-img-link{ display: block; width: 100%; margin: 0 0 20px; position: relative; }
 .loop-entry-img-link img{ display: block; width: 100%; }

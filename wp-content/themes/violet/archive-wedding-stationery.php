@@ -16,43 +16,41 @@ if(have_posts()) : ?>
     	<?php $obj = get_post_type_object( 'wedding-stationery' ); ?>
 		<h1><?php echo $obj->labels->name; ?></h1>
       	<p><?php echo $obj->description;  ?></p>
-
+	</header>
 <!--       <fieldset class="filter"> -->
 <!--         <legend class="symple-button">Filter by style &amp; mood</legend> -->
         <?php //echo do_shortcode('[searchandfilter id="800"]'); ?>
 <!--       </fieldset> -->
-      
-      	 <h4>Style</h4>
-      	 <?php 
-        	//Get Moods
-			$argsz = array('type' => 'wedding-styles','taxonomy'  => 'style');
-		    $mood = get_categories($argsz); ?>
-      	<ul id="moodFilters" class="filters styles">
-      		<li><a href="#Filter" class="selected" title="show all" data-filter="*">show all</a></li>
-			<?php foreach ($mood as $moody) { ?>
-			<li><a href="#filter" data-filter=".style-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><?php echo $moody->name;?></a></li>
-			<?php } ?>
-			
-      	<h4>Mood</h4>
-      	<?php 
+      <div class="browse-filters">
+      	 <div class="style-filters">
+      	 	<p><b>Style</b></p>
+	      	 <?php 
+	        	//Get Moods
+				$argsz = array('type' => 'wedding-styles','taxonomy'  => 'style');
+			    $mood = get_categories($argsz); ?>
+	      	<ul id="moodFilters" class="filters styles">
+	      		<li><a href="#filter" class="selected" title="show all" data-filter="*">show all</a></li>
+				<?php foreach ($mood as $moody) { ?>
+				<li><a href="#filter" data-filter=".style-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><?php echo $moody->name;?></a></li>
+				<?php } ?>
+			</ul>
+		</div>
+      	 <div class="mood-filters">
+      	 	<p><b>Mood</b></p>
+      		<?php 
         	//Get Moods
 			$argsz = array('type' => 'wedding-styles','taxonomy'  => 'mood');
 		    $mood = get_categories($argsz); ?>
-      	<ul id="moodFilters" class="filters moody">
-      		<li><a href="#Filter" class="selected" title="show all" data-filter="*">show all</a></li>
-			<?php foreach ($mood as $moody) { ?>
-			<li><a href="#filter" data-filter=".mood-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><?php echo $moody->name;?></a></li>
-			<?php }
-		//     echo "<pre>";
-		//     print_r($Parent_categories);
-		//     echo "</pre>";  
-		    ?>
-		</ul>
-      
-      
-      
-      
-    </header>
+      		<ul id="moodFilters" class="filters moody">
+      			<li><a href="#filter" class="selected" title="show all" data-filter="*">show all</a></li>
+				<?php foreach ($mood as $moody) { ?>
+				<li><a href="#mood-<?php echo strtolower($moody->name);?>" data-filter=".mood-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><span><?php echo $moody->name;?></span></a></li>
+				<?php } ?>
+			</ul>
+		</div>      
+     </div>
+
+   
     <div class="grid-loader"><i class="icon-spinner icon-spin"></i></div>
     <?php
 $args = array(
@@ -71,8 +69,9 @@ $loop = new WP_Query( $args );?>
 				<?php 
 				$fields = get_field_objects( $post->ID);
 				$allowed = array("suite_image", "stationary_suite_2_image", "stationery_suite_image_3", "stationary_suite_image_4");
+				$allowed_yy = array("suite_image_label", "stationary_suite_2_image_label", "stationery_suite_image_3_label", "stationary_suite_image_4_label");
 				$fields_xx = array_intersect_key($fields, array_flip($allowed));
-		
+				
 				if( $fields_xx ) {
 					foreach( $fields_xx as $field_name => $field ) {?>
 						<article <?php post_class('grid-item '. $post->post_name.' item container' ); ?>>
@@ -81,7 +80,13 @@ $loop = new WP_Query( $args );?>
 	        	     				<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive">
 								</a>
 								<div class="text">
-			        				<h2><?php the_title(); ?></h2>
+									<?php 
+									if($field['value']['caption']) {
+										echo "<h3>".$post->post_title .": ".$field['value']['caption']."</h3>";
+									} else {
+										echo "<h3>".$post->post_title."</h3>";
+									}
+									?>
 			        				<p><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>
 			        				<p><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
 			     				</div>
@@ -100,6 +105,7 @@ $loop = new WP_Query( $args );?>
   
 </div>
 <!-- /archive-wrap -->
+
 <?php
 // End loop
 endif;

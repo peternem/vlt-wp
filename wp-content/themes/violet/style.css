@@ -1412,17 +1412,42 @@ ul.disc {
 .filters.moody > li,
 .filters.styles > li {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 5px 15px 0 0;
 }
 .filters.moody > li a,
 .filters.styles > li a {
   border: 1px solid #d7d3d1;
   display: block;
-  padding: 5px 8px;
 }
 .filters.moody .selected,
 .filters.styles .selected {
-  border: 1px solid pink;
+  border: 1px solid #8c8787;
+}
+.filters.moody .selected > span,
+.filters.styles .selected > span {
+  background-color: #faf6f0;
+}
+.filters.moody span,
+.filters.styles span {
+  display: block;
+  padding: 5px 8px;
+}
+.browse-filters {
+  overflow: auto;
+  width: 100%;
+}
+.browse-filters p {
+  padding-bottom: 0.425rem;
+}
+.style-filters {
+  border-right: 1px solid #d7d3d1;
+  float: left;
+  margin-right: 2%;
+  width: 25%;
+}
+.mood-filters {
+  float: left;
+  width: 73%;
 }
 /* Headings
 ================================================== */
@@ -1726,6 +1751,25 @@ ul.disc {
   z-index: 2;
   border: 1px solid #d7d3d1;
 }
+.grid-item h3 {
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+.grid-item p {
+  margin-bottom: 0;
+  padding: 0;
+}
+.grid-item p:last-child {
+  margin: 0;
+}
+.grid-item .label {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.grid-item .text {
+  padding: 20px;
+  border-top: 1px solid #d7d3d1;
+}
 .related-style-entry {
   position: relative;
   border: 1px solid #d7d3d1;
@@ -1736,27 +1780,6 @@ ul.disc {
 }
 .gutter-sizer {
   width: 2%;
-}
-.grid-item .text {
-  padding: 20px;
-  border-top: 1px solid #d7d3d1;
-}
-.grid-item h2 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0 0 8px;
-  text-transform: uppercase;
-}
-.grid-item p {
-  font-size: 0.875rem;
-  margin-bottom: 8px;
-}
-.grid-item .label {
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.grid-item p:last-child {
-  margin: 0;
 }
 .loop-entry-img-link {
   display: block;
