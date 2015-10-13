@@ -1238,14 +1238,6 @@ address {
 #archive-entries-wrap {
   position: relative;
 }
-#post {
-  position: relative;
-  float: left;
-  width: 660px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 #sidebar {
   width: 320px;
 }
