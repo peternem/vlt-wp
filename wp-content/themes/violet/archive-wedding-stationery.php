@@ -17,38 +17,41 @@ if(have_posts()) : ?>
 		<h1><?php echo $obj->labels->name; ?></h1>
       	<p><?php echo $obj->description;  ?></p>
 	</header>
-<!--       <fieldset class="filter"> -->
-<!--         <legend class="symple-button">Filter by style &amp; mood</legend> -->
-        <?php //echo do_shortcode('[searchandfilter id="800"]'); ?>
-<!--       </fieldset> -->
-      <div class="browse-filters">
-      	 <div class="style-filters">
-      	 	<p><b>Style</b></p>
-	      	 <?php 
-	        	//Get Moods
-				$argsz = array('type' => 'wedding-styles','taxonomy'  => 'style');
-			    $mood = get_categories($argsz); ?>
-	      	<ul id="moodFilters" class="filters styles">
-	      		<li><a href="#filter" class="selected" title="show all" data-filter="*">show all</a></li>
-				<?php foreach ($mood as $moody) { ?>
-				<li><a href="#filter" data-filter=".style-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><?php echo $moody->name;?></a></li>
-				<?php } ?>
-			</ul>
+	<div class="browse-filters">
+		<div class="btn-container">
+			<a class="btn-link btn-link btn-filter" role="button" href="#">Filter by Style or Mood <i class="fa fa-angle-down"></i>
+			</a>
 		</div>
-      	 <div class="mood-filters">
-      	 	<p><b>Mood</b></p>
-      		<?php 
-        	//Get Moods
-			$argsz = array('type' => 'wedding-styles','taxonomy'  => 'mood');
-		    $mood = get_categories($argsz); ?>
-      		<ul id="moodFilters" class="filters moody">
-      			<li><a href="#filter" class="selected" title="show all" data-filter="*">show all</a></li>
-				<?php foreach ($mood as $moody) { ?>
-				<li><a href="#mood-<?php echo strtolower($moody->name);?>" data-filter=".mood-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><span><?php echo $moody->name;?></span></a></li>
-				<?php } ?>
-			</ul>
-		</div>      
-     </div>
+		<div class="filter-container">
+			<div class="style-filters">
+				<p><b>Style</b></p>
+				<?php 
+				//Get Styles
+				$argsz = array('type' => 'wedding-styles','taxonomy'  => 'style');
+				$mood = get_categories($argsz);
+				?>
+		      	<ul id="moodFilters" class="filters styles">
+		      		<li><a href="#filter" class="selected" title="show all" data-filter="*"><span>show all</span></a></li>
+					<?php foreach ($mood as $moody) { ?>
+					<li><a href="#filter" data-filter=".style-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><span><?php echo $moody->name;?></a></li>
+					<?php } ?>
+				</ul>
+			</div>
+			<div class="mood-filters">
+		      	<p><b>Mood</b></p>
+		      	<?php 
+		       	//Get Moods
+				$argsz = array('type' => 'wedding-styles','taxonomy'  => 'mood');
+				$mood = get_categories($argsz); ?>
+		      	<ul id="moodFilters" class="filters moody">
+		      		<li><a href="#filter" class="selected" title="show all" data-filter="*"><span>show all</span></a></li>
+					<?php foreach ($mood as $moody) { ?>
+					<li><a href="#mood-<?php echo strtolower($moody->name);?>" data-filter=".mood-<?php echo strtolower($moody->name);?>"  title="<?php echo $moody->name;?>"><span><?php echo $moody->name;?></span></a></li>
+					<?php } ?>
+				</ul>
+			</div>		
+		</div>
+	</div>
 
    
     <div class="grid-loader"><i class="icon-spinner icon-spin"></i></div>

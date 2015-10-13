@@ -6,7 +6,7 @@
  */
 
 wpex_hook_entry_before(); ?>
-
+<h2>formats/entry-standard.php</h2>
 <article <?php post_class( 'loop-entry container' ); ?>>
 	<?php wpex_hook_entry_top(); ?>
 	<?php wpex_entry_thumbnail(); ?>

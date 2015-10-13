@@ -17,7 +17,7 @@ if( of_get_option( 'sidebar_homepage_archive' ) == '1' ) echo '<div id="post" cl
             if (have_posts()) { 
                 while (have_posts()) {
                     the_post( );
-                    $format = get_post_format();
+                   echo  $format = get_post_format();
                     if ( false === $format ) $format = 'standard';
                     get_template_part( '/formats/entry', $format );
                 }

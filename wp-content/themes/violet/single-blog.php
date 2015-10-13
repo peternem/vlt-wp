@@ -9,7 +9,7 @@ get_header();
 
 //start post loop
 while (have_posts()) : the_post(); ?>
-
+<h2>single-blog.php</h2>
 <div id="post" class="clearfix">
 	<div class="container clearfix">
 		

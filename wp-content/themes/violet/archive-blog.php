@@ -17,7 +17,7 @@ if(have_posts()) : ?>
 <div id="archive-wrap" class="clearfix">
   <div id="archive-entries-wrap" class="clearfix">
     <header id="page-heading">
-      <h1>Violet Blog</h1>
+      <h1>Violet Blog - archive-blog.php</h1>
       <p>
         <?php $obj = get_post_type_object( 'blog' );
 echo $obj->description; ?></p>
@@ -32,7 +32,7 @@ echo $obj->description; ?></p>
                 if (have_posts()) { 
                     while (have_posts()) {
                         the_post( );
-                        $format = get_post_format();
+                        echo "Post Format: ".$format = get_post_format();
                         if ( false === $format ) $format = 'standard';
                         get_template_part( '/formats/entry', $format );
                     }

@@ -1090,6 +1090,11 @@ img {
   border-color: #8c8787;
   color: #fff;
 }
+.btn-link {
+  font-weight: 300;
+  color: #303030;
+  font-weight: 500;
+}
 /* Grids
 ================================================== */
 .grid-container {
@@ -1407,17 +1412,18 @@ ul.disc {
 .filters.styles {
   max-width: 100%;
   overflow: auto;
-  margin-bottom: 1.5rem;
 }
 .filters.moody > li,
 .filters.styles > li {
   display: inline-block;
-  padding: 5px 15px 0 0;
+  padding: 5px 10px 0 0;
 }
 .filters.moody > li a,
 .filters.styles > li a {
-  border: 1px solid #d7d3d1;
+  border: 1px solid #fff;
   display: block;
+  min-width: 100px;
+  text-align: left;
 }
 .filters.moody .selected,
 .filters.styles .selected {
@@ -1430,7 +1436,20 @@ ul.disc {
 .filters.moody span,
 .filters.styles span {
   display: block;
-  padding: 5px 8px;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+.btn-container {
+  padding-bottom: 1rem;
+}
+.btn-container .fa {
+  font-weight: bold;
+  margin-left: 3px;
+}
+.filter-container {
+  display: none;
+  padding-bottom: 2rem;
+  overflow: auto;
 }
 .browse-filters {
   overflow: auto;
@@ -1440,14 +1459,14 @@ ul.disc {
   padding-bottom: 0.425rem;
 }
 .style-filters {
-  border-right: 1px solid #d7d3d1;
   float: left;
-  margin-right: 2%;
-  width: 25%;
+  width: 30.55%;
 }
 .mood-filters {
+  border-left: 1px solid #d7d3d1;
   float: left;
-  width: 73%;
+  width: 69.33%;
+  padding-left: 1.5rem;
 }
 /* Headings
 ================================================== */

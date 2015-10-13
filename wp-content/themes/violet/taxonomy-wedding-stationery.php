@@ -9,8 +9,7 @@ get_header();
 
 //start post loop
 while (have_posts()) : the_post(); ?>
-<h2>Uses: Single-wedding-style.php</h2>
-
+<h2>Uses: taxonomy-wedding-stationery.php</h2>
 <div id="post" class="clearfix">
     <!-- /single-media-wrap -->
     <article class="style-entry clearfix">
@@ -158,7 +157,7 @@ while (have_posts()) : the_post(); ?>
 						<li>Sapien pretium et</li>
 					</ul>
 					
-					<a href="/wedding-stationery/<?php echo $post->post_name ?>/" class="btn btn-default" role="button" >Style Detail Page</a>
+					<a href="/suite/fifth-avenue/" class="btn btn-default" role="button" >Style Detail Page</a>
 				</div>
 	    	 </div>
     	</section>
@@ -485,6 +484,7 @@ while (have_posts()) : the_post(); ?>
 										<h3><?php the_title() ?></h3>
 										<?php echo get_the_term_list( $post->ID, 'mood','<b>Mood:</b> ', ', ' )."<br/>"; ?>
 										<?php echo get_the_term_list( $post->ID, 'style','<b>Style:</b> ', ', ' )."<br/>"; ?>
+										<?php //echo get_the_term_list( $post->ID, 'suite', '<b>Suite:</b> ', ', ' ); ?>
 									</div>
 								</div>
 							</div>

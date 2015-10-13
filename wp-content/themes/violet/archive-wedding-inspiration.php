@@ -9,7 +9,7 @@
 get_header();
 
 // Sidebar Wrap?
-if( of_get_option( 'sidebar_homepage_archive' ) == '1' ) echo '<div id="post" class="home-sidebar">';
+//if( of_get_option( 'sidebar_homepage_archive' ) == '1' ) echo '<div id="post" class="home-sidebar">';
 
 // Start loop
 if(have_posts()) : ?>

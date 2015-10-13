@@ -13,6 +13,7 @@ if( of_get_option( 'sidebar_homepage_archive' ) == '1' ) echo '<div id="post" cl
 
 // Start loop
 if(have_posts()) : ?>
+<h2>Uses: Single.php</h2>
     <div id="archive-wrap" class="clearfix">
         <header id="page-heading">
             <?php $post = $posts[0]; ?>
@@ -40,7 +41,7 @@ if(have_posts()) : ?>
                 if (have_posts()) { 
                     while (have_posts()) {
                         the_post( );
-                        $format = get_post_format();
+                       echo "Post Format: ".$format = get_post_format();
                         if ( false === $format ) $format = 'standard';
                         get_template_part( '/formats/entry', $format );
                     }
