@@ -14,6 +14,10 @@
     padding-left: 25px;
     padding-right: 25px;
   }
+  .stationery-detail {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .design-vision .style-grid .middle-col {
     padding-right: 0;
     padding-left: 0;
@@ -45,6 +49,12 @@
     right: 0;
     margin: 0;
     top: -60px;
+  }
+  .hidden-lg {
+    display: block;
+  }
+  .show-lg {
+    display: none;
   }
   .entry-overlay {
     display: none !important;
@@ -108,14 +118,6 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-  }
-  .sidr.right {
-    left: auto;
-    right: -320px;
-  }
-  .sidr.left {
-    left: -320px;
-    right: auto;
   }
   #navigation {
     background-color: #fff;
@@ -246,6 +248,9 @@
   .admin-bar #header-wrap {
     margin-top: 0px;
   }
+  .carousel {
+    margin-bottom: 2.50rem;
+  }
 }
 /* #Tablet (Landscape) = Design for a width of 720px
 ================================================== */
@@ -272,30 +277,7 @@
     padding-top: 0 !important;
   }
   /*main*/
-  #post {
-    width: 430px;
-  }
-  #sidebar {
-    width: 260px;
-  }
-  .wpex-widget-recent-posts .recent-right {
-    width: 130px;
-  }
-  #footer .wpex-widget-recent-posts .recent-right {
-    width: 130px;
-  }
   /*homepage with sidebar*/
-  .home-sidebar .loop-entry {
-    width: 205px;
-  }
-  .home-sidebar .loop-entry-meta li {
-    display: block;
-    float: none;
-    margin-bottom: 5px;
-  }
-  .home-sidebar .loop-entry-meta li:last-child {
-    margin: 0;
-  }
   /*footer*/
   .footer-box.logo {
     width: 25%;
@@ -339,17 +321,6 @@
     width: 280px;
   }
   /*main*/
-  #post {
-    width: 100%;
-  }
-  #sidebar {
-    width: 100%;
-  }
-  #sidebar {
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 4px solid #ddd;
-  }
   /*header*/
   #header-social {
     position: inherit;

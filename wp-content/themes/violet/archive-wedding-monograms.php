@@ -10,7 +10,7 @@ get_header();
 
 // Start loop
 if(have_posts()) : ?>
-
+<h2>archive-wedding-momogram.php</h2>
 <div id="archive-wrap" class="clearfix">
   <div id="archive-entries-wrap" class="clearfix">
     <header id="page-heading">

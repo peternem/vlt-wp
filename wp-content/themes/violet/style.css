@@ -1090,6 +1090,16 @@ img {
   border-color: #8c8787;
   color: #fff;
 }
+.btn-secondary {
+  background-color: #ffffff;
+  border-color: #303030;
+  color: #303030;
+}
+.btn-secondary:hover {
+  background-color: #ffffff;
+  border-color: #8c8787;
+  color: #8c8787;
+}
 .btn-link {
   font-weight: 300;
   color: #303030;
@@ -1137,6 +1147,12 @@ img {
 }
 .fixed-page .logo-container {
   border: none;
+}
+.hidden-lg {
+  display: none;
+}
+.show-lg {
+  display: block;
 }
 /*clear floats*/
 .remove-margin {
@@ -1350,7 +1366,7 @@ a:focus {
   text-transform: uppercase;
 }
 .typography .mood {
-  padding-bottom: 16px;
+  padding-bottom: 0.571rem;
 }
 .typography .label {
   font-weight: 500;
@@ -1600,6 +1616,46 @@ ul.disc {
 .wedding-style-archive h2 {
   text-transform: uppercase;
 }
+.related-style,
+.explore-styles,
+.stationery-detail {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  overflow: auto;
+}
+.related-style .style-grid,
+.explore-styles .style-grid,
+.stationery-detail .style-grid {
+  border: none;
+}
+.related-style h2,
+.explore-styles h2,
+.stationery-detail h2 {
+  margin-bottom: 0.25rem;
+  padding-top: 1rem;
+}
+.related-style h3,
+.explore-styles h3,
+.stationery-detail h3 {
+  margin-bottom: 1.5rem;
+}
+.related-style h4,
+.explore-styles h4,
+.stationery-detail h4 {
+  margin-bottom: 1rem;
+}
+.related-style .carousel,
+.explore-styles .carousel,
+.stationery-detail .carousel {
+  margin-bottom: 2px;
+}
+.related-style .explore,
+.explore-styles .explore,
+.stationery-detail .explore {
+  padding: 2rem 3rem;
+  border: 1px solid #d7d3d1;
+}
 .style-inspiration {
   background-color: #faf6f0;
   padding-left: 50px;
@@ -1672,6 +1728,27 @@ ul.disc {
   text-align: right;
   text-transform: uppercase;
   padding: 5px;
+}
+.motif-images {
+  margin-bottom: 2rem;
+  overflow: auto;
+}
+.motif-images img {
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 10px;
+  max-width: 75px;
+}
+.sm-palette-image {
+  margin-bottom: 2rem;
+  overflow: auto;
+}
+.sm-palette-image img {
+  float: left;
+}
+.stat-info {
+  margin-bottom: 2rem;
+  overflow: auto;
 }
 .blog-container {
   margin-bottom: 5%;
