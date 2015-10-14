@@ -145,8 +145,7 @@ get_header();
 			</div>
 		</section>
 		<section class="related-style">
-		
-			<div class="col-lg-7 pull-right">
+			<div class="col-lg-7">
 				<div class="row">
 				<h4>Related Stationery Styles</h4>
 					<div class="col-sm-4 col-md-4 col-lg-4">
@@ -178,7 +177,7 @@ get_header();
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-offset-1 col-lg-4 pull-left">
+			<div class="col-lg-offset-1 col-lg-4">
 				<div class="row">
 					<div class="col-lg-12">
 						<p><b>Details- Slide Down UI Panels</b></p>
@@ -192,7 +191,6 @@ get_header();
 			<div class="col-lg-7">
 				<div class="row">
 				<h4>Explore More in This Stationery Styles</h4>
-				
 					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-sm-3 col-md-3 col-lg-3">
