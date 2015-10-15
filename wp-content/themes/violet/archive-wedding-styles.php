@@ -81,7 +81,7 @@ if(have_posts()) : ?>
 	        			<h2 class="grey-hr"><?php the_title(); ?></h2>
 	        			<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
 	        			<p class="description"><?php the_field('suite_description'); ?></p>
-	        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button">CTA</a> 
+	        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button"><span>Make It Yours</span></a> 
 	      							
 					</div>
 					

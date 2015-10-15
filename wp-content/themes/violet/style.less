@@ -745,6 +745,45 @@ ul.disc { list-style: disc outside }
 	float:left
 }
 
+/* bx-pager styling
+================================================== */
+.carousel-pager {
+	a {
+		display: block;
+		&:hover {
+			.overlay {  
+			    background:rgba(0, 0, 0, 0.95);
+			    text-align:center;
+			    opacity:0.50;	  
+			    width:100%;height:100%; 
+			    -webkit-transition: all 0.3s ease-in-out;
+			    -moz-transition: all 0.3s ease-in-out;
+			    -o-transition: all 0.3s ease-in-out;
+			    -ms-transition: all 0.3s ease-in-out;
+			    transition: all 0.3s ease-in-out;
+			}
+		}
+
+	}
+	a.active {	
+		.overlay {  
+		    background:rgba(0, 0, 0, 0.95);
+		    text-align:center;
+		    opacity:0.50;	  
+		    width:100%;height:100%; 
+		    -webkit-transition: all 0.3s ease-in-out;
+		    -moz-transition: all 0.3s ease-in-out;
+		    -o-transition: all 0.3s ease-in-out;
+		    -ms-transition: all 0.3s ease-in-out;
+		    transition: all 0.3s ease-in-out;
+		}
+	}
+    		// &:hover {
+    			// filter: grayscale(0%);
+    			// transition: all 0.2s ease-in-out 0s;
+
+
+}
 
 /* Jumbotron styling
 ================================================== */

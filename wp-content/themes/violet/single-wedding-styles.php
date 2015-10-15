@@ -36,7 +36,12 @@ while (have_posts()) : the_post(); ?>
 	            	<h2 class="grey-hr"><?php the_title(); ?></h2>
 	            	<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', 'Mood: ', ', ' ); ?></p>
 	            	<p class="description"><?php the_field('suite_description'); ?></p>
-	            	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"  class="btn btn-default" role="button">Make this yours</span></a>
+	            	<!-- App Link CTA -->
+	            	<?php
+					if(get_field('app_link_dashboard')) { ?>
+						<a id="#MakeItYours" href="<?php echo get_field('app_link_dashboard');?>" title="<?php echo get_field('app_link_dashboard_label');?>" class="btn btn-default" role="button"><?php echo get_field('app_link_dashboard_label');?></span></a>
+					<?php } 
+					?>
 	    	 	</div>
 	    	 	
 	    	 	<!-- middle-left Col -->
@@ -158,7 +163,7 @@ while (have_posts()) : the_post(); ?>
 						<li>Sapien pretium et</li>
 					</ul>
 					
-					<a href="/wedding-stationery/<?php echo $post->post_name ?>/" class="btn btn-default" role="button" >Style Detail Page</a>
+					<a href="/wedding-stationery/<?php echo $post->post_name ?>/" title="Design This Suite" class="btn btn-default" role="button" >DESIGN THIS SUITE</a>
 				</div>
 	    	 </div>
     	</section>
@@ -186,7 +191,12 @@ while (have_posts()) : the_post(); ?>
 						</article>
 					<?php } ?>
 					<?php wp_reset_postdata(); ?>
-					<a href="#" class="btn btn-default" role="button" >CREATE STYLE GUIDE</a>
+					<!-- App Link CTA -->
+	            	<?php
+					if(get_field('app_link_style_guide')) { ?>
+						<a id="#CreateStyleGuide" href="<?php echo get_field('app_link_style_guide');?>" class="btn btn-default" role="button" title="<?php echo get_field('app_link_style_guide_label');?>"><span><?php echo get_field('app_link_style_guide_label');?></span></a>
+					<?php } 
+					?>
 				</div>
 	    	 	
 	    	 	<!-- middle-left Col -->
@@ -369,7 +379,13 @@ while (have_posts()) : the_post(); ?>
 						</article>
 					<?php } ?>
 					<?php wp_reset_postdata(); ?>
-					<a href="#" class="btn btn-default" role="button" >Design Monogram</a>
+					
+					<!-- App Link Monogram CTA -->
+	            	<?php
+					if(get_field('app_link_monogram')) { ?>
+						<a id="#DesignMonogram" href="<?php echo get_field('app_link_monogram');?>" class="btn btn-default" role="button" title="<?php echo get_field('app_link_monogram_label');?>"><span><?php echo get_field('app_link_monogram_label');?></span></a>
+					<?php } 
+					?>
 				</div>
 		</section>
 		
