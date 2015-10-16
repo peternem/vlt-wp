@@ -31,15 +31,7 @@ get_header();
 	    		</div>
 	    		<!-- Left Col -->
 	    	 	<div class="col-lg-7 ">
-				<style src="http://violetweddings.com/wp-content/themes/violet/css/jquery.bxslider.css"></style>
-				<script src="http://violetweddings.com/wp-content/themes/violet/js/jquery.bxslider.js"></script>
-				<script>
-				jQuery(document).ready(function() {
-					jQuery('.bxslider').bxSlider({
-					  pagerCustom: '#bx-pager'
-					});
-				});
-				</script>
+				
 					<div class="row">
 						<div class="col-md-12 col-lg-12 carousel">
 						<ul class="bxslider">

@@ -3,6 +3,13 @@
 
 	$(document).ready(function() {
 		
+		/* JQuery BxSlider init */
+		jQuery('.bxslider').bxSlider({
+		  pagerCustom: '#bx-pager',
+		  controls: false
+		});
+		
+		
 		$('.btn-filter').click( function() {
 			$('.filter-container').slideToggle( "fast");
 			$(this).find('i').toggleClass('fa-angle-down fa-angle-up');
@@ -10,9 +17,9 @@
 		
 
 		$('.filter-btn').click( function() {
-			
 			$(this).find('i').toggleClass('')
 		});
+		
 		// change is-checked class on buttons
 		$('.moody, .styles').each( function( i, buttonGroup ) {
 			var $buttonGroup = $( buttonGroup );
