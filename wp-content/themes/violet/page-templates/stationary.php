@@ -7,7 +7,6 @@
  * @package upBootWP 0.1
  */
 get_header(); ?>
-<h2>Page Template Stationary.php</h2>
 <header id="page-heading">
 	<h1><?php echo the_title(); ?></h1>
 	<?php echo the_content(); ?>

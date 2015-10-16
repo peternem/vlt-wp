@@ -91,34 +91,20 @@ get_header();
 	            	
 	            	<div class="col-md-12 col-lg-12 motif-images">
 						<p><b>Motif Options</b></p>
-						<?php
-						$imageArray = get_field('motif_image_1'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
-						<?php
-						$imageArray = get_field('motif_image_2'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
-						<?php
-						$imageArray = get_field('motif_image_3'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
-						<?php
-						$imageArray = get_field('motif_image_4'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
+						<?php 
+							$allowed = array("motif_image_1", "motif_image_2", "motif_image_3", "motif_image_4");
+							if( $allowed ) {
+								foreach( $allowed as $yy ) { 
+									$imageArray = get_field($yy); // Array returned by Advanced Custom Fields
+									$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+									$imageURL = $imageArray['url']; // Grab the full size version
+									//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+									?>
+									<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>
+				      				<?php 
+								}	
+							} 
+							?>
 					</div>
 					<div class="col-md-12 col-lg-12 sm-palette-image">
 						<p><b>Designer Colors</b></p>
@@ -141,136 +127,6 @@ get_header();
 				</div>
 			</div>
 		</section>    
-    
-    
-    
-    
-		<section class="stationery-detail">
-	    	<div class="row style-grid">
-	    		<!-- Page Title for mobile and tablets hidden on desktop -->
-	    		<div class="col-lg-12 hidden-lg hide">
-	    			<h2><?php echo $post->post_title; ?></h2>
-					<h3>Wedding Stationery</h3>
-	    		</div>
-	    		<!-- Left Col -->
-	    	 	<div class="col-lg-7 ">
-
-					<div class="row">
-						<div class="col-md-12 col-lg-12 carousel">
-	    	 	
-							<?php
-							$imageArray = get_field('suite_image'); // Array returned by Advanced Custom Fields
-							$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-							$imageURL = $imageArray['url']; // Grab the full size version
-							//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-							?>
-							<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col"> </a>
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3">
-							<?php
-							$imageArray = get_field('suite_image'); // Array returned by Advanced Custom Fields
-							$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-				 			$imageURL = $imageArray['url']; // Grab the full size version
-							$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-							?>
-							<a href="<?php echo $imageURL; ?>"> <img class="img-responsive" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>
-							
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3">
-							<?php
-							$imageArray = get_field('stationary_suite_2_image'); // Array returned by Advanced Custom Fields
-							$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-							$imageURL = $imageArray['url']; // Grab the full size version
-							$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-							?>
-							<a href="<?php echo $imageURL; ?>"><img class="img-responsive" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>
-						
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3">
-							<?php
-							$imageArray = get_field('stationery_suite_image_3'); // Array returned by Advanced Custom Fields
-							$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-							$imageURL = $imageArray['url']; // Grab the full size version
-							$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-							?>
-							<a href="<?php echo $imageURL; ?>"><img class="img-responsive" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col"></a>
-							
-						</div>
-						<div class="col-sm-3 col-md-3 col-lg-3">
-							<?php
-							$imageArray = get_field('stationary_suite_image_4'); // Array returned by Advanced Custom Fields
-							$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-							$imageURL = $imageArray['url']; // Grab the full size version
-							$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-							?>
-							<a href="<?php echo $imageURL; ?>" ><img class="img-responsive" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col"></a>
-							
-						</div>
-					</div>
-				</div>
-				<!-- Right Col -->
-				<div class="col-lg-offset-1 col-lg-4 typography">
-					<div class="col-md-12 col-lg-12 show-lg">
-						<h2><?php echo $post->post_title; ?></h2>
-						<h4>Wedding Stationery</h4>
-						
-					</div>
-					<p class="mood"><?php echo get_the_term_list( $post->ID, 'style', '<b>Style:</b> ', ', ' ); ?></p>
-	            	<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<b>Mood:</b>', ', ' ); ?></p>
-	            	<div class="description"><?php the_field('stationery_suite_description'); ?></div>
-	            	
-	            	<div class="col-md-12 col-lg-12 motif-images">
-						<p><b>Motif Options</b></p>
-						<?php
-						$imageArray = get_field('motif_image_1'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
-						<?php
-						$imageArray = get_field('motif_image_2'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
-						<?php
-						$imageArray = get_field('motif_image_3'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
-						<?php
-						$imageArray = get_field('motif_image_4'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>  
-					</div>
-					<div class="col-md-12 col-lg-12 sm-palette-image">
-						<p><b>Designer Colors</b></p>
-						<?php
-						$imageArray = get_field('small_palette_image'); // Array returned by Advanced Custom Fields
-						$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-			 			$imageURL = $imageArray['url']; // Grab the full size version
-						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>
-					</div>
-					<div class="col-md-12 col-lg-12 stat-info">
-						<!-- App Link CTA -->
-	            	<?php
-					if(get_field('app_link_style_stationery')) { ?>
-						<p><a id="#CreateStyleGuide" href="<?php echo get_field('app_link_style_stationery');?>" class="btn btn-default" role="button" title="<?php echo get_field('app_link_style_stationery_label');?>"><span><?php echo get_field('app_link_style_stationery_label');?></span></a></p>
-					<?php } ?>
-						
-					</div>
-				</div>
-			</div>
-		</section>
 		<section class="related-style">
 			<div class="col-lg-7">
 				<div class="row">

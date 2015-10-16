@@ -19,6 +19,7 @@
 
 
 @import  "/less/variables.less";
+@import  "/less/mixins.less";
 @import  "/less/grid.less";
 @import  "/less/reset.less";
 
@@ -198,7 +199,7 @@ img {
 .style-grid {
 	border: 1px solid @global-color-soft-grey;
 	.text-col {
-		padding: 1.875rem;
+		padding: 1.875rem 1.875rem 1.875rem 0;
 		text-align: center;
 	}
 }
@@ -356,9 +357,9 @@ a:focus { outline: 0 }
 		border:1px solid #8c8787; 
 		border-right:0;
 	}
-	h2 {
+	h1 {
 	}
-	h2.grey-hr:after {
+	h1.grey-hr:after {
 		display: block;
 		margin: 1.571rem auto;
 		width: 60px;
@@ -378,16 +379,11 @@ a:focus { outline: 0 }
 	.description { 
 		line-height:1.5rem;
 	}
+	.wedding-style {
+		margin-bottom: 0.35rem;
+	}
 }
 
-.wedding-style {
-	font-family:@global-heading4-font-family;
-	font-style:italic;
-	color: @global-heading4-color;
-	font-size:@global-heading4-font-size;
-	letter-spcing: @global-heading4-letter-space;
-	line-height: @global-heading4-line-height;
-}
 
 /* Lists
 ================================================== */
@@ -706,11 +702,6 @@ ul.disc { list-style: disc outside }
 }
 
 .style-grid {
-	.hide {
-	   
-	}
-	.middle-left {
-	}
 	.middle-right .col-lg-12, .middle-left .col-lg-12 {
 	    padding-bottom: 2px;
 	    padding-top: 2px;
@@ -752,37 +743,15 @@ ul.disc { list-style: disc outside }
 		display: block;
 		&:hover {
 			.overlay {  
-			    background:rgba(0, 0, 0, 0.95);
-			    text-align:center;
-			    opacity:0.50;	  
-			    width:100%;height:100%; 
-			    -webkit-transition: all 0.3s ease-in-out;
-			    -moz-transition: all 0.3s ease-in-out;
-			    -o-transition: all 0.3s ease-in-out;
-			    -ms-transition: all 0.3s ease-in-out;
-			    transition: all 0.3s ease-in-out;
+			    .overlay-filter();
 			}
 		}
-
 	}
 	a.active {	
 		.overlay {  
-		    background:rgba(0, 0, 0, 0.95);
-		    text-align:center;
-		    opacity:0.50;	  
-		    width:100%;height:100%; 
-		    -webkit-transition: all 0.3s ease-in-out;
-		    -moz-transition: all 0.3s ease-in-out;
-		    -o-transition: all 0.3s ease-in-out;
-		    -ms-transition: all 0.3s ease-in-out;
-		    transition: all 0.3s ease-in-out;
+		    .overlay-filter();
 		}
 	}
-    		// &:hover {
-    			// filter: grayscale(0%);
-    			// transition: all 0.2s ease-in-out 0s;
-
-
 }
 
 /* Jumbotron styling

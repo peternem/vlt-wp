@@ -9,8 +9,6 @@ get_header();
 
 //start post loop
 while (have_posts()) : the_post(); ?>
-<h2>Uses: Single-wedding-style.php</h2>
-
 <div id="post" class="clearfix">
     <!-- /single-media-wrap -->
     <article class="style-entry clearfix">
@@ -18,7 +16,7 @@ while (have_posts()) : the_post(); ?>
 	    	<div class="row style-grid">
 	    	 	<!-- Left Col -->
 	    	 	<div class="col-sm-6 col-md-3 col-lg-3 text-col typography">
-					<p class="wedding-style">
+					<h4 class="wedding-style">
 						<?php 
 						//Used later in the Blog section at bottom of page 
 						$curr_PostID = $post->ID;
@@ -32,9 +30,9 @@ while (have_posts()) : the_post(); ?>
 							// Used in blog section
 							$current_page_term_slug =  $term->slug;
 						}?>
-					</p>
-	            	<h2 class="grey-hr"><?php the_title(); ?></h2>
-	            	<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', 'Mood: ', ', ' ); ?></p>
+					</h4>
+	            	<h1 class="grey-hr"><?php the_title(); ?></h1>
+	            	<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<b>Mood:</b> ', ', ' ); ?></p>
 	            	<p class="description"><?php the_field('suite_description'); ?></p>
 	            	<!-- App Link CTA -->
 	            	<?php
@@ -153,16 +151,14 @@ while (have_posts()) : the_post(); ?>
 						</article>
 					<?php } ?>
 					<?php wp_reset_postdata(); ?>
-					<p><strong>Includes:</strong></p>
-					<ul class="items-list">
-						<li>Quisque et gravida nisl</li>
-						<li>Vestibulum pellentesque</li>
-						<li>Commodo libero vitae</li>
-						<li>LZacus tempor</li>
-						<li>Consectetur eros in</li>
-						<li>Sapien pretium et</li>
-					</ul>
-					
+					<?php
+						if(get_field('wedding_suite_includes')) {
+							echo '<div class="wedding-includes">';
+							echo '<p><strong>' . get_field('wedding_suite_includes_label') . '</strong></p>';
+							echo '<div class="wedding-includes">' . get_field('wedding_suite_includes') . '</div>';
+							echo '</div>';
+						}
+					?>
 					<a href="/wedding-stationery/<?php echo $post->post_name ?>/" title="Design This Suite" class="btn btn-default" role="button" >DESIGN THIS SUITE</a>
 				</div>
 	    	 </div>
@@ -512,7 +508,7 @@ while (have_posts()) : the_post(); ?>
 		</section>
     </article>
     <article class="entry clearfix"> 
-      <?php the_content(); ?>
+      <?php //the_content(); ?>
     </article>
     <!-- /entry -->
 </div>

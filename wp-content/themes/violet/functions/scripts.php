@@ -26,9 +26,6 @@ function wpex_load_scripts() {
 	if( of_get_option('responsive') ) {
 		wp_enqueue_style('responsive', get_template_directory_uri() . '/css/responsive.css', false, filemtime(get_stylesheet_directory(). '/css/font-awesome.css'));
 	}
-	
-	
-	
 		
 	/*******
 	*** Javascript
@@ -46,6 +43,7 @@ function wpex_load_scripts() {
 	wp_enqueue_script('wpex-plugins', WPEX_JS_DIR .'/plugins.js', array('jquery'), '', true);
 	wp_enqueue_script('isotope-plugins', WPEX_JS_DIR .'/isotope.pkgd.min.js', array('jquery'), '2.2.2', true);
 	wp_enqueue_script('isotope-script', WPEX_JS_DIR .'/isotope-script.js', array('jquery'), '', true);
+	wp_enqueue_script('bxalider-script', WPEX_JS_DIR .'/jquery.bxslider.js', array('jquery'), '', true);
 	//initialize
 	wp_enqueue_script('wpex-global', WPEX_JS_DIR .'/global.js', array('jquery','wpex-plugins'), '1.0', true);
 	

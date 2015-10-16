@@ -1122,7 +1122,7 @@ img {
   border: 1px solid #d7d3d1;
 }
 .style-grid .text-col {
-  padding: 1.875rem;
+  padding: 1.875rem 1.875rem 1.875rem 0;
   text-align: center;
 }
 .isotope,
@@ -1354,7 +1354,7 @@ a:focus {
   border: 1px solid #8c8787;
   border-right: 0;
 }
-.typography h2.grey-hr:after {
+.typography h1.grey-hr:after {
   display: block;
   margin: 1.571rem auto;
   width: 60px;
@@ -1374,13 +1374,8 @@ a:focus {
 .typography .description {
   line-height: 1.5rem;
 }
-.wedding-style {
-  font-family: "Playfair Display", sans-serif;
-  font-style: italic;
-  color: #303030;
-  font-size: 0.875rem;
-  letter-spcing: 0.025em;
-  line-height: 24px;
+.typography .wedding-style {
+  margin-bottom: 0.35rem;
 }
 /* Lists
 ================================================== */
@@ -1808,11 +1803,11 @@ ul.disc {
   opacity: 0.50;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: background 500ms ease-in-out;
+  -moz-transition: background 500ms ease-in-out;
+  -o-transition: background 500ms ease-in-out;
+  -ms-transition: background 500ms ease-in-out;
+  transition: background 0.13s ease-in-out;
 }
 .carousel-pager a.active .overlay {
   background: rgba(0, 0, 0, 0.95);
@@ -1820,11 +1815,11 @@ ul.disc {
   opacity: 0.50;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: background 500ms ease-in-out;
+  -moz-transition: background 500ms ease-in-out;
+  -o-transition: background 500ms ease-in-out;
+  -ms-transition: background 500ms ease-in-out;
+  transition: background 0.13s ease-in-out;
 }
 /* Jumbotron styling
 ================================================== */
