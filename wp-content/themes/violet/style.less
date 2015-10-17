@@ -274,20 +274,22 @@ address{letter-spacing: 1px; margin: 20px 0 }
 	.style-grid {
 		border: none;	
 	}
-	.outerbox {
-	    padding: 40px 0;
-	}
 }
 
+.single-wedding-styles #post {
+	margin-top: 0;
+}
+#archive-wrap, #post {
+	margin-top: 40px;
+}
 .outerbox{
 	width: 100%;
 	max-width: @global-page-max-width;
 	margin: 0 auto;
-	padding: 40px 50px;
+	padding: 0 50px 40px;
 }
 
 #home-wrap, #search-entries-wrap, #archive-entries-wrap { position: relative; }
-//#post { position: relative; float: left; width: 660px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 #sidebar{ width: 320px; }
 
@@ -396,17 +398,20 @@ ul.disc { list-style: disc outside }
 // ul ul, ul ol, ol ol, ol ul { margin: 4px 0 5px 30px }
 // ul ul li, ul ol li, ol ol li, ol ul li { margin-bottom: 6px }
 
-.items-list {
-	list-style: disc;
-	overflow: auto;
-	margin-bottom: 1.50rem;
-	> li {
-	    float: left;
-	    list-style: outside none disc;
-	    margin-left: 0.95rem;
-	    width: 46.25%;
-	}
+.wedding-includes {
+	ul {
+		list-style: disc;
+		overflow: auto;
+		margin-bottom: 1.50rem;
+		> li {
+		    float: left;
+		    list-style: outside none disc;
+		    margin-left: 0.95rem;
+		    width: 44.25%;
+		}
+	}	
 }
+
 .filters.moody, .filters.styles  {
 	max-width: 100%;
 	overflow: auto;
@@ -554,6 +559,11 @@ ul.disc { list-style: disc outside }
     padding-top: 25px;
     overflow: auto;
 }
+
+.stationery-detail {
+    padding-top: 0;
+}
+
 .related-style, .explore-styles, .stationery-detail {
     .style-grid  {
     	border: none;
@@ -607,7 +617,7 @@ ul.disc { list-style: disc outside }
 			padding-left: 1.5%;
 			.col-md-12 {
 				h4.text-center {
-			    	margin-bottom: 1.25rem;
+			    	margin-bottom: 0;
 			    	margin-top: 1.25rem;
 			   	}
 			}
@@ -616,10 +626,32 @@ ul.disc { list-style: disc outside }
 			padding-right: 1.5%;
 			padding-left: 1.5%;
 		}
+		.typography {
+			text-align: left;
+		}
+	}
+	.img-responsive {
+		&.swatch {
+		    margin: 0 auto;
+		    max-width: 75%;
+		}
+		&.create-image {
+		    margin:0.75rem auto 0;
+		    width: 50px;
+		}
 	}
 }
 .custom-monogram {
 	padding: 50px;
+	.style-grid {
+		.typography {
+			text-align: left;
+		}
+		.middle-right {
+		    padding-left: 4%;
+		    padding-right: 4%;
+		}
+	}
 }
 
 .single-wedding-styles .pinboard {
@@ -659,18 +691,26 @@ ul.disc { list-style: disc outside }
 }
 
 .motif-images {
-	margin-bottom: 2rem;
+	margin-bottom: 1.571rem;
 	overflow: auto;
-
+	li {
+		float: left;
+		margin-right: 10px;
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+	a {
+		display:block;
+	}
 	img {
 		border: 1px solid #ccc;
-	    float: left;
-	    margin-right: 10px;
+	   
 	    max-width: 75px;
 	}	
 }
 .sm-palette-image {
-	margin-bottom: 2rem;
+	margin-bottom: 2.143rem;
 	overflow: auto;
 
 	img {
@@ -683,9 +723,18 @@ ul.disc { list-style: disc outside }
 }
 
 .blog-container {
-    margin-bottom: 5%;
+    margin-bottom: 3rem;
     overflow: auto;
     width: 100%;
+    .blog-post {
+	    > h4 {
+		    margin-bottom: 0.35rem;
+		}
+		> p {
+		    padding-bottom: 0.25rem;
+		}    	
+    }
+
 }
 
 .blog-img {
@@ -699,7 +748,9 @@ ul.disc { list-style: disc outside }
     float: left;
     padding: 0 1.786rem;
     width: 83%;
+
 }
+
 
 .style-grid {
 	.middle-right .col-lg-12, .middle-left .col-lg-12 {
@@ -736,12 +787,16 @@ ul.disc { list-style: disc outside }
 	float:left
 }
 
-/* bx-pager styling
+/* BX Carousel styling
 ================================================== */
 .carousel-pager {
+	margin-bottom: 2rem;
 	a {
 		display: block;
+		text-align:center;
+		
 		&:hover {
+			text-decoration: none !important;
 			.overlay {  
 			    .overlay-filter();
 			}
@@ -752,6 +807,36 @@ ul.disc { list-style: disc outside }
 		    .overlay-filter();
 		}
 	}
+	a .fa {
+	    display: none;
+	}
+}
+
+.carousel {
+	postion: relative;
+}
+
+.bx-wrapper {
+	position: relative;
+}
+	
+#slider-prev, #slider-next {
+    position: absolute;
+    top:45%;
+    z-index: 99999;
+    .fa {
+	    color: #8c8787;
+	    font-size: 2rem;
+	    padding: 1rem;
+    }
+}
+
+#slider-prev {
+	left: 0
+}
+
+#slider-next {
+	right: 0
 }
 
 /* Jumbotron styling
@@ -1053,7 +1138,7 @@ ul.disc { list-style: disc outside }
 
 
 /*back to top*/
-#toplink{ display: none; position: fixed; bottom: 20px; right: 20px; width: 30px; height: 30px; line-height: 28px; text-align: center; background: #333; color: #fff; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; opacity: 0.8; -moz-opacity: 0.8; -webkit-opacity: 0.8; }
+#toplink{ display: none; position: fixed; bottom: 20px; right: 20px; width: 30px; height: 30px; line-height: 28px; text-align: center; background: #333; color: #fff; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; opacity: 0.8; -moz-opacity: 0.8; -webkit-opacity: 0.8; z-index: 9999; }
 #toplink:hover{  opacity: 1; -moz-opacity: 1; -webkit-opacity: 1; }
 
 /* Social
@@ -1129,10 +1214,10 @@ div.wpcf7-mail-sent-ng { margin: 0; padding: 10px; background: #ffe9e9; color: #
 .sharing-image {
     margin: 1.25rem auto 0;
 }
-.create-image {
-    margin: 0 auto;
-    width: 275px;
-}
+// .create-image {
+    // margin: 0 auto;
+    // width: 275px;
+// }
 .monogram-svg {
     margin: 10% auto;
     width: 145px;

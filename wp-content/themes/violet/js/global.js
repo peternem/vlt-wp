@@ -6,7 +6,12 @@
 		/* JQuery BxSlider init */
 		jQuery('.bxslider').bxSlider({
 		  pagerCustom: '#bx-pager',
-		  controls: false
+//		  nextSelector: '#slider-next',
+//		  prevSelector: '#slider-prev',
+//		  nextText: '<i class="fa fa-chevron-right"></i>',
+//		  prevText: '<i class="fa fa-chevron-left"></i>'
+		  controls: false,
+		  //pager: true
 		});
 		
 		

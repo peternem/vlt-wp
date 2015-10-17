@@ -53,7 +53,10 @@ get_header();
 							?>
 							  
 						</ul>
+							<div id="slider-prev"></div> 
+						  	<div id="slider-next"></div>
 						</div>
+						
 						<div id="bx-pager" class="col-md-12 col-lg-12 carousel-pager">
 							 <div class="row">
 							 	<?php $postx_counter = -1; ?>
@@ -61,13 +64,18 @@ get_header();
 								 if( $allowed ) {
 									foreach( $allowed as $xx ) { 
 										$postx_counter++;
-					      				echo "<div class=\"col-sm-3 col-md-3 col-lg-3\">";
+					      				echo "<div class=\"col-xs-3 col-sm-3 col-md-3 col-lg-3 pager-col\">";
 										$imageArray = get_field($xx); // Array returned by Advanced Custom Fields
 										$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
 										$imageURL = $imageArray['url']; // Grab the full size version
-										//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+										$imageThumbURL = $imageArray['sizes']['bx-carousel-thumb']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 										?>
-										<a data-slide-index="<?php echo $postx_counter ?>" href="" <?php if($postx_counter==0){echo 'class="active"';}?> ><div class="overlay"><img src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col"></div></a>
+										<a data-slide-index="<?php echo $postx_counter ?>" href="" <?php if($postx_counter==0){echo 'class="active"';}?> >
+											<div class="overlay">
+												<i class="fa fa-circle"></i>
+												<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="col"/>
+											</div>
+										</a>
 					      				<?php 
 					      				echo "</div>";
 									}	
@@ -76,7 +84,6 @@ get_header();
 							</div>
 						</div>
 					</div>
-
 				</div>
 				<!-- Right Col -->
 				<div class="col-lg-offset-1 col-lg-4 typography">
@@ -91,6 +98,7 @@ get_header();
 	            	
 	            	<div class="col-md-12 col-lg-12 motif-images">
 						<p><b>Motif Options</b></p>
+						<ul>
 						<?php 
 							$allowed = array("motif_image_1", "motif_image_2", "motif_image_3", "motif_image_4");
 							if( $allowed ) {
@@ -100,11 +108,12 @@ get_header();
 									$imageURL = $imageArray['url']; // Grab the full size version
 									//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 									?>
-									<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>
+									<li><a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a></li>
 				      				<?php 
 								}	
 							} 
 							?>
+							</ul>
 					</div>
 					<div class="col-md-12 col-lg-12 sm-palette-image">
 						<p><b>Designer Colors</b></p>

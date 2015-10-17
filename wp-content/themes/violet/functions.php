@@ -172,6 +172,7 @@ if( ! function_exists( 'wpex_new_excerpt_length' ) ) {
  */
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'insp-1-472x651' , 472, 651, true);
+add_image_size( 'bx-carousel-thumb' , 283, 192, true);
 
 /*--------------------------------------*/
 /* Useful functions
@@ -183,7 +184,7 @@ add_filter('widget_text', 'do_shortcode');
 //set a default post excerpt length
 if( ! function_exists( 'wpex_new_excerpt_length' ) ) {
 	function wpex_new_excerpt_length($length) {
-		return of_get_option( 'excerpt_length', '15' );
+		return of_get_option( 'excerpt_length', '30' );
 	}
 }
 add_filter( 'excerpt_length', 'wpex_new_excerpt_length' );

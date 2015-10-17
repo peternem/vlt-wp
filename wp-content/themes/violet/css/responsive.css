@@ -2,7 +2,7 @@
 ================================================== */
 @media only screen and (max-width: 1280px) {
   .outerbox {
-    padding: 80px 25px;
+    padding: 40px 30px;
   }
   .style-inspiration,
   .design-stationery,
@@ -395,12 +395,32 @@
 /* Mobile (portait) = Design for a max-width of 480px
 ================================================== */
 @media only screen and (max-width: 480px) {
+  .carousel-pager .row {
+    text-align: center;
+    max-width: 100%;
+    margin: 0px auto;
+  }
+  .carousel-pager .pager-col {
+    width: 1.10rem;
+    margin: 0px 0%;
+    float: none;
+    display: inline-block;
+  }
+  .carousel-pager img {
+    display: none;
+  }
+  .carousel-pager a.active .overlay {
+    background: none;
+  }
+  .carousel-pager a .fa {
+    display: block;
+  }
   /*isotope grid */
   .gutter-sizer {
     width: 2%;
   }
   .grid-item {
-    width: 48.75%;
+    width: 100%;
   }
   .loop-entry {
     width: 48%;
@@ -469,5 +489,27 @@
   }
   body.no-sidebar #author-bio {
     width: 315px;
+  }
+}
+/* Mobile (portait) = Design for a max-width of 380px
+================================================== */
+@media only screen and (max-width: 380px) {
+  .motif-images li {
+    margin-right: 5px;
+  }
+  .motif-images img {
+    max-width: 60px;
+  }
+  .style-grid .text-col {
+    padding: 1.875rem 0;
+  }
+  .design-stationery .text-col {
+    padding-left: 0;
+    text-align: center;
+  }
+  .wedding-includes ul > li {
+    margin-left: 15px;
+    width: 100%;
+    text-align: left;
   }
 }

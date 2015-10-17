@@ -155,7 +155,7 @@ while (have_posts()) : the_post(); ?>
 						if(get_field('wedding_suite_includes')) {
 							echo '<div class="wedding-includes">';
 							echo '<p><strong>' . get_field('wedding_suite_includes_label') . '</strong></p>';
-							echo '<div class="wedding-includes">' . get_field('wedding_suite_includes') . '</div>';
+							echo get_field('wedding_suite_includes');
 							echo '</div>';
 						}
 					?>
@@ -239,7 +239,7 @@ while (have_posts()) : the_post(); ?>
 					 		$imageThumbURL = $imageArray['url'];
 					 		//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 					 		?>
- 		          			<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="ing-responsive swatch">
+ 		          			<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="img-responsive swatch">
  		          			
 						</div>
 						<div class="col-sm-6 col-md-6 col-lg-6">
@@ -256,7 +256,7 @@ while (have_posts()) : the_post(); ?>
 					<div class="row">
 						<div class="col-md-12">
 							<h4 class="text-center">Or Create Your Own</h4>
-						 	<img src="/wp-content/uploads/2015/10/styledetail_palette_empty.png" class="img-responsive create-image"/>
+						 	<img src="/wp-content/uploads/2015/10/icon_add.svg" class="img-responsive create-image"/>
 						</div>
 					</div>
 				</div>
@@ -267,13 +267,12 @@ while (have_posts()) : the_post(); ?>
 					<div class="row">
 						<div class="col-md-12 col-lg-12">
 							 <?php
-						 		$imageArray = get_field('sharing_image'); // Array returned by Advanced Custom Fields
-						 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-						 		$imageThumbURL = $imageArray['url'];
+						 		$imageArrayX = get_field('sharing_image'); // Array returned by Advanced Custom Fields
+						 		$imageAlt = $imageArrayX['alt']; // Grab, from the array, the 'alt'
+						 		$imageThumbURL = $imageArrayX['url'];
 						 		//$imageThumbURL = $imageArray['sizes']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 						 		?>
-						 		
-						        <img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="img-responsive sharing-image">
+						        <a href="<?php echo $imageThumbURL; ?>" rel="lightbox"> <img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="col mg-responsive sharing-image"> </a>
 						</div>
 					</div>
 				</div>
@@ -285,64 +284,32 @@ while (have_posts()) : the_post(); ?>
     	<section class="custom-monogram">
 			<div class="row style-grid">
 				<!-- left Col -->
-	    	 	<div class="col-sm-12 col-md-12 col-lg-4 style-col left-col">
+	    	 	<div class="col-sm-12 col-md-12 col-lg-3 style-col left-col">
 	    	 		<div class="row">
-	    	 			<div class="col-sm-6 col-md-6 col-lg-6">
-							
-							<?php
-					 		$imageArray = get_field('logo_1'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url'];
-					 		//$imageThumbURL = $imageArray['sizes']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-					 		
-					        <img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="img-responsive monogram-svg">
-
-						</div>
-	    	 			<div class="col-sm-6 col-md-6 col-lg-6">
-	    	 			
-	    	 				<?php
-					 		$imageArray = get_field('logo_2'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url'];
-					 		//$imageThumbURL = $imageArray['sizes']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-						 		
-						    <img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="img-responsive monogram-svg">
-	    	 			
-	    	 			</div>
-	    	 			<div class="col-sm-6 col-md-6 col-lg-6">
-	    	 			
-	    	 				<?php
-					 		$imageArray = get_field('logo_3'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url'];
-					 		//$imageThumbURL = $imageArray['sizes']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-						 		
-						    <img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="img-responsive monogram-svg">
-	    	 			
-	    	 			</div>
-	    	 			<div class="col-sm-6 col-md-6 col-lg-6">
-	    	 			
-	    	 				<?php
-					 		$imageArray = get_field('logo_4'); // Array returned by Advanced Custom Fields
-					 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
-					 		$imageThumbURL = $imageArray['url'];
-					 		//$imageThumbURL = $imageArray['sizes']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
-					 		?>
-						 		
-						    <img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="img-responsive monogram-svg">
-	    	 				
-	    	 			</div>
+	    	 			<?php 
+							$allowed = array("logo_1", "logo_2", "logo_3", "logo_4");
+							if( $allowed ) {
+								foreach( $allowed as $xx ) { 
+				      				echo '<div class="col-sm-6 col-md-6 col-lg-6">';
+									$imageArray = get_field($xx); // Array returned by Advanced Custom Fields
+									$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+									$imageURL = $imageArray['url']; // Grab the full size version
+									//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
+									?>
+									<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col svg"> </a>
+				      				<?php 
+				      				echo "</div>";
+								}	
+							} 
+						?>
 	    	 			<div class="col-md-12 col-lg-12">
-							<h4 class="text-center">Logos in This Style</h4>
+							<p class="text-center">Logos in this style</p>
 		    	 		</div>	
 		    	 	</div>
 		    	 </div>
 	    	 	<!-- middle-right Col -->
 				
-				<div class="col-sm-6 col-md-3 col-lg-4 style-col middle-right">
+				<div class="col-sm-6 col-md-3 col-lg-6 style-col middle-right">
 					<div class="row">
 						<div class="col-md-12 col-lg-12">
 							<?php
@@ -357,7 +324,7 @@ while (have_posts()) : the_post(); ?>
 				</div>
 	    	 	<!-- right Col -->
 	    	 	
-	    	 	<div class="col-sm-12 col-md-12 col-lg-4 text-col typography">
+	    	 	<div class="col-sm-12 col-md-12 col-lg-3 text-col typography">
 					<?php
 					$my_query = new WP_Query('name=create-a-custom-wedding-monograms');
 					while($my_query->have_posts()){
@@ -395,7 +362,7 @@ while (have_posts()) : the_post(); ?>
 	    	 				<h3>What We're Pinning</h3>
 	    	 				<!-- Pinboard -->
 	    	 				<aside class="pinboard">
-								<a data-pin-do="embedBoard" href="http://www.pinterest.com/violetwedding/<?php the_field('pinterest_board'); ?>/" data-pin-scale-width="80" data-pin-scale-height="320" data-pin-board-width="400">See on Pinterest</a> 
+								<a data-pin-do="embedBoard" href="http://www.pinterest.com/violetwedding/<?php the_field('pinterest_board'); ?>/" data-pin-scale-width="80" data-pin-scale-height="320" data-pin-board-width="500">See on Pinterest</a> 
           						<!-- Please call pinit.js only once per page --> 
 								<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script> 
 							</aside>
@@ -405,12 +372,12 @@ while (have_posts()) : the_post(); ?>
 	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
 	    	 		<div class="row">
 	    	 			<div class="col-lg-12">
-	    	 			<h3>From The Blog</h3>
+	    	 			<h3>From Our Blog</h3>
 	    	 			
 	    	 			<?php 
 	    	 			$terms = get_terms('style');
 	    	 			foreach ($terms as $term) {
-	    	 				$wpq = array ('taxonomy'=>'style','term'=>$term->slug, 'posts_per_page' 	=> 6,);
+	    	 				$wpq = array ('taxonomy'=>'style','term'=>$term->slug, 'posts_per_page' 	=> 3,);
 	    	 				$myquery = new WP_Query ($wpq);
 	    	 				$article_count = $myquery->post_count;
 	    	 				
@@ -424,12 +391,12 @@ while (have_posts()) : the_post(); ?>
 		    	 						if($post->ID != $curr_PostID) { ?>
 		    	 							<li class="blog-container">
 		    	 							<div class="blog-img">
-												<?php the_post_thumbnail('thumbnail', array( 'class' => 'aga-img img-responsive' )); ?> 
+												<a href="<?php echo $post->post_name; ?>"><?php the_post_thumbnail('thumbnail', array( 'class' => 'aga-img img-responsive' )); ?></a>
 											</div>
 											<div class="blog-post">
 												<h4><a href="<?php echo $post->post_name; ?>"><?php echo $post->post_title; ?></a></h4>
 												<?php the_excerpt(); ?>
-		    	 								<?php echo get_the_term_list( $post->ID, 'style','<b>Related Styles:</b> ', ', ' )."<br/>"; ?>
+		    	 								<?php //echo get_the_term_list( $post->ID, 'style','<b>Related Styles:</b> ', ', ' )."<br/>"; ?>
 												<?php //echo get_the_term_list( $post->ID, 'suite', '<b>Suite:</b> ', ', ' ); ?>
 		    	 							</div>
 		    	 							</li>

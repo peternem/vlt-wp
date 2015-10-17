@@ -41,7 +41,7 @@
 	//WordPress head hook <== DO NOT DELETE ME
 	wp_head(); ?>
 <?php wpex_hook_head_bottom(); ?>
-<script src="http://violetweddings.com/wp-content/themes/violet/js/jquery.bxslider.js"></script>
+
 
 </head>
 <!-- /end head -->
