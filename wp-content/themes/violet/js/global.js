@@ -6,12 +6,7 @@
 		/* JQuery BxSlider init */
 		jQuery('.bxslider').bxSlider({
 		  pagerCustom: '#bx-pager',
-//		  nextSelector: '#slider-next',
-//		  prevSelector: '#slider-prev',
-//		  nextText: '<i class="fa fa-chevron-right"></i>',
-//		  prevText: '<i class="fa fa-chevron-left"></i>'
 		  controls: false,
-		  //pager: true
 		});
 		
 		
@@ -47,17 +42,6 @@
 			$('#navigation').toggleClass('test height');
 			$('body').toggleClass('fixed-page');
 		});
-//		$('.mobile-menu-toggle').sidr({
-//			name: 'sidr-main',
-//			source: '#sidr-close, #navigation',
-//			side: 'left',
-//			displace: false
-//		});
-//		
-//		$(".sidr-class-toggle-sidr-close").click( function() {
-//			$.sidr('close', 'sidr-main');
-//			preventDefaultEvents: false
-//		});
 		
 		/*lightbox*/
 		$("a.fancybox").fancybox({
@@ -95,90 +79,11 @@
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top}, 'normal');
 		});
-
-//		$('#single-media-wrap').imagesLoaded(function(){
-//			$('.flexslider-gallery').flexslider({
-//				animation: "fade",
-//				controlNav: false,
-//				slideshow: true,
-//				smoothHeight: true,
-//				slideDirection: "horizontal",
-//				prevText: "",
-//				nextText: "",
-//				start: function(slider) {
-//					$('.flexslider-gallery li img').click(function(event){
-//						event.preventDefault();
-//						slider.flexAnimate(slider.getTarget("next"));
-//					});
-//				}
-//			});
-//		});
-
 	});
 
 	$(window).load(function() {
 
 		$('div#load-more').addClass('display-element');
-		
-		
-//		$('#wpex-grid-wrap, .single .post-video').animate({opacity:1},'fast');
-//		
-//		$('.grid-loader').hide();
-//		
-//		var $container = $('#wpex-grid-wrap');
-//		$container.imagesLoaded(function(){
-//			$container.isotope({
-//				itemSelector: '.loop-entry',
-//				transformsEnabled: false,
-//				animationOptions: {
-//					duration: 400,
-//					easing: 'swing',
-//					queue: false
-//				}
-//			});
-//		});
-		
-//		$(window).resize(function () {
-//			var $container = $('#wpex-grid-wrap');
-//			$container.isotope();
-//		});
-		
-//		var ajaxurl = wpexvars.ajaxurl;
-//		$('div#load-more').click(function() {
-//			$(this).children('a').html(wpexvars.loading);
-//			var $this = $(this),
-//				anchor = $this.children('a'),
-//				nonce = anchor.val(),
-//				pagenum = anchor.data('pagenum'),
-//				maxpage = anchor.data('maxpage'),
-//				data = {
-//					action: 'aq_ajax_scroll',
-//					pagenum: pagenum,
-//					archive_type: anchor.data('archive_type'),
-//					archive_id: anchor.data('archive_id'),
-//					archive_month: anchor.data('archive_month'),
-//					archive_year: anchor.data('archive_year'),
-//					post_format: anchor.data('post_format'),
-//					author: anchor.data('author'),
-//					s: anchor.data('s'),
-//					security: nonce
-//				};
-//			$.post(ajaxurl, data, function(response) {
-//				var content = $(response);
-//				$(content).imagesLoaded(function() {
-//					$('div#load-more a').html(wpexvars.loadmore);
-//					$('#wpex-grid-wrap').append(content).isotope( 'appended', content, function() {	
-//						$('#wpex-grid-wrap').isotope('reLayout');
-//						$(".fitvids").fitVids(); /* re-fire fitvids */
-//					});
-//				});
-//				anchor.data('pagenum', pagenum + 1);
-//				if(pagenum >= maxpage) {
-//					$this.fadeOut();
-//				}
-//			});
-//			return false;
-//		});
 
 		function wpex_staticheader() {
 			var $header_height = $('.fixed-header').outerHeight();

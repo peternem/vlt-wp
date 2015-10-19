@@ -4,13 +4,13 @@
 
 @media only screen and (max-width: 1280px) {
 	.outerbox {
-	    padding: 40px 30px;
+	    padding: 0 30px 40px;
 	}
 	.style-inspiration, .design-stationery, .design-vision, .custom-monogram, .sharing-styles, .related-styles, #copyright {
 	    padding-left: 25px;
 	    padding-right: 25px;
 	}
-	.stationery-detail {
+	.stationery-detail, .related-style,.explore-styles, .explore-styles1 {
 	    padding-left: 0;
 	    padding-right: 0;
 	}
@@ -18,13 +18,30 @@
 	    padding-right: 0;
 		padding-left: 0;
 	}
+	.explore-styles {
+	    margin: 0;
+	}
 	#footer-widgets {
     	padding: 25px 25px;
-   }
-   
+   	}
+   	.hidden-lg {
+	    display: block;
+	}
+	.show-lg {
+	    display: none;
+	}
 }
+
+@media only screen and (max-width: 1024px) {
+	.offset-gut {
+	    padding-left: 5%;
+	}
+}
+
 @media only screen and (max-width: 980px) {
-	
+	.offset-gut {
+	    padding-left: 0;
+	}
 	a#logo {
 	    text-align: center;
 	    float: none;
@@ -44,12 +61,6 @@
 	    right: 0;
 	    margin: 0;
 	    top: -60px;
-	}
-	.hidden-lg {
-	    display: block;
-	}
-	.show-lg {
-	    display: none;
 	}
 	.entry-overlay { display: none !important; }
 	
@@ -103,8 +114,6 @@
 	 }
 	 
 	#sidr-main { padding: 40px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
-	// .sidr.right { left: auto; right: -320px; }
-	// .sidr.left { left: -320px; right: auto; }
 	
 	#navigation {
         background-color:#fff;
@@ -209,8 +218,18 @@
 	.admin-bar #header-wrap {
 	    margin-top:0px;
 	}
+	
+	dl.accordion {
+	    margin-top: 40px;
+	}
 	.carousel {
 	    margin-bottom: 2.50rem;
+	}
+	.explore .inner {
+	    margin: 1em auto;
+	}
+	.explore .inner p {
+	    padding-bottom: 1.1em;
 	}
 }
 
@@ -377,7 +396,10 @@
 		    padding: 10px;
 		}
 	}
-		/*footer*/
+	.stat-info {
+		text-align: center;
+	}
+	/*footer*/
 	.footer-box{
 		&.logo {
 			width: 100%;
@@ -440,9 +462,6 @@
 /* Mobile (portait) = Design for a max-width of 380px
 ================================================== */
 @media only screen and (max-width: 380px) {
-	// body {
-		// font-size: 12px;
-	// }
 	.motif-images {
 		li {
 		    margin-right: 5px;

@@ -2,7 +2,7 @@
 ================================================== */
 @media only screen and (max-width: 1280px) {
   .outerbox {
-    padding: 40px 30px;
+    padding: 0 30px 40px;
   }
   .style-inspiration,
   .design-stationery,
@@ -14,7 +14,10 @@
     padding-left: 25px;
     padding-right: 25px;
   }
-  .stationery-detail {
+  .stationery-detail,
+  .related-style,
+  .explore-styles,
+  .explore-styles1 {
     padding-left: 0;
     padding-right: 0;
   }
@@ -22,11 +25,28 @@
     padding-right: 0;
     padding-left: 0;
   }
+  .explore-styles {
+    margin: 0;
+  }
   #footer-widgets {
     padding: 25px 25px;
   }
+  .hidden-lg {
+    display: block;
+  }
+  .show-lg {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .offset-gut {
+    padding-left: 5%;
+  }
 }
 @media only screen and (max-width: 980px) {
+  .offset-gut {
+    padding-left: 0;
+  }
   a#logo {
     text-align: center;
     float: none;
@@ -49,12 +69,6 @@
     right: 0;
     margin: 0;
     top: -60px;
-  }
-  .hidden-lg {
-    display: block;
-  }
-  .show-lg {
-    display: none;
   }
   .entry-overlay {
     display: none !important;
@@ -248,8 +262,17 @@
   .admin-bar #header-wrap {
     margin-top: 0px;
   }
+  dl.accordion {
+    margin-top: 40px;
+  }
   .carousel {
     margin-bottom: 2.50rem;
+  }
+  .explore .inner {
+    margin: 1em auto;
+  }
+  .explore .inner p {
+    padding-bottom: 1.1em;
   }
 }
 /* #Tablet (Landscape) = Design for a width of 720px
@@ -427,6 +450,9 @@
   }
   .loop-entry .text {
     padding: 10px;
+  }
+  .stat-info {
+    text-align: center;
   }
   /*footer*/
   .footer-box.logo {

@@ -81,7 +81,7 @@ $loop = new WP_Query( $args );?>
         	     	<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive">
 				</a>
 				<div class="text">
-		        	<h3><?php the_title(); ?></h3>
+		        	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h3><?php the_title(); ?></h3></a>
 		        	<p><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>
 		        	<p><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
 		     	</div>

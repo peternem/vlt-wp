@@ -553,10 +553,24 @@ ul.disc { list-style: disc outside }
 	}
 }
 
-.related-style, .explore-styles, .stationery-detail {
+.explore-styles {
+    border: 1px solid @global-color-soft-grey;
+    margin: 0 25px;
+    overflow: auto;
+    padding: 2px 0;
+}
+.related-style, .stationery-detail {
 	padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
+    overflow: auto;
+}
+
+.explore-styles1 {
+	padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-top: 40px;
     overflow: auto;
 }
 
@@ -581,9 +595,16 @@ ul.disc { list-style: disc outside }
     .carousel {
 	    margin-bottom: 2px;
 	}
-	.explore {
-		padding: 2rem 3rem;
-		border: 1px solid @global-color-soft-grey;
+}
+
+.explore {
+	.inner {
+		max-width: 220px;
+		width:100%;
+		margin:10% auto;
+		> p {
+			paddding-bottom: 8%;
+		}
 	}
 }
 
@@ -707,15 +728,33 @@ ul.disc { list-style: disc outside }
 		border: 1px solid #ccc;
 	   
 	    max-width: 75px;
+	}
+	b {
+		text-transform: uppercase;
 	}	
 }
 .sm-palette-image {
-	margin-bottom: 2.143rem;
+	margin-bottom: 2rem;
 	overflow: auto;
 
 	img {
 	    float: left;
-	}   	
+	}
+	b {
+		text-transform: uppercase;
+	}
+	.svg {
+	    width: 36px;
+	} 
+	span {
+	    display: block;
+	    float: left;
+	    font-weight: 500;
+	    line-height: 16px;
+	    margin-left: 15px;
+	    padding: 5px 0 0;
+	    width: 120px;
+	} 	
 }
 .stat-info {
 	margin-bottom: 2rem;
@@ -837,6 +876,43 @@ ul.disc { list-style: disc outside }
 
 #slider-next {
 	right: 0
+}
+
+
+/* Simple jQuery Accordion v2 
+================================================== */
+
+.accordion { 
+   dt, dd {
+      padding: 16px;
+      border-top: 1px solid @global-color-soft-grey;
+      border-bottom: 0; 
+      &:last-of-type {
+      	border-bottom: 1px solid @global-color-soft-grey;
+      }
+      a {
+        display: block;
+        font-weight: 500;
+		text-transform: uppercase;
+        .fa {
+		    float: right;
+		    line-height: 21px;
+		}
+		.pdf {
+		    font-size: 12px;
+		    margin-left: 10px;
+		    text-transform: initial;
+		}
+      }
+   }
+  dd {
+     border-top: 0; 
+     &:last-of-type {
+       border-top: 1px solid white;
+       position: relative;
+       top: -1px;
+     }
+  }
 }
 
 /* Jumbotron styling

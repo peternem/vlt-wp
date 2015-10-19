@@ -79,9 +79,9 @@ get_header(); ?>
 									<div class="text">
 										<?php 
 										if($field['value']['caption']) {
-											echo "<h3>".$post->post_title .": ".$field['value']['caption']."</h3>";
+											echo '<h3><a href="/wedding-stationery/'.$post->post_name.'">'.$post->post_title .': '.$field['value']['caption'].'</a></h3>';
 										} else {
-											echo "<h3>".$post->post_title."</h3>";
+											echo '<h3><a href="/wedding-stationery/'.$post->post_name.'">'.$post->post_title.'</a></h3>';
 										}
 										?>
 				        				<p><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>

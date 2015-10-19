@@ -1615,12 +1615,24 @@ ul.disc {
 .wedding-style-archive h2 {
   text-transform: uppercase;
 }
+.explore-styles {
+  border: 1px solid #d7d3d1;
+  margin: 0 25px;
+  overflow: auto;
+  padding: 2px 0;
+}
 .related-style,
-.explore-styles,
 .stationery-detail {
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 25px;
+  overflow: auto;
+}
+.explore-styles1 {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 40px;
   overflow: auto;
 }
 .stationery-detail {
@@ -1652,11 +1664,13 @@ ul.disc {
 .stationery-detail .carousel {
   margin-bottom: 2px;
 }
-.related-style .explore,
-.explore-styles .explore,
-.stationery-detail .explore {
-  padding: 2rem 3rem;
-  border: 1px solid #d7d3d1;
+.explore .inner {
+  max-width: 220px;
+  width: 100%;
+  margin: 10% auto;
+}
+.explore .inner > p {
+  paddding-bottom: 8%;
 }
 .style-inspiration {
   background-color: #faf6f0;
@@ -1767,12 +1781,30 @@ ul.disc {
   border: 1px solid #ccc;
   max-width: 75px;
 }
+.motif-images b {
+  text-transform: uppercase;
+}
 .sm-palette-image {
-  margin-bottom: 2.143rem;
+  margin-bottom: 2rem;
   overflow: auto;
 }
 .sm-palette-image img {
   float: left;
+}
+.sm-palette-image b {
+  text-transform: uppercase;
+}
+.sm-palette-image .svg {
+  width: 36px;
+}
+.sm-palette-image span {
+  display: block;
+  float: left;
+  font-weight: 500;
+  line-height: 16px;
+  margin-left: 15px;
+  padding: 5px 0 0;
+  width: 120px;
 }
 .stat-info {
   margin-bottom: 2rem;
@@ -1891,6 +1923,43 @@ ul.disc {
 }
 #slider-next {
   right: 0;
+}
+/* Simple jQuery Accordion v2 
+================================================== */
+.accordion dt,
+.accordion dd {
+  padding: 16px;
+  border-top: 1px solid #d7d3d1;
+  border-bottom: 0;
+}
+.accordion dt:last-of-type,
+.accordion dd:last-of-type {
+  border-bottom: 1px solid #d7d3d1;
+}
+.accordion dt a,
+.accordion dd a {
+  display: block;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.accordion dt a .fa,
+.accordion dd a .fa {
+  float: right;
+  line-height: 21px;
+}
+.accordion dt a .pdf,
+.accordion dd a .pdf {
+  font-size: 12px;
+  margin-left: 10px;
+  text-transform: initial;
+}
+.accordion dd {
+  border-top: 0;
+}
+.accordion dd:last-of-type {
+  border-top: 1px solid white;
+  position: relative;
+  top: -1px;
 }
 /* Jumbotron styling
 ================================================== */

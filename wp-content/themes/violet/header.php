@@ -21,10 +21,7 @@
 	<![endif]-->
 <?php } ?>
 <!-- Title Tag -->
-<title>
-<?php bloginfo('name'); ?>
-<?php wp_title(); ?>
-</title>
+<title><?php bloginfo('name'); ?> - <?php wp_title(); ?></title>
 <?php
 	//set favicon if defined in admin
 	if(of_get_option('custom_favicon')) { ?>
