@@ -52,12 +52,16 @@ if(have_posts()) : ?>
     <div class="grid-loader"><i class="icon-spinner icon-spin"></i></div>
     <?php
 	if (have_posts()) { 
+		?>
+		<div id="wpex-grid-wrap2" class="grid">
+		<div class="gutter-sizer2"></div>
+		<?php 
 		while (have_posts()) {
 			the_post( );
 			$format = get_post_format();
 			if ( false === $format ) $format = 'standard';
 			wpex_hook_entry_before(); ?>
-		<section class="wedding-style-archive">
+		<section <?php post_class('item grid-item2 wedding-style-archive'.$post->post_name); ?>>
 			<article class="">
 				<?php wpex_hook_entry_top(); ?>
 				<div class="row style-grid">
@@ -69,6 +73,7 @@ if(have_posts()) : ?>
 						<p class="wedding-style"><?php $terms = get_the_terms( $post->ID , 'style' ); foreach ( $terms as $term ) {echo $term->name;}?> Wedding Style</p>
 	        			<h2 class="grey-hr"><?php the_title(); ?></h2>
 	        			<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
+	        			<p class="mood"><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>
 	        			<p class="description"><?php the_field('suite_description'); ?></p>
 	        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button"><span>Make It Yours</span></a> 
 	      							
@@ -172,6 +177,9 @@ if(have_posts()) : ?>
 		</section>
     	<?php wpex_hook_entry_after();
 		}
+		?>
+		</div><!-- end isotope grid -->
+		<?php 
 	}
 ?>
     

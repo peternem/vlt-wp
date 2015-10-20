@@ -1243,15 +1243,11 @@ address {
 .single-wedding-styles #post {
   margin-top: 0;
 }
-#archive-wrap,
-#post {
-  margin-top: 40px;
-}
 .outerbox {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 50px 40px;
+  padding: 115px 50px 40px;
 }
 #home-wrap,
 #search-entries-wrap,
@@ -1514,9 +1510,6 @@ ul.disc {
 }
 /* Header
 ================================================== */
-#wrap {
-  padding-top: 81px;
-}
 #header {
   padding: 32px 50px;
   border-bottom: 1px solid #d7d3d1;
@@ -2022,6 +2015,21 @@ ul.disc {
   padding: 20px;
   border-top: 1px solid #d7d3d1;
 }
+.grid-item2 {
+  float: left;
+  height: auto;
+  margin-bottom: 35px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+.grid-item2 h3 {
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+.grid-item2 .style-grid .text-col {
+  padding: 1.875rem;
+}
 .related-style-entry {
   position: relative;
   border: 1px solid #d7d3d1;
@@ -2032,6 +2040,9 @@ ul.disc {
 }
 .gutter-sizer {
   width: 2%;
+}
+.gutter-sizer2 {
+  width: 100%;
 }
 .loop-entry-img-link {
   display: block;

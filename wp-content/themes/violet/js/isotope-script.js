@@ -43,10 +43,10 @@
 
 						// filter isotope
 						$grid.isotope({
-							itemSelector : '.grid-item',
+							itemSelector : '.grid-item, .grid-item2',
 							layoutMode : 'fitRows',
 							fitRows : {
-								gutter : '.gutter-sizer'
+								gutter : '.gutter-sizer, .gutter-sizer2'
 							},
 							// use filterFns
 							filter : hashFilter,
