@@ -456,12 +456,12 @@ while (have_posts()) : the_post(); ?>
 							 			$imageURL = $imageArray['url']; // Grab the full size version
 										$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 										?>
-										<a href="<?php echo $imageURL; ?>" rel="lightbox">
+										<a href="/wedding-stationery/<?php echo $post->post_name?>" title="<?php echo $post->post_title;?>">
 										<img src="<?php echo $imageURL;?>" class="img-responsive" alt="<?php echo $imageAlt; ?>">
 										</a>  
 									</div>
 									<div class="related-text">
-										<h3><?php the_title() ?></h3>
+										<h3><a href="/wedding-stationery/<?php echo $post->post_name?>" title="<?php echo $post->post_title;?>"><?php the_title() ?></a></h3>
 										<?php echo get_the_term_list( $post->ID, 'mood','<b>Mood:</b> ', ', ' )."<br/>"; ?>
 										<?php echo get_the_term_list( $post->ID, 'style','<b>Style:</b> ', ', ' )."<br/>"; ?>
 									</div>

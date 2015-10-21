@@ -108,7 +108,7 @@ get_header();
 									$imageURL = $imageArray['url']; // Grab the full size version
 									//$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 									?>
-									<li><a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a></li>
+									<li><img class="motif-image" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"></li>
 				      				<?php 
 								}	
 							} 
@@ -123,7 +123,7 @@ get_header();
 			 			$imageURL = $imageArray['url']; // Grab the full size version
 						$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 						?>
-						<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img class="" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>"> </a>
+						<img class="" src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>">
 					</div>
 					<div class="col-md-12 col-lg-12 sm-palette-image">
 						<?php
@@ -193,14 +193,33 @@ get_header();
 						<dl class="accordion">
 
 						<dt><a href="">Details<i class="fa fa-chevron-down"></i></a></dt>
-						<dd>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</dd>
-						
+						<dd>
+						<?php 
+						if(get_field('app_link_style_stationery')) { ?>
+							<div>
+								<?php echo get_field('stationery_details'); ?>
+							</div>
+						<?php } ?>
+						</dd>
 						<dt><a href="">Pricing <span class="pdf">(Free PDF Download)</span><i class="fa fa-chevron-down"></i></a></dt>
-						<dd>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</dd>
+						<dd>
+						<?php 
+						if(get_field('stationery_pricing')) { ?>
+							<div>
+								<?php echo get_field('stationery_pricing'); ?>
+							</div>
+						<?php } ?>
+						</dd>
 						
 						<dt><a href="">Shipping<i class="fa fa-chevron-down"></i></a></dt>
-						<dd>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</dd>
-						
+						<dd>
+						<?php 
+						if(get_field('stationery_shipping')) { ?>
+							<div>
+								<?php echo get_field('stationery_shipping'); ?>
+							</div>
+						<?php } ?>
+						</dd>
 						</dl>
 					</div>
 				</div>
@@ -208,7 +227,7 @@ get_header();
 		</section>	
 		<section class="explore-styles1">
 			<div class="col-lg-12">
-				<h4>Explore More in This Stationery Styles</h4>
+				<h4>Explore This Style</h4>
 			</div>
 		</section>
 		<section class="explore-styles">
@@ -223,7 +242,7 @@ get_header();
 								$imageURL = $imageArray['url']; // Grab the full size version
 								$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 								?>
-								<a href="<?php echo $imageURL; ?>" rel="lightbox"> <img src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col img-responsive"> </a>
+								<a href="/wedding-styles/<?php echo $post->post_name ?>/x"> <img src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col img-responsive"> </a>
 							</div>
 						</div>
 					</div>

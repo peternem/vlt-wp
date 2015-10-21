@@ -9,22 +9,16 @@ get_header();
 
 //start post loop
 while (have_posts()) : the_post(); ?>
-<h2>single-blog.php</h2>
 <div id="post" class="clearfix">
 	<div class="container clearfix">
-		
-		
-		
 		<header id="single-heading">
 			<h1><?php the_title(); ?></h1>
 			<?php wpex_post_meta(); ?>
 		</header><!-- /single-meta -->
-		
 		<article class="entry clearfix">
 			<?php the_content(); ?>
             <p><?php echo get_the_term_list( $post->ID, 'style', 'Style: ', ', ' ); ?></p>
         <p><?php echo get_the_term_list( $post->ID, 'mood', 'Mood: ', ', ' ); ?></p>
-        <p><?php echo get_the_term_list( $post->ID, 'suite', 'Suite: ', ', ' ); ?></p>
 		</article><!-- /entry -->
 		
 		<?php wp_link_pages(' '); ?>

@@ -100,16 +100,6 @@
 <!-- /header-wrap -->
 <?php wpex_hook_header_after(); ?>
 <div id="wrap">
-	<?php if(is_page('home')) { ?>
-	<div id="hompage-hero-section" class="jumbtron clearfix ">
-		<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1280%C3%97385&w=1280&h=385" class="img-responsive"/>
-		<div class="caption">
-			<h1>Your Wedding, Your Style</h1>
-			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content.</p>
-			<p><a class="btn btn-default" href="#" role="button">Find Your Wedding Style</a></p>
-		</div>
-	</div>
-	<?php } ?>
 <?php wpex_hook_content_before(); ?>
 <div id="main-content" class="outerbox clearfix <?php if( of_get_option( 'pagination_style', 'infinite_scroll' ) == 'infinite_scroll' ) { echo 'infinite-scroll-enabled'; } ?>">
 <?php wpex_hook_content_top(); ?>

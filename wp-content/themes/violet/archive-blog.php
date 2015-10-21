@@ -17,14 +17,10 @@ if(have_posts()) : ?>
 <div id="archive-wrap" class="clearfix">
   <div id="archive-entries-wrap" class="clearfix">
     <header id="page-heading">
-      <h1>Violet Blog - archive-blog.php</h1>
+    <h1>Blog</h1>
       <p>
         <?php $obj = get_post_type_object( 'blog' );
 echo $obj->description; ?></p>
-      <fieldset class="filter">
-        <legend class="symple-button">Filter by style &amp; mood</legend>
-        <?php echo do_shortcode('[searchandfilter id="583"]'); ?>
-      </fieldset>
     </header>
     <div class="grid-loader"><i class="icon-spinner icon-spin"></i></div>
     <div id="wpex-grid-wrap">
@@ -32,7 +28,7 @@ echo $obj->description; ?></p>
                 if (have_posts()) { 
                     while (have_posts()) {
                         the_post( );
-                        echo "Post Format: ".$format = get_post_format();
+                       $format = get_post_format();
                         if ( false === $format ) $format = 'standard';
                         get_template_part( '/formats/entry', $format );
                     }

@@ -11,7 +11,9 @@ get_header();
 if(have_posts()) : ?>
 <div id="archive-wrap" class="clearfix">
 	<header id="page-heading">
-		<h1>Wedding Styles</h1>
+		<?php $obj = get_post_type_object( 'wedding-styles' ); ?>
+		<h1><?php echo $obj->labels->name; ?></h1>
+      	<p><?php echo $obj->description;  ?></p>
 	</header>
 	<div id="archive-entries-wrap" class="clearfix">
 		<div class="browse-filters">

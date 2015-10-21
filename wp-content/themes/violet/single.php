@@ -9,7 +9,6 @@ get_header();
 
 //start post loop
 while (have_posts()) : the_post(); ?>
-<h2>Uses: Single.php</h2>
 <div id="post" class="clearfix">
   <div class="container clearfix">
   <?php
