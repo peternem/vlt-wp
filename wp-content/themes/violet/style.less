@@ -184,9 +184,9 @@ img {
     border-color: @global-color-coral;
     color:@global-color-white;
     &:hover {
-	    background-color:  @global-color-white;
+	    background-color:  @global-color-warm-grey;
 	    border-color: @global-color-warm-grey;
-	    color: @global-color-warm-grey;
+	    color: @global-color-white;
 	}
 }
 
@@ -198,7 +198,9 @@ img {
 
 /* Grids and wrappers
 ================================================== */
-
+.clearfix.visible-xs-block {
+    display: none;
+}
 .outerbox{
 	width: 100%;
 	max-width: @global-page-max-width;
@@ -1345,6 +1347,11 @@ div.wpcf7-mail-sent-ng { margin: 0; padding: 10px; background: #ffe9e9; color: #
 .sharing-image {
     margin: 1.25rem auto 0;
 }
+
+.mobile, .tablet {
+	display: none;
+}
+
 // .create-image {
     // margin: 0 auto;
     // width: 275px;

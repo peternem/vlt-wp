@@ -6,7 +6,6 @@
 	.outerbox {
 	    padding-left: 30px;
 	    padding-right: 30px;
-	    padding-top: 90px;
 	}
 	.style-inspiration, .design-stationery, .design-vision, .custom-monogram, .sharing-styles, .related-styles, #copyright {
 	    padding-left: 25px;
@@ -38,9 +37,36 @@
 	.offset-gut {
 	    padding-left: 5%;
 	}
+	.jumbtron .caption {
+	    max-width: 29%;
+    	left: 2%;
+    	top: 1rem;
+	}
 }
 
 @media only screen and (max-width: 980px) {
+	
+	.jumbtron .caption {
+		max-width: 100%;
+	    left: 15%;
+	    top: 25%;
+	    right: 15%;
+	    background: rgb(255, 255, 255); 
+	    background: rgba(255,255,255,0.75);
+	    bottom: inherit;
+	}
+	.home .innerbox {
+	    padding: 3rem 0;
+	}
+
+
+	img.desktop.img-responsive {
+	    display: none;
+	}
+	img.tablet.img-responsive {
+	    display: block;
+	}
+	
 	.offset-gut {
 	    padding-left: 0;
 	}
@@ -210,10 +236,6 @@
 	/*main*/
 	//#wrap { padding: 0; }
 	
-	.jumbtron {
-	    margin: 61px auto 0;
-	}
-	
 	html #wpadminbar {
 	    display: none;
 	}
@@ -252,23 +274,9 @@
 	
 	/*special hide class*/
 	.hide-tablet-portrait{ display: none; }
-	
 
-		
 	/*removed fixed header*/
 	.fixed-header { position: relative !important; top: auto !important; left: auto !important; }
-	//#wrap { padding-top: 0 !important; }
-	
-	/*main*/
-	// #post{ width: 430px }
-	// #sidebar{ width: 260px }
-	// .wpex-widget-recent-posts .recent-right{ width: 130px; }
-	// #footer .wpex-widget-recent-posts .recent-right{ width: 130px; }
-	
-	/*homepage with sidebar*/
-	// .home-sidebar .loop-entry{ width: 205px;  }
-	// .home-sidebar .loop-entry-meta li{ display: block; float: none; margin-bottom: 5px; }
-	// .home-sidebar .loop-entry-meta li:last-child{ margin:0; }
 	
 	/*footer*/
 	.footer-box{
@@ -292,28 +300,21 @@
 
 
 
-/* Mobile (Portrait) = Design for a width of 280px
+/* Mobile (Portrait) = Design for a width of 767px
 ================================================== */
 
 @media only screen and (max-width: 767px) {
-	
+	.clearfix.visible-xs-block {
+	    display: table !important;
+	    width: 100%;
+	    padding: 2%;
+	}
 	/*hide*/
 	.hide-mobile-portrait{ display: none; }
 	#single-nav{ display: none; }
 	
 	/*removed fixed header*/
 	.fixed-header { position: relative !important; top: auto !important; left: auto !important; }
-	//#wrap { padding-top: 0 !important; }
-	
-	/*grid*/
-	//.outerbox{ width: 280px; }
-	#sidebar{ width: 280px; }
-	//.loop-entry{ width: 280px; margin-right: 0; margin-bottom: 20px }
-	
-	/*main*/
-	// #post{ width: 100%; }
-	// #sidebar{ width: 100%; }
-	// #sidebar{ margin-top: 30px; padding-top: 30px; border-top: 4px solid #ddd; }
 	
 	/*header*/
 	#header-social{ position: inherit; top: auto; right: auto; text-align: center; margin-top: -10px; margin-bottom: 20px; }
@@ -339,11 +340,7 @@
 	    	margin-left: 0;
 	    }
 	}
-	// .footer-box{ width: 100%; margin-right: 0; }
-	// #footer-bottom, #footer-menu{ text-align: center; }
-	// #footer-menu{ margin-top: 5px; }
-	// #copyright,.footer-menu{ width: 100%; float: none; }
-	// .footer-menu{ margin-top: 10px; text-align: center; }
+
 	
 	/*comments*/
 	.children { margin: 30px 0 0; }
@@ -359,9 +356,28 @@
        
 }
 
+@media only screen and (max-width: 665px) {
+	.jumbtron .caption {
+	    max-width: 100%;
+	    left: inherit;
+	    top: inherit;
+	    right: inherit;
+	    position: relative;
+	    bottom: inherit;
+	    z-index: inherit;
+	    margin-top: 2rem;
+	}
+}
 /* Mobile (portait) = Design for a max-width of 480px
 ================================================== */
 @media only screen and (max-width: 480px) {
+	img.tablet.img-responsive {
+	    display: none;
+	}
+	img.mobile.img-responsive {
+	    display: block;
+	}
+
 	.carousel-pager {
 		.row {
 		    text-align: center;

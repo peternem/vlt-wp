@@ -24,19 +24,20 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
-	    	 	<div class="col-sm-3 col-md-3 col-lg-3">
+	    	 	<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-monogram-1.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-monogram-2.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
+	    	 	<div class="clearfix visible-xs-block"></div>
 	    	 	<!-- Right Mid Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-monogram-3.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 				<!-- Right Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-monogram-4.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 	    	 </div>
@@ -49,19 +50,20 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
-	    	 	<div class="col-sm-3 col-md-3 col-lg-3">
+	    	 	<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-stationery-1.jpg" class="img-responsive"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-stationery-2.jpg" class="img-responsive"/>
 	    	 	</div>
+	    	 	<div class="clearfix visible-xs-block"></div>
 	    	 	<!-- Right Mid Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-stationery-3.jpg" class="img-responsive"/>
 	    	 	</div>
 				<!-- Right Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/home-stationery-4.jpg" class="img-responsive"/>
 	    	 	</div>
 	    	 </div>
@@ -89,19 +91,20 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
-	    	 	<div class="col-sm-3 col-md-3 col-lg-3">
+	    	 	<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/browse-classic.jpg" class="img-responsive center-block"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/browse-modern.jpg" class="img-responsive center-block"/>
 	    	 	</div>
+	    	 	<div class="clearfix visible-xs-block"></div>
 	    	 	<!-- Right Mid Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/browse-vintage.jpg" class="img-responsive center-block"/>
 	    	 	</div>
 				<!-- Right Col -->
-				<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
 					<img src="/wp-content/uploads/2015/10/browse-rustic.jpg" class="img-responsive center-block"/>
 	    	 	</div>
 	    	 </div>
@@ -112,25 +115,26 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
-	    	 	<div class="col-sm-2 col-md-2 col-lg-2">
+	    	 	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
-				<div class="col-sm-2 col-md-2 col-lg-2">
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
-	    	 	<div class="col-sm-2 col-md-2 col-lg-2">
+	    	 	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
-	    	 	<div class="col-sm-2 col-md-2 col-lg-2">
+	    	 	
+	    	 	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 	    	 	<!-- Right Mid Col -->
-				<div class="col-sm-2 col-md-2 col-lg-2">
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 				<!-- Right Col -->
-				<div class="col-sm-2 col-md-2 col-lg-2">
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 	    	 </div>

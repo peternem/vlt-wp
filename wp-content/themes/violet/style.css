@@ -1111,9 +1111,9 @@ img {
   color: #ffffff;
 }
 .btn-thirdly:hover {
-  background-color: #ffffff;
+  background-color: #8c8787;
   border-color: #8c8787;
-  color: #8c8787;
+  color: #ffffff;
 }
 .btn-link {
   font-weight: 300;
@@ -1122,6 +1122,9 @@ img {
 }
 /* Grids and wrappers
 ================================================== */
+.clearfix.visible-xs-block {
+  display: none;
+}
 .outerbox {
   width: 100%;
   max-width: 1280px;
@@ -2594,6 +2597,10 @@ div.wpcf7-mail-sent-ng {
 ================================================== */
 .sharing-image {
   margin: 1.25rem auto 0;
+}
+.mobile,
+.tablet {
+  display: none;
 }
 .monogram-svg {
   margin: 10% auto;

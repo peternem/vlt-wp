@@ -4,7 +4,6 @@
   .outerbox {
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 90px;
   }
   .style-inspiration,
   .design-stationery,
@@ -44,8 +43,31 @@
   .offset-gut {
     padding-left: 5%;
   }
+  .jumbtron .caption {
+    max-width: 29%;
+    left: 2%;
+    top: 1rem;
+  }
 }
 @media only screen and (max-width: 980px) {
+  .jumbtron .caption {
+    max-width: 100%;
+    left: 15%;
+    top: 25%;
+    right: 15%;
+    background: #ffffff;
+    background: rgba(255, 255, 255, 0.75);
+    bottom: inherit;
+  }
+  .home .innerbox {
+    padding: 3rem 0;
+  }
+  img.desktop.img-responsive {
+    display: none;
+  }
+  img.tablet.img-responsive {
+    display: block;
+  }
   .offset-gut {
     padding-left: 0;
   }
@@ -252,9 +274,6 @@
     display: inline-block;
   }
   /*main*/
-  .jumbtron {
-    margin: 61px auto 0;
-  }
   html #wpadminbar {
     display: none;
   }
@@ -295,8 +314,6 @@
     top: auto !important;
     left: auto !important;
   }
-  /*main*/
-  /*homepage with sidebar*/
   /*footer*/
   .footer-box.logo {
     width: 25%;
@@ -316,9 +333,14 @@
     width: 600px;
   }
 }
-/* Mobile (Portrait) = Design for a width of 280px
+/* Mobile (Portrait) = Design for a width of 767px
 ================================================== */
 @media only screen and (max-width: 767px) {
+  .clearfix.visible-xs-block {
+    display: table !important;
+    width: 100%;
+    padding: 2%;
+  }
   /*hide*/
   .hide-mobile-portrait {
     display: none;
@@ -332,11 +354,6 @@
     top: auto !important;
     left: auto !important;
   }
-  /*grid*/
-  #sidebar {
-    width: 280px;
-  }
-  /*main*/
   /*header*/
   #header-social {
     position: inherit;
@@ -408,9 +425,27 @@
     margin: 0;
   }
 }
+@media only screen and (max-width: 665px) {
+  .jumbtron .caption {
+    max-width: 100%;
+    left: inherit;
+    top: inherit;
+    right: inherit;
+    position: relative;
+    bottom: inherit;
+    z-index: inherit;
+    margin-top: 2rem;
+  }
+}
 /* Mobile (portait) = Design for a max-width of 480px
 ================================================== */
 @media only screen and (max-width: 480px) {
+  img.tablet.img-responsive {
+    display: none;
+  }
+  img.mobile.img-responsive {
+    display: block;
+  }
   .carousel-pager .row {
     text-align: center;
     max-width: 100%;
