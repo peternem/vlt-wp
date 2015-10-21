@@ -1105,6 +1105,16 @@ img {
   border-color: #8c8787;
   color: #8c8787;
 }
+.btn-thirdly {
+  background-color: #fc9b91;
+  border-color: #fc9b91;
+  color: #ffffff;
+}
+.btn-thirdly:hover {
+  background-color: #ffffff;
+  border-color: #8c8787;
+  color: #8c8787;
+}
 .btn-link {
   font-weight: 300;
   color: #303030;
@@ -1117,6 +1127,10 @@ img {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 50px 40px 50px;
+}
+#archive-wrap,
+#post {
+  padding-top: 27px;
 }
 .home .innerbox {
   padding: 3rem 3.571em;
@@ -2584,6 +2598,9 @@ div.wpcf7-mail-sent-ng {
 .monogram-svg {
   margin: 10% auto;
   width: 145px;
+}
+.mono.img-responsive.center-block {
+  max-width: 145px;
 }
 /* Form Submit Buttons
 ================================================== */

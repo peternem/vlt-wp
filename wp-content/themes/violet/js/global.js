@@ -79,21 +79,17 @@
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top}, 'normal');
 		});
-	});
-
-	$(window).load(function() {
-
-		$('div#load-more').addClass('display-element');
-
+		
 		function wpex_staticheader() {
 			var $header_height = $('.fixed-header').outerHeight();
+			console.log($header_height)
 			$('.fixed-header').css({
 				position: 'fixed',
 				top: 0,
 				left: 0
 			});
 			$('#wrap').css({
-				paddingTop: $header_height
+				paddingTop: $header_height + 10
 			});	
 		}
 		
@@ -109,6 +105,13 @@
 				paddingTop: $header_height
 			});
 		});
+	});
+
+	$(window).load(function() {
+
+		$('div#load-more').addClass('display-element');
+
+		
 
 		if ($(window).width() > 767) {
 			$('.wpex-tooltip').tipsy({ fade: true, gravity: 's' });

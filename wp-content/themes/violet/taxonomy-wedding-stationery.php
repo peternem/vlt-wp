@@ -139,7 +139,7 @@ get_header();
 	            	<?php
 					if(get_field('app_link_style_stationery')) { ?>
 						<div>
-							<a id="#CreateStyleGuide" href="<?php echo get_field('app_link_style_stationery');?>" class="btn btn-default" role="button" title="<?php echo get_field('app_link_style_stationery_label');?>"><span><?php echo get_field('app_link_style_stationery_label');?></span></a>
+							<a id="#CreateStyleGuide" href="<?php echo get_field('app_link_style_stationery');?>" class="btn btn-thirdly" role="button" title="<?php echo get_field('app_link_style_stationery_label');?>"><span><?php echo get_field('app_link_style_stationery_label');?></span></a>
 						</div>
 					<?php } ?>
 						
@@ -242,7 +242,7 @@ get_header();
 								$imageURL = $imageArray['url']; // Grab the full size version
 								$imageThumbURL = $imageArray['sizes']['medium']; //grab from the array, the 'sizes', and from it, the 'thumbnail'
 								?>
-								<a href="/wedding-styles/<?php echo $post->post_name ?>/x"> <img src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col img-responsive"> </a>
+								<a href="/wedding-styles/<?php echo $post->post_name ?>/"> <img src="<?php echo $imageURL;?>" alt="<?php echo $imageAlt; ?>" class="col img-responsive"> </a>
 							</div>
 						</div>
 					</div>

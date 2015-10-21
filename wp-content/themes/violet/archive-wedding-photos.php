@@ -22,10 +22,6 @@ if(have_posts()) : ?>
         <?php $obj = get_post_type_object( 'wedding-photos' );
 echo $obj->description; ?>
       </p>
-      <fieldset class="filter">
-        <legend class="symple-button">Filter by style &amp; mood</legend>
-        <?php echo do_shortcode('[searchandfilter id="801"]'); ?>
-      </fieldset>
     </header>
     <div class="grid-loader"><i class="icon-spinner icon-spin"></i></div>
     <?php

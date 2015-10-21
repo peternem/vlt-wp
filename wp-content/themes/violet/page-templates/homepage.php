@@ -25,19 +25,19 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
 	    	 	<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=145x145&w=145&h=145" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/home-monogram-1.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=145x145&w=145&h=145" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/home-monogram-2.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 	    	 	<!-- Right Mid Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=145x145&w=145&h=145" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/home-monogram-3.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 				<!-- Right Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=145x145&w=145&h=145" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/home-monogram-4.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 	    	 </div>
 			<div class="cta-link text-center"><a href="">Browse All Styles</a></div>
@@ -50,19 +50,19 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
 	    	 	<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
+					<img src="/wp-content/uploads/2015/10/home-stationery-1.jpg" class="img-responsive"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
+					<img src="/wp-content/uploads/2015/10/home-stationery-2.jpg" class="img-responsive"/>
 	    	 	</div>
 	    	 	<!-- Right Mid Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
+					<img src="/wp-content/uploads/2015/10/home-stationery-3.jpg" class="img-responsive"/>
 	    	 	</div>
 				<!-- Right Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
+					<img src="/wp-content/uploads/2015/10/home-stationery-4.jpg" class="img-responsive"/>
 	    	 	</div>
 	    	 </div>
 			<div class="cta-link text-center"><a href="">Browse All Stationery</a></div>
@@ -90,19 +90,19 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
 	    	 	<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/browse-classic.jpg" class="img-responsive center-block"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/browse-modern.jpg" class="img-responsive center-block"/>
 	    	 	</div>
 	    	 	<!-- Right Mid Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/browse-vintage.jpg" class="img-responsive center-block"/>
 	    	 	</div>
 				<!-- Right Col -->
 				<div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive center-block"/>
+					<img src="/wp-content/uploads/2015/10/browse-rustic.jpg" class="img-responsive center-block"/>
 	    	 	</div>
 	    	 </div>
 		</section>
@@ -136,15 +136,6 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 	    	 </div>
 		</section>
 	</article>
-	<div class="container clearfix">
-		<header id="single-heading">
-			<h2><?php the_title(); ?></h2>
-		</header>
-		<!-- /single-heading -->
-		<div class="entry">
-			<?php the_content(); ?>
-		</div><!-- /entry -->
-	</div>
 </div><!-- /full-width-page -->
 <?php
 //end page loop
