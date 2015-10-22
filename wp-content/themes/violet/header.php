@@ -49,7 +49,7 @@
 <body <?php body_class('body '. $no_sidebar .''); ?>>
 <?php get_template_part('google-tag-manager'); ?> 
 <?php wpex_hook_header_before(); ?>
-<div id="header-wrap" class="fixed-header" >
+<div id="header-wrap" <?php if( of_get_option('static_header') !== '1' && ! wp_is_mobile() ) { echo 'class="fixed-header"'; } ?> >
   <header id="header" class="outerbox clearfix">
 <!--   <a id="skip-link" href="#main-content">Skip to main content</a> -->
     <?php wpex_hook_header_top(); ?>
