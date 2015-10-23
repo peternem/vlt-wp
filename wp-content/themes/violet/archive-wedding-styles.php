@@ -71,13 +71,11 @@ if(have_posts()) : ?>
 					<!-- Left Col -->
 					
 					<div class="col-sm-6 col-md-3 col-lg-3 text-col typography">
-					
-						<p class="wedding-style"><?php $terms = get_the_terms( $post->ID , 'style' ); foreach ( $terms as $term ) {echo $term->name;}?> Wedding Style</p>
 	        			<h2 class="grey-hr"><?php the_title(); ?></h2>
+	        			<p class="style"><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>
 	        			<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<span class="label">Mood:</span> ', ', ' ); ?></p>
-	        			<p class="mood"><?php echo get_the_term_list( $post->ID, 'style', '<span class="label">Style:</span> ', ', ' ); ?></p>
 	        			<p class="description"><?php the_field('suite_description'); ?></p>
-	        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button"><span>Make It Yours</span></a> 
+	        			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default" role="button"><span>See More</span></a> 
 	      							
 					</div>
 					

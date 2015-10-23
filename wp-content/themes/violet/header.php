@@ -50,48 +50,41 @@
 <?php get_template_part('google-tag-manager'); ?> 
 <?php wpex_hook_header_before(); ?>
 <div id="header-wrap" <?php if( of_get_option('static_header') !== '1' && ! wp_is_mobile() ) { echo 'class="fixed-header"'; } ?> >
-  <header id="header" class="outerbox clearfix">
-<!--   <a id="skip-link" href="#main-content">Skip to main content</a> -->
+
+	<header id="header" class="navbar clearfix">
     <?php wpex_hook_header_top(); ?>
-   <div class="logo-container">
-    	<a id="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="home">
-		    <?php
-			//show custom image logo if defined in the admin
-			if( of_get_option('custom_logo','') !== '' ) { ?>
-			<img src="<?php echo esc_url(of_get_option('custom_logo')); ?>" alt="<?php get_bloginfo( 'name' ) ?>" />
-		    <?php } else { ?>
-		    <h2><?php echo get_bloginfo( 'name' ); ?></h2>
-	    <?php } ?>
-		</a>
-	    <?php
-				//show social icons if not disabled
-				if( of_get_option('social','1') ) {
-					wpex_display_social();
-				 } //social disabled ?>
-		
-	    <?php
-		// Output content for mobile menu
-		wpex_mobile_menu(); ?>
-	</div>
-    <nav id="navigation" class="clearfix">
-      <?php
-			// Main Navigation menu
-			wp_nav_menu( array(
-				'theme_location'	=> 'main_menu',
-				'sort_column'		=> 'menu_order',
-				'menu_class'		=> 'sf-menu',
-				'fallback_cb'		=> false
-			)); ?>
-      <?php
-			// Sub Navigation menu
-			wp_nav_menu( array(
-				'theme_location'	=> 'sub_menu',
-				'sort_column'		=> 'menu_order',
-				'menu_class'		=> 'sub-menu',
-				'fallback_cb'		=> false
-			)); ?>
-      <!--?php get_search_form(); ?--> 
-    </nav>
+		<div class="logo-container">
+    		<a id="logo" class="logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="home">
+			    <?php
+				//show custom image logo if defined in the admin
+				if( of_get_option('custom_logo','') !== '' ) { ?>
+				<img src="<?php echo esc_url(of_get_option('custom_logo')); ?>" alt="<?php get_bloginfo( 'name' ) ?>" />
+			    <?php } else { ?>
+			    <h2><?php echo get_bloginfo( 'name' ); ?></h2>
+		    <?php } ?>
+			</a>
+		</div>
+		<?php wpex_mobile_menu(); ?>
+    	<nav id="navigation" class="clearfix">
+    		
+	      <?php
+				// Main Navigation menu
+				wp_nav_menu( array(
+					'theme_location'	=> 'main_menu',
+					'sort_column'		=> 'menu_order',
+					'menu_class'		=> 'sf-menu',
+					'fallback_cb'		=> false
+				)); ?>
+	      <?php
+				// Sub Navigation menu
+				wp_nav_menu( array(
+					'theme_location'	=> 'sub_menu',
+					'sort_column'		=> 'menu_order',
+					'menu_class'		=> 'sub-menu',
+					'fallback_cb'		=> false
+				)); ?>
+      		<!--?php get_search_form(); ?--> 
+    		</nav>
     <!-- /navigation -->
     <?php wpex_hook_header_bottom(); ?>
   </header>

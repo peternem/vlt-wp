@@ -2,7 +2,7 @@
 	"use strict";
 
 	$(document).ready(function() {
-		
+
 		/* JQuery BxSlider init */
 		jQuery('.bxslider').bxSlider({
 		  pagerCustom: '#bx-pager',
@@ -39,7 +39,9 @@
 		
 		/* Mobile menu */
 		$('.mobile-menu-toggle').click( function() {
-			$('#navigation').toggleClass('test height');
+			$('#navigation').slideToggle("normal", function() {
+				$('#navigation').toggleClass('test height');
+			});
 			$('body').toggleClass('fixed-page');
 		});
 		
@@ -88,6 +90,7 @@
 
 		function wpex_staticheader() {
 			var $header_height = $('.fixed-header').outerHeight();
+			var $h_height = $('#header').outerHeight();
 			console.log($header_height)
 			$('.fixed-header').css({
 				position: 'fixed',
@@ -95,7 +98,7 @@
 				left: 0
 			});
 			$('#wrap').css({
-				paddingTop: $header_height
+				paddingTop: $h_height + 10
 			});	
 		}
 		
@@ -107,8 +110,9 @@
 		
 		$(window).bind('orientationchange', function(event) {
 			var $header_height = $('.fixed-header').outerHeight();
+			var $h_height = $('#header').outerHeight();
 			$('#wrap').css({
-				paddingTop: $header_height
+				paddingTop: $h_height
 			});
 		});
 

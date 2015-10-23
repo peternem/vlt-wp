@@ -70,19 +70,10 @@
 	.offset-gut {
 	    padding-left: 0;
 	}
-	a#logo {
-	    text-align: center;
-	    float: none;
-	    display: block;
-	    max-width: 125px;
-	    margin: 25px auto;
-	    width: 100%;
-	}
+
 	/*special hide class*/
 	.hide-all-devices{ display: none; }
 	
-	/*hide stuff*/
-	#navigation #searchbar{ display: none; }
 	#navigation {
 		position: absolute;
 	    left: 0;
@@ -90,32 +81,49 @@
 	    margin: 0;
 	    top: -60px;
 	}
+	
+	#navigation ul li a{
+		color: @global-color-charcoal;
+	}
 	.entry-overlay { display: none !important; }
 	
-	#header {
-	    padding: 15px 0;
+	.navbar .logo-container {
+		//background-color: #fff;
+		// border-bottom: 1px solid @global-color-soft-grey;
+	    width: 125px;
+	    margin: 0px auto;
+	    float: none;
+	}
+	
+	.navbar {
+	    padding: 0;
+	    	.logo-link {
+			    float: none;
+			    display: block;
+			    max-width: 125px;
+			    margin: 18px auto 0;
+			    padding: 0;
+			    width: 100%;
+			}
 	}
 	
 	/*navigation*/
 	.mobile-menu-toggle { 
-		display: block;
-		height: 35px;
-		line-height: 35px;
-		color: #666;
-		position: absolute;
-		right: 25px; 
-		top: 12px;
-		margin: 0;
-		text-transform: uppercase;
-		border: 1px solid #ddd;
-		background: #f7f7f7;
-		background: -moz-linear-gradient(top,  #fefefe 0%, #f7f7f7 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#f7f7f7));
-		background: -webkit-linear-gradient(top,  #fefefe 0%,#f7f7f7 100%);
-		background: -o-linear-gradient(top,  #fefefe 0%,#f7f7f7 100%);
-		background: -ms-linear-gradient(top,  #fefefe 0%,#f7f7f7 100%);background: linear-gradient(to bottom,  #fefefe 0%,#f7f7f7 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#f7f7f7',GradientType=0 );
-		width: 65px;
+	    display: block;
+	    height: 30px;
+	    line-height: 30px;
+	    color: #666;
+	    position: absolute;
+	    right: 15px;
+	    top: 10px;
+	    margin: 0;
+	    text-transform: uppercase;
+	    border: none;
+	    background: #ffffff;
+	    width: 65px;
+	    &:hover, &:focus {
+	    	background-color: #d7d3d1;
+	    }
 	}
 
 	.mobile-menu-toggle  {
@@ -123,10 +131,8 @@
     	span.fa-bars {
       		font-size: 18px;
     	}
+    	&:hover { text-decoration: none; color: #000; }
 	}
-	
-	.mobile-menu-toggle:hover { text-decoration: none; color: #000; }
-	
 	.sidr { 
 		position: absolute; 
 		position: fixed; 
@@ -144,14 +150,16 @@
 	#sidr-main { padding: 40px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 	
 	#navigation {
-        background-color:#fff;
-		opacity: 0.90;
+        background-color: #fff;
+        border-top: 1px solid @global-color-soft-grey;
+        display: none;
+        height: 100%;
+		opacity: 0.98;
 		overflow-x: none;
     	overflow-y: scroll; /* has to be scroll, not auto */
+    	position: fixed;
 	    padding: 0 5%;
-	    position:fixed;
-        top:-579px;
-        z-index:0;
+        top:49px;
         width:100%;
         -webkit-overflow-scrolling: touch;
         -webkit-transition:top .3s ease-in-out,right .3s ease-in-out;
@@ -161,7 +169,7 @@
 		    margin-top: 3%;
 		}
 		&.test {
-			 top: 60px;
+			 //top: 60px;
 		}
 		.sf-menu {
 		    margin: 0;
@@ -169,25 +177,16 @@
 		}
 		
 	}
-	#navigation.height {
-	    height: 100%;
-	}
-
-	.logo-container {
-		background-color: #fff;
-	    border-bottom: 1px solid @global-color-soft-grey;
-	    position: absolute;
-	    z-index: 999;
-	    width: 100%;
-
-	    height: 60px;
-	    top: 0;
-	}
 	
+	#navigation.height {
+	    // height: 100%;
+	    // bottom: 0;
+	    // position: fixed;
+	}
 	#navigation {
 		ul {
 			li {
-				border-top: 1px solid  @global-color-soft-grey;
+				border-top: none;// 1px solid  @global-color-soft-grey;
 			    display: block;
 			    width: 100%;
 			    text-align: center;
@@ -203,7 +202,6 @@
 			}
 		}
 	}
-	
 
 	.footer-box{
 		&.logo {
@@ -232,9 +230,6 @@
 	
 	/*display dropdown nav*/
 	#navigation .selector { display: inline-block; }
-	
-	/*main*/
-	//#wrap { padding: 0; }
 	
 	html #wpadminbar {
 	    display: none;
@@ -316,11 +311,6 @@
 	/*removed fixed header*/
 	.fixed-header { position: relative !important; top: auto !important; left: auto !important; }
 	
-	/*header*/
-	#header-social{ position: inherit; top: auto; right: auto; text-align: center; margin-top: -10px; margin-bottom: 20px; }
-	#header-social li, #header-social a{ display: inline-block; }
-	#logo{ text-align: center; }
-	#logo a{ display: inline-block; float: none; }
 	
 	/*blog*/
 	#related-posts .alignleft{ max-width: 30% }

@@ -9,9 +9,6 @@
  License URI: #
 */
 
-
-
-
 /* Google Fonts
 ================================================== */
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
@@ -196,6 +193,11 @@ img {
   	font-weight: 500;
 }
 
+.dsg-links {
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
 /* Grids and wrappers
 ================================================== */
 .clearfix.visible-xs-block {
@@ -226,7 +228,10 @@ img {
 	    	padding-left: 10px;
     		padding-right: 10px;
 	    }
-	}	
+	}
+	#single-heading {
+    	margin-bottom: 5px;
+   }
 }
 
 .home {
@@ -273,7 +278,7 @@ img {
     position: fixed;
     width: 100%;
     .logo-container {
-	    border: none;
+	    //border: none;
 	}
 }
 
@@ -416,8 +421,11 @@ a:focus { outline: 0 }
 	.grey-hr {
 	    text-transform: uppercase;
 	}
+	.style {
+		padding-bottom: 0;
+		}
 	.mood { 
-		padding-bottom: 0.571rem;
+		padding-bottom: 1.143rem;
 	}
 	.label { 
 		font-weight:@global-body-bold-weight;
@@ -534,21 +542,32 @@ ul.disc { list-style: disc outside }
 /* Header
 ================================================== */
 //#wrap {padding-top:81px}
-#header {
-	padding:32px 50px; 
-	border-bottom: 1px solid @global-color-soft-grey; 
+.navbar {
+	padding:29px 50px;
+	background: #fff;
+	border-bottom: 1px solid @global-color-soft-grey;
+	margin: 0px auto;
 	max-width:@global-page-max-width;
 	position: relative;
+	min-height: 50px;
+	max-height: 80px;
+	text-align: center;
+	.logo-container {
+	    float: left;
+	}
+	.logo-link {
+	    float: left;
+	    padding: 4px;
+	    a { display: inline-block; text-align:center; text-decoration: none; }
+	    img { display: block; width:106px; max-width: 100%; margin:auto }
+	}
 }
-#header-wrap{ z-index: 999; width: 100%; background: #fff; text-align:center;position: fixed; top: 0px; left: 0px; }
+#header-wrap{ z-index: 999; width: 100%; position: fixed; top: 0px; left: 0px; }
 #header-top{ position: relative; }
 #page-featured-img{ padding: 7px; margin-bottom: 30px;  }
 #page-featured-img img{ display: block; width: 100%; }
 
 /*logo*/
-#logo{ float:left}
-#logo a { display: inline-block; text-align:center; text-decoration: none; }
-#logo img { display: block; width:106px; max-width: 100%; margin:auto }
 #logo h1, #logo h2 { float: left; background: #000; padding: 15px; margin: 0; line-height: 21px; color: #fff; -webkit-transition: all 0.1s ease-in-out; -moz-transition: all 0.1s ease-in-out; -o-transition: all 0.1s ease-in-out; transition: all 0.1s ease-in-out; }
 
 /* Main Navigation

@@ -3,8 +3,8 @@
 	<img src="/wp-content/uploads/2015/10/hero-tablet.jpg" class="tablet img-responsive"/>
 	<img src="/wp-content/uploads/2015/10/hero-mobile.jpg" class="mobile img-responsive"/>
 	<div class="caption">
-		<h1><?php the_title(); ?></h1>
-		<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content.</p>
-		<p><a class="btn btn-default" href="#" role="button">Find Your Wedding Style</a></p>
+		<h1><?php echo the_title(); ?></h1>
+		<?php echo the_content(); ?>
+		<p><a class="btn btn-default" href="/wedding-styles/" role="button">Find Your Wedding Style</a></p>
 	</div>
 </div>

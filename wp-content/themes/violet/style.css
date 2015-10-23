@@ -1120,6 +1120,10 @@ img {
   color: #303030;
   font-weight: 500;
 }
+.dsg-links {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
 /* Grids and wrappers
 ================================================== */
 .clearfix.visible-xs-block {
@@ -1149,6 +1153,9 @@ img {
 .home .style-grid .col-lg-3 {
   padding-left: 10px;
   padding-right: 10px;
+}
+.home #single-heading {
+  margin-bottom: 5px;
 }
 .home .cta-link.text-center {
   margin-top: 2.857rem;
@@ -1193,9 +1200,6 @@ img {
 .fixed-page {
   position: fixed;
   width: 100%;
-}
-.fixed-page .logo-container {
-  border: none;
 }
 .hidden-lg {
   display: none;
@@ -1403,8 +1407,11 @@ a:focus {
 .typography .grey-hr {
   text-transform: uppercase;
 }
+.typography .style {
+  padding-bottom: 0;
+}
 .typography .mood {
-  padding-bottom: 0.571rem;
+  padding-bottom: 1.143rem;
 }
 .typography .label {
   font-weight: 500;
@@ -1550,17 +1557,38 @@ ul.disc {
 }
 /* Header
 ================================================== */
-#header {
-  padding: 32px 50px;
+.navbar {
+  padding: 29px 50px;
+  background: #fff;
   border-bottom: 1px solid #d7d3d1;
+  margin: 0px auto;
   max-width: 1280px;
   position: relative;
+  min-height: 50px;
+  max-height: 80px;
+  text-align: center;
+}
+.navbar .logo-container {
+  float: left;
+}
+.navbar .logo-link {
+  float: left;
+  padding: 4px;
+}
+.navbar .logo-link a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.navbar .logo-link img {
+  display: block;
+  width: 106px;
+  max-width: 100%;
+  margin: auto;
 }
 #header-wrap {
   z-index: 999;
   width: 100%;
-  background: #fff;
-  text-align: center;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -1577,20 +1605,6 @@ ul.disc {
   width: 100%;
 }
 /*logo*/
-#logo {
-  float: left;
-}
-#logo a {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-}
-#logo img {
-  display: block;
-  width: 106px;
-  max-width: 100%;
-  margin: auto;
-}
 #logo h1,
 #logo h2 {
   float: left;
@@ -1912,7 +1926,7 @@ ul.disc {
 }
 .carousel-pager a:hover .overlay {
   background: rgba(0, 0, 0, 0.95);
-  opacity: 0.50;
+  opacity: 0.95;
   width: 100%;
   height: 100%;
   -webkit-transition: background 500ms ease-in-out;
@@ -1923,7 +1937,7 @@ ul.disc {
 }
 .carousel-pager a.active .overlay {
   background: rgba(0, 0, 0, 0.95);
-  opacity: 0.50;
+  opacity: 0.95;
   width: 100%;
   height: 100%;
   -webkit-transition: background 500ms ease-in-out;

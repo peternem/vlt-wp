@@ -20,7 +20,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<section id="createWeddingMonogram" class="innerbox">
 			<header id="single-heading">
 				<h2 class="text-center">Create Your Wedding Monogram</h2>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae erat ante.</p>
+				<p class="text-center">Start with a style you love and make a special mark just for your wedding.</p>
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
@@ -41,53 +41,118 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<img src="/wp-content/uploads/2015/10/home-monogram-4.jpg" class="mono img-responsive center-block"/>
 	    	 	</div>
 	    	 </div>
-			<div class="cta-link text-center"><a href="">Browse All Styles</a></div>
+			<div class="cta-link text-center">
+				<?php
+				if(get_field('create_monogram_link_url'))
+				{
+					?>
+					<a href="<?php echo get_field('create_monogram_link_url'); ?>" role="button" title="<?php echo get_field('create_monogram_link_label'); ?>"><?php echo get_field('create_monogram_link_label'); ?></a>
+					<?php
+				}
+				?>
+			</div>
 		</section>
 		<section id="designWeddingStationary" class="innerbox">
 			<header id="single-heading">
-				<h2 class="text-center">Design Your Wedding Stationery</h2>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae erat ante.</p>
+				<?php
+				if(get_field('design_your_stationery')) {
+					echo get_field('design_your_stationery');
+				}
+				?>
 			</header>
-			<div class="row style-grid">
-	    	 	<!-- Left Col -->
-	    	 	<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-stationery-1.jpg" class="img-responsive"/>
-	    	 	</div>
-	    	 	<!-- Left Mid Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-stationery-2.jpg" class="img-responsive"/>
-	    	 	</div>
-	    	 	<div class="clearfix visible-xs-block"></div>
-	    	 	<!-- Right Mid Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-stationery-3.jpg" class="img-responsive"/>
-	    	 	</div>
-				<!-- Right Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-stationery-4.jpg" class="img-responsive"/>
-	    	 	</div>
+	    	 <div class="row style-grid">
+<?php 
+	$args = array(
+			'post_type' => 'wedding-styles',
+			'meta_key'          => 'wedding_stationery_rank',
+            'orderby'           => 'meta_value_num',
+            'order'             => 'ASC',
+			'post_status' 		=> 'publish',
+			'posts_per_page' => 4,
+			'taxonomy'=>'wedding-stationary',
+	);
+	$myquery = new WP_Query ($args);
+	
+	
+		while ($myquery->have_posts()) : $myquery->the_post();
+	?>
+	<?php 
+					$fields = get_field_objects( $post->ID);
+					$allowed = array("suite_image");
+					$fields_xx = array_intersect_key($fields, array_flip($allowed));
+					
+					if( $fields_xx ) {
+						foreach( $fields_xx as $field_name => $field ) {?>
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+						<?php 
+        				$filter_name = strtok($post->post_name, '-');
+        				$filter_name_a = ucwords($filter_name);
+        				?>
+						<article <?php post_class($post->post_name); ?>>
+								<a href="/<?php echo $post->post_type;?>/#filter=.style-<?php echo $filter_name; ?>">
+	        	     				<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive">
+								</a>
+			        			<h3 class="dsg-links text-center"><a href="/<?php echo $post->post_type;?>/#filter=.style-<?php echo $filter_name; ?>"><?php echo $filter_name_a; ?> Wedding Suites</a></h3>
+			        				<?php 
+// 				        				echo "<pre style=\"font-size: 9px;\">";
+// 				        				print_r($post);
+// 				        				echo "<pre>";
+				        				?>
+	      				</article>
+		      			</div>
+					<?php } ?>
+				<?php }?>
+	<?php endwhile; // end of the loop.  ?>	   
+	<?php wp_reset_postdata(); ?> 	 
 	    	 </div>
-			<div class="cta-link text-center"><a href="">Browse All Stationery</a></div>
+			<div class="cta-link text-center">
+				<?php
+				if(get_field('design_your_stationary_link_url'))
+				{
+					?>
+					<a href="<?php echo get_field('design_your_stationary_link_url'); ?>" role="button" title="<?php echo get_field('design_your_stationary_link_label'); ?>"><?php echo get_field('design_your_stationary_link_label'); ?></a>
+					<?php
+				}
+				?>
+			</div>
 		</section>
 		<section id="easyTools" class="innerbox">
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
 	    	 	<div class="col-sm-6 col-md-6 col-lg-6 text-col typography">
 					<header id="single-heading">
-						<h2 class="text-center">Easy To Use Tools</h2>
-						<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae erat ante.</p>
-						<a class="btn btn-default" href="#" role="button">Find Your Style</a>
+							<?php
+							if(get_field('easy_to_use_tools'))
+							{
+								echo get_field('easy_to_use_tools');
+								?>
+								<a class="btn btn-default" href="<?php echo get_field('easy_to_use_cta_url'); ?>" role="button" title="<?php echo get_field('easy_to_use_cta_label'); ?>"><?php echo get_field('easy_to_use_cta_label'); ?></a>
+								<?php
+							}
+							?>
+						
 					</header>
 	    	 	</div>
 	    	 	<div class="col-sm-6 col-md-6 col-lg-6">
-	    	 		<img src="http://violetweddings.com/wp-content/uploads/2015/09/gardenParty-monogram-editor.jpg" class="img-responsive"/>
+	    	 	<?php 
+	    	 	if(get_field('easy_to_use_image')) {
+						$imageArray = get_field('easy_to_use_image'); // Array returned by Advanced Custom Fields
+				 		$imageAlt = $imageArray['alt']; // Grab, from the array, the 'alt'
+				 		$imageThumbURL = $imageArray['url'];
+				 		?>
+				 		<img src="<?php echo $imageThumbURL;?>" alt="<?php echo $imageAlt; ?>" class="img-responsive">
+	    	 	<?php } ?>
 	    	 	</div>
 	    	 </div>
 			
 		</section>
 		<section id="yourWeddingStyle" class="innerbox">
 			<header id="single-heading">
-				<h2 class="text-center">What is your Wedding Style?</h2>
+				<?php
+				if(get_field('your_wedding-style')) {
+					echo get_field('your_wedding-style');
+				}
+				?>
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
@@ -111,7 +176,12 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 		</section>
 		<section id="asSeenIn" class="innerbox">
 			<header id="single-heading">
-				<h2 class="text-center">As Seen In</h2>
+				<?php
+				if(get_field('as_seen_in')) {
+					echo get_field('as_seen_in');
+				}
+				?>
+				
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
