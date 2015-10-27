@@ -303,7 +303,7 @@ while (have_posts()) : the_post(); ?>
 							} 
 						?>
 	    	 			<div class="col-md-12 col-lg-12">
-							<p class="text-center">Logos in this style</p>
+							<h4 class="text-center">Logos in this style</h4>
 		    	 		</div>	
 		    	 	</div>
 		    	 </div>
@@ -355,10 +355,10 @@ while (have_posts()) : the_post(); ?>
     	<hr>
     	
 		<section class="sharing-styles">
+			<div class="row style-grid">
 			<!-- left Col -->
 	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
-	    	 		<div class="row">
-	    	 			<div class="col-lg-12">
+	    	 		<div class="pinterest">
 	    	 				<h3>What We're Pinning</h3>
 	    	 				<!-- Pinboard -->
 	    	 				<aside class="pinboard">
@@ -366,12 +366,11 @@ while (have_posts()) : the_post(); ?>
           						<!-- Please call pinit.js only once per page --> 
 								<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script> 
 							</aside>
-	    	 			</div>
 	    	 		</div>
 	    	 	</div>
 	    	 	<div class="col-sm-12 col-md-12 col-lg-6">
-	    	 		<div class="row">
-	    	 			<div class="col-lg-12">
+	    	 		<div class="blogroll">
+	    	 			
 	    	 			<h3>From Our Blog</h3>
 	    	 			
 	    	 			<?php 
@@ -396,8 +395,6 @@ while (have_posts()) : the_post(); ?>
 											<div class="blog-post">
 												<h4><a href="<?php echo $post->post_name; ?>"><?php echo $post->post_title; ?></a></h4>
 												<?php the_excerpt(); ?>
-		    	 								<?php //echo get_the_term_list( $post->ID, 'style','<b>Related Styles:</b> ', ', ' )."<br/>"; ?>
-												<?php //echo get_the_term_list( $post->ID, 'suite', '<b>Suite:</b> ', ', ' ); ?>
 		    	 							</div>
 		    	 							</li>
 		    	 						
@@ -412,9 +409,9 @@ while (have_posts()) : the_post(); ?>
 	    	 			?>
 
 						<?php wp_reset_postdata(); ?>
-	    	 			</div>
 	    	 		</div>
 	    	 	</div>
+	    	 </div>
 		</section>
 		
 		<hr>
@@ -462,8 +459,8 @@ while (have_posts()) : the_post(); ?>
 									</div>
 									<div class="related-text">
 										<h3><a href="/wedding-stationery/<?php echo $post->post_name?>" title="<?php echo $post->post_title;?>"><?php the_title() ?></a></h3>
-										<?php echo get_the_term_list( $post->ID, 'mood','<b>Mood:</b> ', ', ' )."<br/>"; ?>
 										<?php echo get_the_term_list( $post->ID, 'style','<b>Style:</b> ', ', ' )."<br/>"; ?>
+										<?php echo get_the_term_list( $post->ID, 'mood','<b>Mood:</b> ', ', ' )."<br/>"; ?>
 									</div>
 								</div>
 							</div>

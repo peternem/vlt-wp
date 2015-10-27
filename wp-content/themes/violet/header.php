@@ -49,25 +49,23 @@
 <body <?php body_class('body '. $no_sidebar .''); ?>>
 <?php get_template_part('google-tag-manager'); ?> 
 <?php wpex_hook_header_before(); ?>
-<div id="header-wrap" <?php if( of_get_option('static_header') !== '1' && ! wp_is_mobile() ) { echo 'class="fixed-header"'; } ?> >
-
-	<header id="header" class="navbar clearfix">
-    <?php wpex_hook_header_top(); ?>
-		<div class="logo-container">
-    		<a id="logo" class="logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="home">
+	<header id="header" class="navbar clearfix fixed-header">
+    	<?php wpex_hook_header_top(); ?>
+    	<nav id="navigation" class="navbar-collapse clearfix">
+    	<?php wpex_mobile_menu(); ?>	
+			<div class="logo-container">
+				<a id="logo" class="logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="home">
 			    <?php
 				//show custom image logo if defined in the admin
 				if( of_get_option('custom_logo','') !== '' ) { ?>
 				<img src="<?php echo esc_url(of_get_option('custom_logo')); ?>" alt="<?php get_bloginfo( 'name' ) ?>" />
 			    <?php } else { ?>
 			    <h2><?php echo get_bloginfo( 'name' ); ?></h2>
-		    <?php } ?>
-			</a>
-		</div>
-		<?php wpex_mobile_menu(); ?>
-    	<nav id="navigation" class="clearfix">
-    		
-	      <?php
+		    	<?php } ?>
+				</a>
+			</div>
+			
+		      <?php
 				// Main Navigation menu
 				wp_nav_menu( array(
 					'theme_location'	=> 'main_menu',
@@ -75,7 +73,7 @@
 					'menu_class'		=> 'sf-menu',
 					'fallback_cb'		=> false
 				)); ?>
-	      <?php
+	      		<?php
 				// Sub Navigation menu
 				wp_nav_menu( array(
 					'theme_location'	=> 'sub_menu',
@@ -89,7 +87,7 @@
     <?php wpex_hook_header_bottom(); ?>
   </header>
   <!-- /header --> 
-</div>
+
 <!-- /header-wrap -->
 <?php wpex_hook_header_after(); ?>
 <div id="wrap">

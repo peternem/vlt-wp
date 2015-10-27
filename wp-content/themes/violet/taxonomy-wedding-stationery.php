@@ -92,7 +92,7 @@ get_header();
 						<h4>Wedding Stationery</h4>
 						
 					</div>
-					<p class="mood"><?php echo get_the_term_list( $post->ID, 'style', '<b>Style:</b> ', ', ' ); ?></p>
+					<p class="style"><?php echo get_the_term_list( $post->ID, 'style', '<b>Style:</b> ', ', ' ); ?></p>
 	            	<p class="mood"><?php echo get_the_term_list( $post->ID, 'mood', '<b>Mood:</b>', ', ' ); ?></p>
 	            	<div class="description"><?php the_field('stationery_suite_description'); ?></div>
 	            	
@@ -150,7 +150,7 @@ get_header();
 		<section class="related-style">
 			<div class="col-md-7 col-lg-7">
 				<div class="row">
-				<h4>Related Stationery Styles</h4>
+				<h3>Related Stationery Styles</h3>
 				<?php 
 				$curr_PostID = $post->ID;
 				$current_page_term_slug = get_the_term_list( $post->ID, 'style');
@@ -227,7 +227,7 @@ get_header();
 		</section>	
 		<section class="explore-styles1">
 			<div class="col-lg-12">
-				<h4>Explore This Style</h4>
+				<h3>Explore This Style</h3>
 			</div>
 		</section>
 		<section class="explore-styles">

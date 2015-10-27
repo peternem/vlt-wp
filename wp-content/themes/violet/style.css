@@ -12,6 +12,7 @@
 ================================================== */
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400,400italic);
 /* Grid Variables
 ================================================== */
 .btn-group-vertical > .btn-group::after,
@@ -1003,6 +1004,7 @@ h3,
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 em {
   color: #303030;
@@ -1060,9 +1062,10 @@ img {
 ================================================== */
 .btn {
   display: inline-block;
-  padding: 11px 20px;
+  padding: 8px 20px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.857em;
   font-weight: 300;
   letter-spacing: 0.15em;
   line-height: 1.42857143;
@@ -1134,10 +1137,6 @@ img {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 50px 40px 50px;
-}
-#archive-wrap,
-#post {
-  padding-top: 27px;
 }
 .home .innerbox {
   padding: 3rem 3.571em;
@@ -1400,7 +1399,7 @@ a:focus {
   display: block;
   margin: 1.571rem auto;
   width: 60px;
-  height: 5px;
+  height: 3px;
   background: #8c8787;
   content: " ";
 }
@@ -1557,13 +1556,24 @@ ul.disc {
 }
 /* Header
 ================================================== */
-.navbar {
-  padding: 29px 50px;
-  background: #fff;
-  border-bottom: 1px solid #d7d3d1;
+.fixed-header {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.navbar-collapse {
   margin: 0px auto;
   max-width: 1280px;
-  position: relative;
+  padding: 24px 50px;
+  width: 100%;
+}
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #d7d3d1;
+  width: 100%;
+  position: fixed;
   min-height: 50px;
   max-height: 80px;
   text-align: center;
@@ -1573,7 +1583,6 @@ ul.disc {
 }
 .navbar .logo-link {
   float: left;
-  padding: 4px;
 }
 .navbar .logo-link a {
   display: inline-block;
@@ -1582,9 +1591,10 @@ ul.disc {
 }
 .navbar .logo-link img {
   display: block;
-  width: 106px;
+  width: 110px;
   max-width: 100%;
   margin: auto;
+  padding: 4px;
 }
 #header-wrap {
   z-index: 999;
@@ -1593,31 +1603,6 @@ ul.disc {
   top: 0px;
   left: 0px;
 }
-#header-top {
-  position: relative;
-}
-#page-featured-img {
-  padding: 7px;
-  margin-bottom: 30px;
-}
-#page-featured-img img {
-  display: block;
-  width: 100%;
-}
-/*logo*/
-#logo h1,
-#logo h2 {
-  float: left;
-  background: #000;
-  padding: 15px;
-  margin: 0;
-  line-height: 21px;
-  color: #fff;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
 /* Main Navigation
 ================================================== */
 .mobile-menu-toggle,
@@ -1625,37 +1610,39 @@ ul.disc {
 #sidr-close {
   display: none;
 }
-#navigation {
-  position: relative;
-  text-align: center
-	width:100%;
-  margin-left: 180px;
-}
-#navigation li {
-  display: inline-block;
-}
-.menu-sub-nav-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-#navigation a {
+#navigation li a {
+  color: #303030;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  padding: 5px 10px;
   text-transform: uppercase;
   font-size: 0.6875rem;
 }
-#menu-main-nav a {
-  color: #303030;
-}
-#menu-sub-nav a {
+#navigation .aux-link.menu-item > a {
   color: #8c8787;
 }
-#navigation ul li + li a {
-  margin-left: 40px;
+.menu-main-nav-container {
+  float: right;
+  width: 85%;
 }
-.sf-menu {
-  margin-right: 20%;
+.menu-main-nav-container .sf-menu {
+  float: right !important;
 }
-/* Main Navigation
+.menu-main-nav-container .menu-item {
+  float: left;
+  display: block;
+  margin-right: 1rem;
+  position: relative;
+}
+.menu-main-nav-container .menu-item:last-child {
+  margin-right: 0;
+}
+.menu-main-nav-container .menu-item > a {
+  display: block;
+  position: relative;
+}
+/* end Main Navigation
 ================================================== */
 /* Style Catalog */
 .wedding-style-archive {
@@ -1720,6 +1707,12 @@ ul.disc {
 }
 .explore .inner > p {
   paddding-bottom: 8%;
+  font-family: "Playfair Display", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+}
+.explore .inner .btn {
+  margin-top: 10px;
 }
 .style-inspiration {
   background-color: #faf6f0;
@@ -1784,15 +1777,37 @@ ul.disc {
   overflow: auto;
   padding: 50px;
 }
+.sharing-styles .row {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+.sharing-styles .col-lg-4,
+.sharing-styles .col-lg-12 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .sharing-styles h3 {
   margin-bottom: 1.95rem;
+  text-transform: uppercase;
+}
+.sharing-styles .row {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+.sharing-styles .col-lg-6 {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .related-styles {
   overflow: auto;
   padding: 50px;
 }
 .related-styles h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.95rem;
+  text-transform: uppercase;
+}
+.related-styles .related-text h3 {
+  margin-bottom: 0.357em;
 }
 .related-styles .row {
   margin-left: -30px;
@@ -1833,6 +1848,9 @@ ul.disc {
 .motif-images b {
   text-transform: uppercase;
 }
+.motif-images > p {
+  padding-bottom: 0.75rem;
+}
 .sm-palette-image {
   margin-bottom: 2rem;
   overflow: auto;
@@ -1843,13 +1861,15 @@ ul.disc {
 .sm-palette-image b {
   text-transform: uppercase;
 }
+.sm-palette-image > p {
+  padding-bottom: 0.75rem;
+}
 .sm-palette-image .svg {
   width: 36px;
 }
 .sm-palette-image span {
   display: block;
   float: left;
-  font-weight: 500;
   line-height: 16px;
   margin-left: 15px;
   padding: 5px 0 0;
@@ -1915,7 +1935,16 @@ ul.disc {
 /* BX Carousel styling
 ================================================== */
 .carousel-pager {
+  margin-top: 1rem;
   margin-bottom: 2rem;
+}
+.carousel-pager .row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.carousel-pager .pager-col {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .carousel-pager a {
   display: block;
@@ -2018,12 +2047,11 @@ ul.disc {
   position: relative;
 }
 .jumbtron .caption {
-  bottom: 2.625em;
-  left: 10%;
+  left: 6%;
   max-width: 25%;
   position: absolute;
   text-align: center;
-  top: 2.625rem;
+  top: 17%;
   z-index: 20;
 }
 .jumbtron h1 {
@@ -2036,6 +2064,7 @@ ul.disc {
   line-height: 1.6rem;
   margin: 0 auto 22px;
   max-width: 600px;
+  padding: 0;
 }
 /* Blog Posts & Blog Entries
 ================================================== */
@@ -2046,14 +2075,13 @@ ul.disc {
 .grid-item {
   float: left;
   height: auto;
-  margin-bottom: 35px;
   position: relative;
   width: 31.95%;
   z-index: 2;
   border: 1px solid #d7d3d1;
 }
 .grid-item h3 {
-  margin: 0 0 5px;
+  margin: 0 0 0.357em;
   text-transform: uppercase;
 }
 .grid-item p {
@@ -2064,11 +2092,10 @@ ul.disc {
   margin: 0;
 }
 .grid-item .label {
-  text-transform: uppercase;
   font-weight: 500;
 }
 .grid-item .text {
-  padding: 20px;
+  padding: 1.429rem;
   border-top: 1px solid #d7d3d1;
 }
 .grid-item2 {
@@ -2090,7 +2117,7 @@ ul.disc {
   width: 2%;
 }
 .gutter-sizer2 {
-  width: 100%;
+  width: 1%;
 }
 .related-style-entry {
   position: relative;
@@ -2356,6 +2383,7 @@ widget_meta li,
 ================================================== */
 /*footer main*/
 #footer {
+  background-color: #faf6f0;
   position: relative;
   max-width: 100%;
 }
@@ -2364,16 +2392,18 @@ widget_meta li,
   position: relative;
   padding: 25px 53px;
   overflow: hidden;
-  font-weight: 400;
   max-width: 1280px;
-  border-top: 1px solid #8c8787;
 }
 /*footer widgets*/
-.footer-box {
+.footer-box.logo {
   float: left;
+  padding: 4px;
 }
 .footer-box.logo img {
-  width: 86px;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  width: 110px;
 }
 .footer-box.social {
   float: right;
@@ -2384,9 +2414,11 @@ widget_meta li,
   margin-left: 53px;
 }
 .footer-menu a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #303030;
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
 }
 #copyright {
   color: #8c8787;

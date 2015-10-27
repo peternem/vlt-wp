@@ -48,6 +48,9 @@
     left: 2%;
     top: 1rem;
   }
+  .menu-main-nav-container {
+    display: block ;
+  }
 }
 @media only screen and (max-width: 980px) {
   .jumbtron .caption {
@@ -58,6 +61,7 @@
     background: #ffffff;
     background: rgba(255, 255, 255, 0.75);
     bottom: inherit;
+    padding: 3%;
   }
   .home .innerbox {
     padding: 3rem 0;
@@ -75,112 +79,68 @@
   .hide-all-devices {
     display: none;
   }
-  #navigation {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0;
-    top: -60px;
-  }
-  #navigation ul li a {
-    color: #303030;
-  }
   .entry-overlay {
     display: none !important;
   }
   .navbar .logo-container {
     width: 125px;
     margin: 0px auto;
+    overflow: auto;
     float: none;
   }
-  .navbar {
-    padding: 0;
+  .navbar .logo-container img {
+    text-align: center;
   }
   .navbar .logo-link {
     float: none;
     display: block;
     max-width: 125px;
-    margin: 18px auto 0;
-    padding: 0;
     width: 100%;
   }
   /*navigation*/
+  #navigation .menu-main-nav-container.height {
+    display: block;
+    height: 100%;
+  }
   .mobile-menu-toggle {
+    background: #ffffff;
+    color: #666;
     display: block;
     height: 30px;
     line-height: 30px;
-    color: #666;
-    position: absolute;
-    right: 15px;
-    top: 10px;
+    letter-spacing: 0.1em;
     margin: 0;
+    position: absolute;
+    right: 25px;
+    top: 20px;
     text-transform: uppercase;
-    border: none;
-    background: #ffffff;
     width: 65px;
   }
   .mobile-menu-toggle:hover,
   .mobile-menu-toggle:focus {
-    background-color: #d7d3d1;
+    text-decoration: underline;
   }
-  .mobile-menu-toggle span.fa-caret-down {
-    position: absolute;
-    right: 20px;
-    top: 0;
-    height: 40px;
-    line-height: 40px;
-    display: block;
-    font-size: 10px;
-  }
-  .mobile-menu-toggle span.fa-bars {
-    font-size: 18px;
-  }
-  .mobile-menu-toggle:hover {
-    text-decoration: none;
-    color: #000;
-  }
-  .sidr {
-    position: absolute;
-    position: fixed;
-    top: 65px;
-    height: 40%;
-    z-index: 999999;
-    width: 100%;
-    overflow-x: none;
-    overflow-y: auto;
-    font-size: 13px;
-    background: #fff;
-    color: #fff;
-  }
-  #sidr-main {
-    padding: 40px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-  }
-  #navigation {
+  #navigation .menu-main-nav-container {
     background-color: #fff;
     border-top: 1px solid #d7d3d1;
-    display: none;
-    height: 100%;
+    left: 0;
     opacity: 0.98;
     overflow-x: none;
-    overflow-y: scroll;
     /* has to be scroll, not auto */
     position: fixed;
     padding: 0 5%;
-    top: 49px;
+    right: 0;
+    top: 70px;
     width: 100%;
-    -webkit-overflow-scrolling: touch;
-    -webkit-transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
-    transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
-  }
-  #navigation .menu-sub-nav-container {
-    position: relative;
-    margin-top: 3%;
+    height: 0;
+    overflow-y: scroll;
+    -webkit-transition: height 0.5s ease-in-out;
+    -moz-transition: height 0.5s ease-in-out;
+    -o-transition: height 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out;
   }
   #navigation .sf-menu {
-    margin: 0;
+    margin: 1rem 0 5rem;
     list-style: inherit;
   }
   #navigation ul li {
@@ -207,65 +167,6 @@
   .footer-box.social {
     width: 100%;
     margin-top: 1.563rem;
-  }
-  .sidr a {
-    color: #707070;
-  }
-  .sidr a:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-  .sidr ul li ul {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: -8px;
-    margin-left: 0;
-    margin-top: 10px;
-  }
-  .sidr ul li ul li a {
-    background: url("../images/caret.png") 12px center no-repeat;
-    padding-left: 30px;
-  }
-  .sidr ul li ul li ul li a {
-    background-position: 24px center;
-    padding-left: 60px;
-  }
-  .sidr-class-toggle-sidr-close {
-    display: block;
-    height: 19px;
-    width: 24px;
-    background: url("../images/bars.png");
-    margin-bottom: 20px;
-  }
-  li.sidr-class-menu-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 0;
-  }
-  ul.sidr-class-sub-menu li.sidr-class-menu-item:last-child {
-    border-color: transparent;
-  }
-  #sidr-id-searchbar {
-    margin-top: 30px;
-  }
-  #sidr-id-searchbar input {
-    border-radius: 3px;
-    -webkit-appearance: none !important;
-    outline: none;
-    border: none;
-    background: #222;
-    color: #999;
-  }
-  #sidr-id-searchsubmit {
-    display: none;
-  }
-  /*display dropdown nav*/
-  #navigation .selector {
-    display: inline-block;
-  }
-  html #wpadminbar {
-    display: none;
-  }
-  .admin-bar #header-wrap {
-    margin-top: 0px;
   }
   dl.accordion {
     margin-top: 40px;
@@ -296,11 +197,6 @@
     display: none;
   }
   /*removed fixed header*/
-  .fixed-header {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-  }
   /*footer*/
   .footer-box.logo {
     width: 25%;
@@ -336,11 +232,6 @@
     display: none;
   }
   /*removed fixed header*/
-  .fixed-header {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-  }
   /*blog*/
   #related-posts .alignleft {
     max-width: 30%;
