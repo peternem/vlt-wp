@@ -23,23 +23,49 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<p class="text-center">Start with a style you love and make a special mark just for your wedding.</p>
 			</header>
 			<div class="row style-grid">
-	    	 	<!-- Left Col -->
-	    	 	<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-monogram-1.jpg" class="mono img-responsive center-block"/>
-	    	 	</div>
-	    	 	<!-- Left Mid Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-monogram-2.jpg" class="mono img-responsive center-block"/>
-	    	 	</div>
-	    	 	<div class="clearfix visible-xs-block"></div>
-	    	 	<!-- Right Mid Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-monogram-3.jpg" class="mono img-responsive center-block"/>
-	    	 	</div>
-				<!-- Right Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/home-monogram-4.jpg" class="mono img-responsive center-block"/>
-	    	 	</div>
+<?php 
+	$argsxx = array(
+			'post_type' => 'wedding-styles',
+			'meta_key'          => 'wedding_stationery_rank',
+            'orderby'           => 'meta_value_num',
+            'order'             => 'ASC',
+			'post_status' 		=> 'publish',
+			'posts_per_page' => 4,
+			'taxonomy'=>'wedding-stationary',
+	);
+	$myquery1 = new WP_Query ($argsxx);
+	
+	
+		while ($myquery1->have_posts()) : $myquery1->the_post();
+	?>
+	<?php 
+					$fields = get_field_objects( $post->ID);
+					$allowed = array("logo_1");
+					$fields_xx = array_intersect_key($fields, array_flip($allowed));
+					
+					if( $fields_xx ) {
+						foreach( $fields_xx as $field_name => $field ) {?>
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+						<?php 
+        				$filter_name = strtok($post->post_name, '-');
+        				$filter_name_a = ucwords($filter_name);
+        				?>
+						<article <?php post_class($post->post_name); ?>>
+								<a href="/wedding-monograms/#filter=.style-<?php echo $filter_name; ?>">
+	        	     				<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive center-block">
+								</a>
+			        			<h3 class="dsg-links text-center"><a href="/wedding-monograms/#filter=.style-<?php echo $filter_name; ?>"><?php echo $filter_name_a; ?> Wedding Suites</a></h3>
+			        				<?php 
+// 				        				echo "<pre style=\"font-size: 9px;\">";
+// 				        				print_r($post);
+// 				        				echo "<pre>";
+				        				?>
+	      				</article>
+		      			</div>
+					<?php } ?>
+				<?php }?>
+	<?php endwhile; // end of the loop.  ?>	   
+	<?php wp_reset_postdata(); ?> 
 	    	 </div>
 			<div class="cta-link text-center">
 				<?php
@@ -154,24 +180,50 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 				}
 				?>
 			</header>
-			<div class="row style-grid">
-	    	 	<!-- Left Col -->
-	    	 	<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/browse-classic.jpg" class="img-responsive center-block"/>
-	    	 	</div>
-	    	 	<!-- Left Mid Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/browse-modern.jpg" class="img-responsive center-block"/>
-	    	 	</div>
-	    	 	<div class="clearfix visible-xs-block"></div>
-	    	 	<!-- Right Mid Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/browse-vintage.jpg" class="img-responsive center-block"/>
-	    	 	</div>
-				<!-- Right Col -->
-				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-					<img src="/wp-content/uploads/2015/10/browse-rustic.jpg" class="img-responsive center-block"/>
-	    	 	</div>
+	    	 <div class="row style-grid">
+<?php 
+	$argsyy = array(
+			'post_type' => 'wedding-styles',
+			'meta_key'          => 'wedding_stationery_rank',
+            'orderby'           => 'meta_value_num',
+            'order'             => 'ASC',
+			'post_status' 		=> 'publish',
+			'posts_per_page' => 4,
+			'taxonomy'=>'wedding-stationary',
+	);
+	$myquery2 = new WP_Query ($argsyy);
+	
+	
+		while ($myquery2->have_posts()) : $myquery2->the_post();
+	?>
+	<?php 
+					$fields = get_field_objects( $post->ID);
+					$allowed = array("your_wedding_style_image");
+					$fields_xx = array_intersect_key($fields, array_flip($allowed));
+					
+					if( $fields_xx ) {
+						foreach( $fields_xx as $field_name => $field ) {?>
+						<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+						<?php 
+        				$filter_name = strtok($post->post_name, '-');
+        				$filter_name_a = ucwords($filter_name);
+        				?>
+						<article <?php post_class($post->post_name); ?>>
+								<a href="/wedding-monograms/#filter=.style-<?php echo $filter_name; ?>">
+	        	     				<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive center-block">
+								</a>
+			        			<h3 class="dsg-links text-center"><a href="/wedding-monograms/#filter=.style-<?php echo $filter_name; ?>"><?php echo $filter_name_a; ?> Wedding Suites</a></h3>
+			        				<?php 
+// 				        				echo "<pre style=\"font-size: 9px;\">";
+// 				        				print_r($post);
+// 				        				echo "<pre>";
+				        				?>
+	      				</article>
+		      			</div>
+					<?php } ?>
+				<?php }?>
+	<?php endwhile; // end of the loop.  ?>	   
+	<?php wp_reset_postdata(); ?> 
 	    	 </div>
 		</section>
 		<section id="asSeenIn" class="innerbox">
@@ -185,28 +237,72 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 			</header>
 			<div class="row style-grid">
 	    	 	<!-- Left Col -->
-	    	 	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+	    	 	<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 	    	 	<!-- Left Mid Col -->
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
-	    	 	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+	    	 	<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 	    	 	
-	    	 	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+	    	 	<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 	    	 	<!-- Right Mid Col -->
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
 				<!-- Right Col -->
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
 					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=280%C3%97190&w=280&h=190" class="img-responsive"/>
 	    	 	</div>
+			</div>
+	    	 <div class="row style-grid">
+<?php 
+	$argsyy = array(
+			'post_type' => 'wedding-styles',
+			'meta_key'          => 'wedding_stationery_rank',
+            'orderby'           => 'meta_value_num',
+            'order'             => 'ASC',
+			'post_status' 		=> 'publish',
+			'posts_per_page' => 4,
+			'taxonomy'=>'wedding-stationary',
+	);
+	$myquery2 = new WP_Query ($argsyy);
+	
+	
+		while ($myquery2->have_posts()) : $myquery2->the_post();
+	?>
+	<?php 
+					$fields = get_field_objects( $post->ID);
+					$allowed = array("your_wedding_style_image");
+					$fields_xx = array_intersect_key($fields, array_flip($allowed));
+					
+					if( $fields_xx ) {
+						foreach( $fields_xx as $field_name => $field ) {?>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+						<?php 
+        				$filter_name = strtok($post->post_name, '-');
+        				$filter_name_a = ucwords($filter_name);
+        				?>
+						<article <?php post_class($post->post_name); ?>>
+								<a href="/wedding-monograms/#filter=.style-<?php echo $filter_name; ?>">
+	        	     				<img src="<?php echo $field['value']['url']; ?>" alt="<?php echo $field['value']['alt']; ?>" class="img-responsive center-block">
+								</a>
+			        				<?php 
+// 				        				echo "<pre style=\"font-size: 9px;\">";
+// 				        				print_r($post);
+// 				        				echo "<pre>";
+				        				?>
+	      				</article>
+		      			</div>
+					<?php } ?>
+				<?php }?>
+	<?php endwhile; // end of the loop.  ?>	   
+	<?php wp_reset_postdata(); ?> 
 	    	 </div>
 		</section>
 	</article>

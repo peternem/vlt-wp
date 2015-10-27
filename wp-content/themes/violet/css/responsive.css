@@ -224,6 +224,10 @@
     width: 100%;
     padding: 2%;
   }
+  .dsg-links {
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
   /*hide*/
   .hide-mobile-portrait {
     display: none;
